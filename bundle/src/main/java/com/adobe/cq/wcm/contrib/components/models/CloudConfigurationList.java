@@ -15,25 +15,27 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 package com.adobe.cq.wcm.contrib.components.models;
 
-import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.models.annotations.Model;
+import java.util.List;
 
-import com.adobe.cq.export.json.ComponentExporter;
-import com.fasterxml.jackson.annotation.JsonInclude;
+import org.jetbrains.annotations.NotNull;
+import org.osgi.annotation.versioning.ConsumerType;
 
-@Model(adaptables = SlingHttpServletRequest.class)
-public class Test implements ComponentExporter {
+/**
+ * Defines the {@code CloudConfigurationList} Sling Model used for the {@code /apps/contrib/wcm/components/cloudconfig} component.
+ *
+ * @since com.adobe.cq.wcm.core.components.models 12.11.0
+ */
+@ConsumerType
+public interface CloudConfigurationList {
 
-    static final String TEST = "test";
-    static final String RT = "contrib/wcm/components/test";
-
-    @JsonInclude
-    public String getTest() {
-        return TEST;
-    }
-
-    @Override
-    public String getExportedType() {
-        return RT;
-    }
+  /**
+   * Retrieve the list of CloudConfigurations for the specified request.
+   *
+   * @return the list of {@code CloudConfiguration}s
+   * @since com.adobe.cq.wcm.core.components.models 12.11.0
+   */
+  @NotNull
+  default List<CloudConfiguration> getCloudConfigurations() {
+      throw new UnsupportedOperationException();
+  }
 }
