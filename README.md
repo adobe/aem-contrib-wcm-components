@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/adobe/aem-contrib-wcm-components.svg?style=svg)](https://circleci.com/gh/adobe/aem-contrib-wcm-components) [![codecov](https://codecov.io/gh/adobe/aem-contrib-wcm-components/branch/master/graph/badge.svg)](https://codecov.io/gh/adobe/aem-contrib-wcm-components)
+
+
 # AEM WCM Components - Community Contributions
 
 This repository was created to allow community contributions for AEM WCM Components to be shared and tested, before they would be integrated into the [Core Components](https://github.com/adobe/aem-core-wcm-components/).
