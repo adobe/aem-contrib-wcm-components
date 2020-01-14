@@ -83,7 +83,7 @@ public final class CoreComponentTestContext {
         return new AemContextBuilder().resourceResolverType(ResourceResolverType.JCR_MOCK)
                 .<io.wcm.testing.mock.aem.junit5.AemContext>afterSetUp(context -> {
                             context.addModelsForClasses(MockResponsiveGrid.class);
-                            context.addModelsForPackage("com.adobe.cq.wcm.core.components.models");
+                            context.addModelsForPackage("com.adobe.cq.wcm.contrib.components.models");
                             context.registerService(SlingModelFilter.class, new MockSlingModelFilter() {
                                 private final Set<String> IGNORED_NODE_NAMES = new HashSet<String>() {{
                                     add(NameConstants.NN_RESPONSIVE_CONFIG);

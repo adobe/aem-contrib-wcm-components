@@ -15,6 +15,12 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 package com.adobe.cq.wcm.contrib.components.internal.servlets;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
@@ -23,7 +29,6 @@ import java.util.Optional;
 
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.caconfig.resource.ConfigurationResourceResolver;
-import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -45,7 +50,7 @@ public class CreateCloudConfigServletTest {
 
     ConfigurationResourceResolver configrr = Mockito.mock(ConfigurationResourceResolver.class);
     Mockito.when(configrr.getResourceCollection(Mockito.any(), Mockito.any(), Mockito.any()))
-        .thenReturn(Collections.singletonList(context.resourceResolver().getResource("/conf/test")));
+            .thenReturn(Collections.singletonList(context.resourceResolver().getResource("/conf/test")));
     context.registerService(ConfigurationResourceResolver.class, configrr);
 
   }
@@ -65,14 +70,14 @@ public class CreateCloudConfigServletTest {
 
     cccSrvlt.doPost(context.request(), context.response());
 
-    Assert.assertNotNull(context.response().getOutputAsString());
-    Assert.assertTrue(context.response().getOutputAsString().contains("Created Cloud Configuration"));
-    Assert.assertNotNull(context.resourceResolver().getResource("/conf/test2/settings/cloudconfigs/test"));
+    assertNotNull(context.response().getOutputAsString());
+    assertTrue(context.response().getOutputAsString().contains("Created Cloud Configuration"));
+    assertNotNull(context.resourceResolver().getResource("/conf/test2/settings/cloudconfigs/test"));
     ValueMap properties = Optional
-        .ofNullable(context.resourceResolver().getResource("/conf/test2/settings/cloudconfigs/test/jcr:content"))
-        .map(r -> r.getValueMap()).orElse(null);
-    Assert.assertEquals("Test", properties.get("jcr:title", String.class));
-    Assert.assertEquals("/apps/contrib/wcm/templates/marketocloudconfig", properties.get("cq:template", String.class));
+            .ofNullable(context.resourceResolver().getResource("/conf/test2/settings/cloudconfigs/test/jcr:content"))
+            .map(r -> r.getValueMap()).orElse(null);
+    assertEquals("Test", properties.get("jcr:title", String.class));
+    assertEquals("/apps/contrib/wcm/templates/marketocloudconfig", properties.get("cq:template", String.class));
   }
 
   @Test
@@ -89,9 +94,9 @@ public class CreateCloudConfigServletTest {
 
     try {
       cccSrvlt.doPost(context.request(), context.response());
-      Assert.fail();
+      fail();
     } catch (IOException e) {
-      Assert.assertNull(context.resourceResolver().getResource("/conf/test2/settings/cloudconfigs/test2"));
+      assertNull(context.resourceResolver().getResource("/conf/test2/settings/cloudconfigs/test2"));
     }
 
   }

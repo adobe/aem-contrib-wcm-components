@@ -18,7 +18,7 @@
 
     var ui = $(window).adaptTo("foundation-ui");
     $(window).adaptTo("foundation-registry").register("foundation.collection.action.action", {
-        name: "core.wcm.components.clientlib.delete",
+        name: "contrib.wcm.components.clientlib.delete",
         handler: function(name, el, config, collection, selections) {
             var message = $("<div/>");
             var intro = $("<p/>").appendTo(message);

@@ -582,6 +582,18 @@
                 <version>3.5</version>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.5</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.1</version>
+                <scope>provided</scope>
+            </dependency>
             <!-- Testing -->
             <dependency>
                 <groupId>org.junit</groupId>
@@ -625,6 +637,31 @@
                 <artifactId>core.wcm.components.junit.core</artifactId>
                 <version>${core.components.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <!-- Jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>2.9.5</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.9.5</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>2.9.5</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient-osgi</artifactId>
+                <version>4.3.4</version>
+                <scope>provided</scope>
             </dependency>
             <!--
                 AEM APIs; make sure to not move this bundle upper in the list so that newer APIs available in AEM but not in the Uber

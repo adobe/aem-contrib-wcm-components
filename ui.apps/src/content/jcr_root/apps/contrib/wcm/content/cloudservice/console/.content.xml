@@ -6,12 +6,12 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="Cloud Service Instances"
         sling:resourceType="granite/ui/components/shell/page"
-        consoleId="core-cloudservice-console">
+        consoleId="contrib-cloudservice-console">
         <head jcr:primaryType="nt:unstructured">
             <clientlibs
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
-                categories="[cq.common.wcm,core.wcm.components.cloudconfig.clientlib]"/>
+                categories="[cq.common.wcm,contrib.wcm.components.cloudconfig.clientlib]"/>
         </head>
         <actions
             jcr:primaryType="nt:unstructured"

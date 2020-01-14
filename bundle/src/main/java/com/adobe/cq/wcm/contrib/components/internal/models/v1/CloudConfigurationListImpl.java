@@ -44,7 +44,7 @@ public class CloudConfigurationListImpl implements CloudConfigurationList {
 
     if (StringUtils.isNotBlank(template)) {
       String query = "SELECT * FROM [cq:Page] WHERE ISDESCENDANTNODE([/conf]) AND [jcr:content/cq:template]='"
-          + template.replace("'", "''") + "'";
+              + template.replace("'", "''") + "'";
       log.debug("Finding cloud configuerations with: {}", query);
 
       slingRequest.getResourceResolver().findResources(query, Query.JCR_SQL2).forEachRemaining(ccr -> {

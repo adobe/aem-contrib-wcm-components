@@ -17,4 +17,6 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/contrib/wcm/components"/>
     <filter root="/apps/contrib/wcm/content"/>
+    <filter root="/apps/contrib/wcm/templates"/>
+    <filter root="/apps/cq/core/content/nav/tools/cloudservices/marketo"/>
 </workspaceFilter>

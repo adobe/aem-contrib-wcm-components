@@ -22,10 +22,10 @@
             sling:resourceType="granite/ui/components/coral/foundation/page/body">
             <items jcr:primaryType="nt:unstructured">
                 <form
-                    granite:id="core-cloudservice-create"
+                    granite:id="contrib-cloudservice-create"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/coral/foundation/form"
-                    action="/bin/core/createcloudconfig"
+                    action="/bin/contrib/createcloudconfig"
                     foundationForm="{Boolean}true"
                     maximized="{Boolean}true"
                     method="post"

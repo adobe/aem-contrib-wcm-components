@@ -23,19 +23,19 @@ import org.osgi.annotation.versioning.ConsumerType;
 /**
  * Defines the {@code CloudConfigurationList} Sling Model used for the {@code /apps/contrib/wcm/components/cloudconfig} component.
  *
- * @since com.adobe.cq.wcm.core.components.models 12.11.0
+ * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
  */
 @ConsumerType
 public interface CloudConfigurationList {
 
-  /**
-   * Retrieve the list of CloudConfigurations for the specified request.
-   *
-   * @return the list of {@code CloudConfiguration}s
-   * @since com.adobe.cq.wcm.core.components.models 12.11.0
-   */
-  @NotNull
-  default List<CloudConfiguration> getCloudConfigurations() {
-      throw new UnsupportedOperationException();
-  }
+    /**
+     * Retrieve the list of CloudConfigurations for the specified request.
+     *
+     * @return the list of {@code CloudConfiguration}s
+     * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
+     */
+    @NotNull
+    default List<CloudConfiguration> getCloudConfigurations() {
+        throw new UnsupportedOperationException();
+    }
 }

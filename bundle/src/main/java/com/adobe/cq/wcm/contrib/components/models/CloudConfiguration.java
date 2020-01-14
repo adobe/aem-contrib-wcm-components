@@ -22,7 +22,7 @@ import org.osgi.annotation.versioning.ConsumerType;
  * Defines the {@code CloudConfiguration} Sling Model used for the
  * {@code /apps/contrib/wcm/components/cloudconfig} component.
  *
- * @since com.adobe.cq.wcm.core.components.models 12.11.0
+ * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
  */
 @ConsumerType
 public interface CloudConfiguration {
@@ -31,7 +31,7 @@ public interface CloudConfiguration {
    * Get the path of the configuration containing the cloud configuration instance
    *
    * @return the path of the configuration containing the cloud configuration instance
-   * @since com.adobe.cq.wcm.core.components.models 12.11.0
+   * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
    */
   @NotNull
   default String getConfigPath() {
@@ -42,7 +42,7 @@ public interface CloudConfiguration {
    * Get the path of the cloud configuration instance
    *
    * @return the path of the cloud configuration instance
-   * @since com.adobe.cq.wcm.core.components.models 12.11.0
+   * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
    */
   @NotNull
   default String getItemPath() {
@@ -53,7 +53,7 @@ public interface CloudConfiguration {
    * Get the title of the cloud configuration instance
    *
    * @return the title of the cloud configuration instance
-   * @since com.adobe.cq.wcm.core.components.models 12.11.0
+   * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
    */
   @NotNull
   default String getTitle() {
