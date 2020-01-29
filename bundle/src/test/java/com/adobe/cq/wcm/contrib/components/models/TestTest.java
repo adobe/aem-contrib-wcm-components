@@ -15,27 +15,16 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 package com.adobe.cq.wcm.contrib.components.models;
 
-import java.util.List;
 
-import org.jetbrains.annotations.NotNull;
-import org.osgi.annotation.versioning.ConsumerType;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-/**
- * Defines the {@code CloudConfigurationList} Sling Model used for the {@code /apps/contrib/wcm/components/cloudconfig} component.
- *
- * @since com.adobe.cq.wcm.core.components.models 12.11.0
- */
-@ConsumerType
-public interface CloudConfigurationList {
+public class TestTest {
 
-  /**
-   * Retrieve the list of CloudConfigurations for the specified request.
-   *
-   * @return the list of {@code CloudConfiguration}s
-   * @since com.adobe.cq.wcm.core.components.models 12.11.0
-   */
-  @NotNull
-  default List<CloudConfiguration> getCloudConfigurations() {
-      throw new UnsupportedOperationException();
-  }
+    @Test
+    public void testAll() {
+        com.adobe.cq.wcm.contrib.components.models.Test test = new com.adobe.cq.wcm.contrib.components.models.Test();
+        Assertions.assertEquals(com.adobe.cq.wcm.contrib.components.models.Test.TEST, test.getTest());
+        Assertions.assertEquals(com.adobe.cq.wcm.contrib.components.models.Test.RT, test.getExportedType());
+    }
 }

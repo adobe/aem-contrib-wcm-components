@@ -13,18 +13,27 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-package com.adobe.cq.wcm.contrib.components;
+package com.adobe.cq.wcm.contrib.components.models;
 
-import org.junit.jupiter.api.Test;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.models.annotations.Model;
 
-import com.adobe.cq.wcm.core.components.testing.AbstractModelTest;
+import com.adobe.cq.export.json.ComponentExporter;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-public class ModelsCommonsTest extends AbstractModelTest {
+@Model(adaptables = SlingHttpServletRequest.class)
+public class Test implements ComponentExporter {
 
-    @Test
-    public void testDefaultBehaviour() throws Exception {
-        testDefaultBehaviour(new String[] {
-                "com.adobe.cq.wcm.contrib.components.models"
-       });
+    static final String TEST = "test";
+    static final String RT = "contrib/wcm/components/test";
+
+    @JsonInclude
+    public String getTest() {
+        return TEST;
+    }
+
+    @Override
+    public String getExportedType() {
+        return RT;
     }
 }
