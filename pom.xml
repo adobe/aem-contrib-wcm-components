@@ -58,6 +58,7 @@
         <module>bundle</module>
         <module>ui.apps</module>
         <module>all</module>
+        <module>ui.testing</module>
     </modules>
 
     <!-- ====================================================================== -->
