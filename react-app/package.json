@@ -16,11 +16,14 @@
     "typescript": "^3.7.5"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2"
+    "aempack": "^1.1.4",
+    "cross-env": "^7.0.2",
+    "fs-extra": "^9.0.0"
   },
   "scripts": {
-    "start": "cross-env PUBLIC_URL=/etc.clientlib/contrib/wcm/components/page/react-webcomponents-page react-scripts start",
-    "build": "cross-env PUBLIC_URL=/etc.clientlib/contrib/wcm/components/page/react-webcomponents-page react-scripts build",
+    "aempack": "cross-env NODE_ENV=development node aempack.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

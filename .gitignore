@@ -21,3 +21,4 @@ node
 node_modules
 
 **/clientlibs/react-webcomponents-page/resources
+**/clientlibs/react-webcomponents-page/static
