@@ -18,7 +18,7 @@ const developWithSSR = process.env.DEVELOPSSR || false;
 const webpackConfig = require('react-scripts/config/webpack.config.js')('development');
 
 webpackConfig.output.path = clientLibRoot;
-
+webpackConfig.output.publicPath = process.env.PUBLIC_URL;
 const user = process.env.AEMUSER  || 'admin';
 const password = process.env.AEMPW || 'admin';
 
