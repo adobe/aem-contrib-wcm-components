@@ -19,3 +19,5 @@ atlassian-ide-plugin.xml
 .vlt-sync-config.properties
 node
 node_modules
+
+**/clientlibs/react-webcomponents-page/resources
