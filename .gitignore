@@ -20,5 +20,4 @@ atlassian-ide-plugin.xml
 node
 node_modules
 
-**/clientlibs/react-webcomponents-page/resources
-**/clientlibs/react-webcomponents-page/static
+**/clientlibs/react-webcomponents/**/*
