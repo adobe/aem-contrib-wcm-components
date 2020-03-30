@@ -19,10 +19,11 @@
   "devDependencies": {
     "aempack": "^1.1.5",
     "cross-env": "^7.0.2",
-    "fs-extra": "^9.0.0"
+    "fs-extra": "^9.0.0",
+    "mini-css-extract-plugin": "latest"
   },
   "scripts": {
-    "aempack": "cross-env NODE_ENV=development node aempack.js",
+    "aempack": "cross-env NODE_ENV=development node scripts/aempack.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
