@@ -8,7 +8,7 @@ export default function Button(properties : ButtonV1Model) {
         return (
             <>
                 { properties.icon && <span className={'cmp-button__icon cmp-button__icon--' + properties.icon}></span>  }
-                <span className="cmp-button__text">Contact Us</span>
+                <span className="cmp-button__text">{properties.text}</span>
             </>
         );
     };
@@ -17,7 +17,7 @@ export default function Button(properties : ButtonV1Model) {
         <div className="button">
             {
                 properties.link &&
-                <a className="cmp-button" href={properties.link}>
+                <a aria-label={properties.ariaLabel} className="cmp-button" href={properties.link}>
                     {getContent()}
                 </a>
             }

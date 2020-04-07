@@ -3,6 +3,33 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const webpackConfig = require('react-scripts/config/webpack.config.js')('production');
 const paths = require('../config/paths');
 
+
+webpackConfig.optimization = {
+    splitChunks: {
+        chunks: 'async',
+            minSize: 30000,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '~',
+            name: true,
+            cacheGroups: {
+            vendors: {
+                test: /[\\/]node_modules[\\/]/,
+                    priority: -10
+            },
+        default: {
+                minChunks: 2,
+                    priority: -20,
+                    reuseExistingChunk: true
+            }
+        }
+    },
+    runtimeChunk: {
+        name: 'bootstrap',
+    },
+};
+
 webpackConfig.output.path = paths.clientLibRoot;
 webpackConfig.output.publicPath = process.env.PUBLIC_URL;
 webpackConfig.output.filename = "resources/js/[name].[hash:8].js";

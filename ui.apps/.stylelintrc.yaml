@@ -1,6 +1,8 @@
 # enables all possible errors (https://stylelint.io/user-guide/rules/#possible-errors)
 extends: stylelint-config-recommended
 plugins: stylelint-selector-bem-pattern
+ignoreFiles:
+    - src/content/jcr_root/apps/contrib/wcm/clientlibs/react-webcomponents/resources/css/*.css
 rules:
     #
     # limit language features (https://stylelint.io/user-guide/rules/#limit-language-features)

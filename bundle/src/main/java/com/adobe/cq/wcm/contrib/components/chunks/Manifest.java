@@ -16,13 +16,28 @@
 package com.adobe.cq.wcm.contrib.components.chunks;
 
 
-import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.LoginException;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.collect.ImmutableMap;
 
-import java.io.IOException;
+import java.util.Arrays;
+import java.util.Map;
 
-public interface AssetManifestService {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Manifest {
     
-    Manifest getManifest(SlingHttpServletRequest request) throws IOException, LoginException;
+    @JsonProperty("files")
+    private Map<String,String> files;
     
+    @JsonProperty("entrypoints")
+    private String[] entryPoints;
+    
+    public Map<String, String> getFiles() {
+        return ImmutableMap.copyOf(files);
+    }
+    
+    public String[] getEntryPoints() {
+        String[] copy = Arrays.copyOf(entryPoints, entryPoints.length);
+        return copy;
+    }
 }

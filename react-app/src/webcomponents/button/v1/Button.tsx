@@ -23,5 +23,5 @@ class ReactButton extends Component<ButtonModel> {
     }
 }
 
-const ButtonCustomElement = createCustomElement(ReactButton, ButtonModel, "container");
+const ButtonCustomElement = createCustomElement(ReactButton, ButtonModel, "element");
 window.customElements.define("core-button", ButtonCustomElement);
