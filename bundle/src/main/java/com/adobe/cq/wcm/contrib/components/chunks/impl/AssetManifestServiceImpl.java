@@ -31,7 +31,7 @@ import java.io.InputStream;
 public class AssetManifestServiceImpl implements AssetManifestService {
     
 
-    private static final String PATH_TO_MANIFEST = "/apps/contrib/wcm/clientlibs/react-webcomponents/asset-manifest.json";
+    private static final String PATH_TO_MANIFEST = "/apps/contrib/wcm/clientlibs/react-webcomponents/resources/asset-manifest.json";
     
     @Override
     public Manifest getManifest(SlingHttpServletRequest request) throws IOException {
