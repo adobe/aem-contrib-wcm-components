@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {Button} from "@adobe/core-contrib-core";
+import {Button} from "@adobe/core-contrib-core/dist/index";
 
 //@ts-ignore
 import { createCustomElement, DOMModel, byContentVal, byAttrVal, registerEvent } from "@adobe/react-webcomponent";
