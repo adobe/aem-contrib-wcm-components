@@ -6,7 +6,7 @@ import org.apache.sling.api.SlingHttpServletResponse;
 
 public interface PrintChunkService {
     
-    void printJsChunkToResponse(String chunkName, SlingHttpServletRequest request, SlingHttpServletResponse response);
-    void printCssChunkToResponse(String chunkName, SlingHttpServletRequest request, SlingHttpServletResponse response);
+    void printJsChunkToResponse(SlingHttpServletRequest request, SlingHttpServletResponse response);
+    void printCssChunkToResponse( SlingHttpServletRequest request, SlingHttpServletResponse response);
     
 }

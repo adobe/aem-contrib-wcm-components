@@ -24,7 +24,7 @@ public class StaticChunkCssTagPrinter extends SlingSafeMethodsServlet {
     
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
-        printChunkService.printCssChunkToResponse("main", request, response);
+        printChunkService.printCssChunkToResponse(request, response);
     }
     
 }

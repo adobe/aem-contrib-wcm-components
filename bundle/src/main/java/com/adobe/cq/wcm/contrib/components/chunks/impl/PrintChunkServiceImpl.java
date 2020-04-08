@@ -28,65 +28,49 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 @Component(service = PrintChunkService.class)
 public class PrintChunkServiceImpl implements PrintChunkService {
     
     private static final Logger log = LoggerFactory.getLogger(PrintChunkServiceImpl.class);
-    private static final String SCRIPT_TAG = "\n<script type=\"text/javascript\" src=\"%s\"></script>";
-    private static final String CSS_TAG = "\n<link rel=\"stylesheet\" href=\"%s\" type=\"text/css\">";
+    private static final String SCRIPT_TAG = "\n<script type=\"text/javascript\" src=\"/etc.clientlibs/contrib/wcm/clientlibs/react-webcomponents/resources/%s\"></script>";
+    private static final String CSS_TAG = "\n<link rel=\"stylesheet\" href=\"/etc.clientlibs/contrib/wcm/clientlibs/react-webcomponents/resources/%s\" type=\"text/css\">";
     
     @Reference
     private AssetManifestService assetManifestService;
     
     @Override
-    public void printJsChunkToResponse(String chunkName, SlingHttpServletRequest request, SlingHttpServletResponse response) {
-        String tag = getTag(SCRIPT_TAG, ".js", chunkName, request);
-        try {
-            response.getWriter().println(tag);
-        } catch (IOException e) {
-           log.error("Error printing js chunk", e);
-        }
+    public void printJsChunkToResponse(SlingHttpServletRequest request, SlingHttpServletResponse response) {
+        print(request, response, SCRIPT_TAG, "js");
     }
     
     @Override
-    public void printCssChunkToResponse(String chunkName, SlingHttpServletRequest request, SlingHttpServletResponse response) {
-        String tag = getTag(CSS_TAG, ".css", chunkName, request);
+    public void printCssChunkToResponse(SlingHttpServletRequest request, SlingHttpServletResponse response) {
+        print(request, response, CSS_TAG, "css");
+    }
+    
+    private void print(SlingHttpServletRequest request, SlingHttpServletResponse response, String format, String extension){
         try {
-            response.getWriter().println(tag);
-        } catch (IOException e) {
+            String[] entryPoints = assetManifestService.getManifest(request).getEntryPoints();
+        
+            for(String entryPoint : entryPoints){
+            
+                if(entryPoint.endsWith(extension)){
+                    String tag = getTag(format, entryPoint);
+                    response.getWriter().println(tag);
+                }
+            
+            }
+        
+        } catch (IOException | LoginException e) {
             log.error("Error printing css chunk", e);
         }
     }
     
 
-    private String getTag(String format, String extension, String chunkName, SlingHttpServletRequest request){
-        
-        StringBuilder stringBuilder = new StringBuilder();
-        final Map<String, String> manifestAsMap;
-        try {
-            manifestAsMap = assetManifestService.getManifest(request).getFiles();
-    
-            final String qualifiedChunk = chunkName + extension;
-            if(manifestAsMap.containsKey(qualifiedChunk)){
-                stringBuilder.append(String.format(format, manifestAsMap.get(qualifiedChunk)));
-            }
-    
-            if(manifestAsMap.containsKey("vendors~" + qualifiedChunk)){
-                stringBuilder.append(String.format(format, manifestAsMap.get("vendors~" + qualifiedChunk)));
-            }
-    
-            if(manifestAsMap.containsKey("default~" + qualifiedChunk)){
-                stringBuilder.append(String.format(format, manifestAsMap.get("default~" + qualifiedChunk)));
-            }
-            
-        } catch (IOException | LoginException e) {
-            log.error("Error computing  chunk", e);
-        }
-        
-        return stringBuilder.toString();
-    
-       
+    private String getTag(String format, String entryPoint){
+        return String.format(format,entryPoint);
     }
 }

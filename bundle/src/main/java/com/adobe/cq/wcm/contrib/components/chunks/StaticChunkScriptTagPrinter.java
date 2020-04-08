@@ -24,11 +24,7 @@ public class StaticChunkScriptTagPrinter extends SlingSafeMethodsServlet {
     
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
-        printChunkService.printJsChunkToResponse("bootstrap", request, response);
-        printChunkService.printJsChunkToResponse("runtime-main", request, response);
-        printChunkService.printJsChunkToResponse("main", request, response);
-        printChunkService.printJsChunkToResponse("vendor", request, response);
-        printChunkService.printJsChunkToResponse("polyfills", request, response);
+        printChunkService.printJsChunkToResponse( request, response);
     }
     
 }
