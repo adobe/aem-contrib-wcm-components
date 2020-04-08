@@ -1,8 +1,9 @@
 {
-  "name": "react-app",
+  "name": "react-webcomponents",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@adobe/core-contrib-core": "0.1.0",
     "@adobe/react-webcomponent": "^0.1.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

@@ -1,8 +1,7 @@
 import React from 'react';
-import {ButtonV1Model} from "../../../../module";
+import {ButtonV1Model} from "../../../types";
 
-
-export default function Button(properties : ButtonV1Model) {
+export const Button = function Button(properties : ButtonV1Model) {
 
     const getContent = () => {
         return (
@@ -29,4 +28,4 @@ export default function Button(properties : ButtonV1Model) {
         </div>
     )
 
-}
+};

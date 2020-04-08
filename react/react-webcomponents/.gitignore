@@ -21,5 +21,4 @@ node
 node_modules
 
 dist
-
-**/clientlibs/react-webcomponents/**/*
+build
