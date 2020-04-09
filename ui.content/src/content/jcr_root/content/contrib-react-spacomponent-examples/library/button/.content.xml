@@ -16,6 +16,14 @@
             <responsivegrid
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid">
+                <button
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Some Text"
+                    accessibilityLabel="Some Text a11n"
+                    icon="someIconCssClass"
+                    link="/content/contrib-react-spacomponent-examples/library"
+                    sling:resourceType="contrib/wcm/components/button"
+                />
                 <text_1740702241
                     cq:styleIds="[1644862132301]"
                     jcr:created="{Date}2019-02-15T19:05:53.032+01:00"
