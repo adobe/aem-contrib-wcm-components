@@ -1,9 +1,24 @@
-import React, { Component } from 'react';
+import React, { MouseEvent, Component } from 'react';
 
-import {Button} from "@adobe/core-contrib-core";
+import {Button, ButtonV1Model} from "@adobe/core-contrib-core";
 
 //@ts-ignore
 import { createCustomElement, DOMModel, byContentVal, byAttrVal, registerEvent } from "@adobe/react-webcomponent";
+
+interface SubModel extends ButtonV1Model{
+    testProp?: string;
+}
+
+class ButtonSub extends Button<SubModel>{
+    constructor(props:SubModel) {
+        super(props);
+    }
+    getContent(){
+        const el = super.getContent();
+        return (<span>overridden! {el}</span>);
+    }
+}
+
 
 class ButtonModel extends DOMModel {
     @byContentVal text: string = "something";
@@ -12,14 +27,21 @@ class ButtonModel extends DOMModel {
 }
 
 class ReactButton extends Component<ButtonModel> {
-    constructor(props:ButtonModel) {
-        super(props);
+
+    handleOnClick(event:MouseEvent){
+        console.log("event", event);
+        alert("captured!");
     }
+
     render() {
-        return <Button
-            text={this.props.text}
-            icon={this.props.icon}
-            link={this.props.link}/>
+        return (
+            <ButtonSub
+                handleOnClick={this.handleOnClick}
+                text={this.props.text}
+                icon={this.props.icon}
+                link={this.props.link}
+            />
+        )
     }
 }
 

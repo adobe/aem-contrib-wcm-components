@@ -56,10 +56,9 @@
     <!-- ====================================================================== -->
     <modules>
         <module>bundle</module>
-        <module>react/react-core</module>
-        <module>react/react-webcomponents</module>
+        <module>react</module>
         <module>ui.apps</module>
-        <module>ui.content</module>
+<!--        <module>ui.content</module>-->
         <module>all</module>
     </modules>
 

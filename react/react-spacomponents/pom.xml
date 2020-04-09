@@ -30,10 +30,10 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>contrib.wcm.components.react-webcomponents</artifactId>
+    <artifactId>contrib.wcm.components.react-spacomponents</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Adobe Experience Manager WCM Components Community Contributions React Webcomponents Package</name>
+    <name>Adobe Experience Manager WCM Components Community Contributions React SPA Components Package</name>
 
     <!-- ====================================================================== -->
     <!-- B U I L D   D E F I N I T I O N                                        -->

@@ -22,4 +22,5 @@ node_modules
 
 dist
 
+**/clientlibs/react-spacomponents/**/*
 **/clientlibs/react-webcomponents/**/*

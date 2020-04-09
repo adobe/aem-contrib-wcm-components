@@ -1,31 +1,42 @@
-import React from 'react';
+import React, {MouseEvent} from 'react';
 import {ButtonV1Model} from "../../../types";
 
-export const Button = function Button(properties : ButtonV1Model) {
+export class Button<Model extends ButtonV1Model> extends React.Component<ButtonV1Model> {
 
-    const getContent = () => {
+    constructor(props:Model) {
+        super(props);
+        this.handleOnClick = this.handleOnClick.bind(this);
+    }
+
+    handleOnClick(event:MouseEvent){
+        if(this.props.handleOnClick){
+            this.props.handleOnClick(event);
+        }
+    }
+    getContent(){
         return (
             <>
-                { properties.icon && <span className={'cmp-button__icon cmp-button__icon--' + properties.icon}></span>  }
-                <span className="cmp-button__text">{properties.text}</span>
+                { this.props.icon && <span className={'cmp-button__icon cmp-button__icon--' + this.props.icon}></span>  }
+                <span className="cmp-button__text">{this.props.text}</span>
             </>
         );
-    };
+    }
 
-    return (
-        <div className="button">
-            {
-                properties.link &&
-                <a aria-label={properties.ariaLabel} className="cmp-button" href={properties.link}>
-                    {getContent()}
-                </a>
-            }
-            {   !properties.link &&
+    render(){
+        return (
+            <div className="button" onClick={this.handleOnClick}>
+                {
+                    this.props.link &&
+                    <a aria-label={this.props.ariaLabel} className="cmp-button" href={this.props.link}>
+                        {this.getContent()}
+                    </a>
+                }
+                {   !this.props.link &&
                 <button className="cmp-button">
-                    {getContent()}
+                    {this.getContent()}
                 </button>
-            }
-        </div>
-    )
-
+                }
+            </div>
+        )
+    }
 };
