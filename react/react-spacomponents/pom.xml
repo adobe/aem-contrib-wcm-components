@@ -62,7 +62,7 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>install</arguments>
+                            <arguments>run install:link-deps</arguments>
                         </configuration>
                     </execution>
                     <execution>

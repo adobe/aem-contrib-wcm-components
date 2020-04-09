@@ -3,6 +3,6 @@
     jcr:primaryType="cq:Template">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        jcr:title="WKND Event Angular App"
+        jcr:title="Contrib React SPA Root"
         status="enabled"/>
 </jcr:root>

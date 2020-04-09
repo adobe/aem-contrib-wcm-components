@@ -1,6 +1,20 @@
-import React from "react";
-import {Button, ButtonV1Model} from "@adobe/core-contrib-core";
 
-import {MapTo} from '@adobe/cq-react-editable-components';
 
-MapTo('contrib/wcm/components/button')(Button, {isEmpty: (props?:ButtonV1Model) => {return !props || !props.text || !(props.text.length > 0)}});
+import React from 'react';
+
+// @ts-ignore
+import { ModelManager, PathUtils, Constants, ModelClient } from '@adobe/cq-spa-page-model-manager';
+
+import './mapping';
+
+import render from "./renderRoot";
+
+const modelClient: any = new ModelClient();
+
+const DOMReady = (f:any) => {/in/.test(document.readyState)?setTimeout( () => DOMReady(f),9):f()};
+
+//PathUtils.getMetaPropertyValue('cq:proxy_aem');
+
+DOMReady( ()=> {
+    ModelManager.initialize({modelClient: modelClient}).then(render);
+});

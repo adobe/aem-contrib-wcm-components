@@ -5,6 +5,6 @@
         cq:lastModified="{Date}2018-10-09T17:21:30.659-04:00"
         cq:lastModifiedBy="admin"
         jcr:primaryType="cq:PageContent"
-        jcr:title="WKND Event Page"
+        jcr:title="Contrib React SPA Page"
         status="enabled"/>
 </jcr:root>
