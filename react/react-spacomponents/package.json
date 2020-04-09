@@ -18,7 +18,9 @@
     "typescript": "^3.7.5"
   },
   "devDependencies": {
-    "aempack": "^1.1.5",
+    "aempack": "^1.1.9",
+    "del-cli": "^3.0.0",
+    "move-cli": "^1.2.1",
     "cross-env": "^7.0.2",
     "fs-extra": "^9.0.0",
     "mini-css-extract-plugin": "latest"

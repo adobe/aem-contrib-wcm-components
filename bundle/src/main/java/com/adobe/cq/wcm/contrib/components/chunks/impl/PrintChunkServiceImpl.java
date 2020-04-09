@@ -35,8 +35,13 @@ import java.util.Map;
 public class PrintChunkServiceImpl implements PrintChunkService {
     
     private static final Logger log = LoggerFactory.getLogger(PrintChunkServiceImpl.class);
-    private static final String SCRIPT_TAG = "\n<script type=\"text/javascript\" src=\"/etc.clientlibs/contrib/wcm/clientlibs/react-webcomponents/resources/%s\"></script>";
-    private static final String CSS_TAG = "\n<link rel=\"stylesheet\" href=\"/etc.clientlibs/contrib/wcm/clientlibs/react-webcomponents/resources/%s\" type=\"text/css\">";
+    
+    private static final String PATH_TO_WEBCOMPONENT_CLIENTLIB = "/etc.clientlibs/contrib/wcm/clientlibs/react-webcomponents/resources/";
+    private static final String PATH_TO_SPA_CLIENTLIB = "/etc.clientlibs/contrib/wcm/clientlibs/react-spacomponents/resources/";
+    
+    
+    private static final String SCRIPT_TAG = "\n<script type=\"text/javascript\" src=\"%s\"></script>";
+    private static final String CSS_TAG = "\n<link rel=\"stylesheet\" href=\"%s\" type=\"text/css\">";
     
     @Reference
     private AssetManifestService assetManifestService;
@@ -58,7 +63,7 @@ public class PrintChunkServiceImpl implements PrintChunkService {
             for(String entryPoint : entryPoints){
             
                 if(entryPoint.endsWith(extension)){
-                    String tag = getTag(format, entryPoint);
+                    String tag = getTag(format, getPrefix(request) + entryPoint);
                     response.getWriter().println(tag);
                 }
             
@@ -66,6 +71,14 @@ public class PrintChunkServiceImpl implements PrintChunkService {
         
         } catch (IOException | LoginException e) {
             log.error("Error printing css chunk", e);
+        }
+    }
+    
+    private String getPrefix(SlingHttpServletRequest request){
+        if(request.getResource().getPath().contains("webcomponent")){
+            return PATH_TO_WEBCOMPONENT_CLIENTLIB;
+        }else {
+            return PATH_TO_SPA_CLIENTLIB;
         }
     }
     

@@ -299,6 +299,14 @@
     <!-- ====================================================================== -->
     <dependencies>
         <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+        </dependency>
+        <dependency>
+            <artifactId>geronimo-atinject_1.0_spec</artifactId>
+            <groupId>org.apache.geronimo.specs</groupId>
+        </dependency>
+        <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>osgi.core</artifactId>
         </dependency>

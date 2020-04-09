@@ -31,26 +31,34 @@ import java.io.InputStream;
 public class AssetManifestServiceImpl implements AssetManifestService {
     
 
-    private static final String PATH_TO_MANIFEST = "/apps/contrib/wcm/clientlibs/react-webcomponents/resources/asset-manifest.json";
+    private static final String PATH_TO_WEBCOMPONENT_MANIFEST = "/apps/contrib/wcm/clientlibs/react-webcomponents/resources/asset-manifest.json";
+    private static final String PATH_TO_SPA_MANIFEST = "/apps/contrib/wcm/clientlibs/react-spacomponents/resources/asset-manifest.json";
     
     @Override
     public Manifest getManifest(SlingHttpServletRequest request) throws IOException {
-        
-            final Resource assetManifestResource = request.getResourceResolver().getResource(PATH_TO_MANIFEST);
     
-            if(assetManifestResource != null){
-                InputStream file = assetManifestResource.adaptTo(InputStream.class);
-                String fileString = IOUtils.toString(file);
-                ObjectMapper objectMapper = new ObjectMapper();
-                return objectMapper.readValue(fileString, Manifest.class);
-            }else{
-                throw new IOException("Could not load manifest file!");
-            }
-        
-        
+        final Resource assetManifestResource = getManifestResource(request);
+    
+        if(assetManifestResource != null){
+            InputStream file = assetManifestResource.adaptTo(InputStream.class);
+            String fileString = IOUtils.toString(file);
+            ObjectMapper objectMapper = new ObjectMapper();
+            return objectMapper.readValue(fileString, Manifest.class);
+        }else{
+            throw new IOException("Could not load manifest file!");
+        }
         
     }
     
+    private Resource getManifestResource(SlingHttpServletRequest request) {
+        
+        if(request.getResource().getPath().contains("webcomponent")){
+            return request.getResourceResolver().getResource(PATH_TO_WEBCOMPONENT_MANIFEST);
+        }else{
+            return request.getResourceResolver().getResource(PATH_TO_SPA_MANIFEST);
+        }
+       
+    }
     
     
 }
