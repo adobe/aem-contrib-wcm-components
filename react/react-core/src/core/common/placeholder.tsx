@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {PlaceHolderModel} from "../../types";
-import context, {withEditorContext} from "./editorcontext";
+import {withEditorContext} from "./editorcontext";
 
 class EditorPlaceHolder extends Component<PlaceHolderModel>{
 
@@ -30,7 +30,6 @@ class EditorPlaceHolder extends Component<PlaceHolderModel>{
     }
 
     isEditOrPreview() {
-        console.log('context', context);
         return this.props.wcmmode === 'edit' || this.props.wcmmode === 'preview';
     }
 }

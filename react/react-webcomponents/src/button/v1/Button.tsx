@@ -7,19 +7,6 @@ import { createCustomElement, DOMModel, byContentVal, byAttrVal, registerEvent }
 import MetaUtils from '../../utils/MetaUtils';
 
 
-interface SubModel extends ButtonV1Model{
-    testProp?: string;
-}
-
-class ButtonSub extends ButtonV1<SubModel>{
-    constructor(props:SubModel) {
-        super(props);
-    }
-    getContent(){
-        const el = super.getContent();
-        return (<span>overridden! {el}</span>);
-    }
-}
 
 
 class ButtonModel extends DOMModel {
@@ -37,7 +24,7 @@ class ReactButton extends Component<ButtonModel> {
 
     render() {
         return (
-            <ButtonSub
+            <ButtonV1
                 handleOnClick={this.handleOnClick}
                 text={this.props.text}
                 icon={this.props.icon}
