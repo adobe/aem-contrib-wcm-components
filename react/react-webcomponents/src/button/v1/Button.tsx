@@ -1,15 +1,17 @@
 import React, { MouseEvent, Component } from 'react';
 
-import {Button, ButtonV1Model} from "@adobe/core-contrib-core";
 
+import {ButtonV1, ButtonV1Model,EditorContext, setEditorContext} from "@adobe/core-contrib-core";
 //@ts-ignore
 import { createCustomElement, DOMModel, byContentVal, byAttrVal, registerEvent } from "@adobe/react-webcomponent";
+import MetaUtils from '../../utils/MetaUtils';
+
 
 interface SubModel extends ButtonV1Model{
     testProp?: string;
 }
 
-class ButtonSub extends Button<SubModel>{
+class ButtonSub extends ButtonV1<SubModel>{
     constructor(props:SubModel) {
         super(props);
     }
@@ -44,6 +46,8 @@ class ReactButton extends Component<ButtonModel> {
         )
     }
 }
+const wcmmode:string = MetaUtils.getWcmMode();
 
-const ButtonCustomElement = createCustomElement(ReactButton, ButtonModel, "element");
+const editContext: EditorContext = {wcmmode:wcmmode};
+const ButtonCustomElement = createCustomElement(setEditorContext(ReactButton, editContext), ButtonModel, "element");
 window.customElements.define("core-button", ButtonCustomElement);

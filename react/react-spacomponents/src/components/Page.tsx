@@ -5,7 +5,7 @@ import withRoute from '../utils/RouteHelper';
 import './Page.css';
 // This component is a variant of a React Page component mapped to the "structure/page" resource type
 // No functionality is changed other than to add an app specific CSS class
-class WkndPage extends Page {
+class ContribPage extends Page {
 
     get containerProps() {
         //@ts-ignore
@@ -16,4 +16,4 @@ class WkndPage extends Page {
     }
 }
 
-export default withComponentMappingContext(withRoute(WkndPage));
+export default withComponentMappingContext(withRoute(ContribPage));

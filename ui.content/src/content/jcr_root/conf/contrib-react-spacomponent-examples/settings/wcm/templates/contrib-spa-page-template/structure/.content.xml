@@ -5,9 +5,10 @@
         cq:deviceGroups="[mobile/groups/responsive]"
         cq:lastModified="{Date}2017-12-07T16:50:03.215+05:30"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/wknd-events/settings/wcm/templates/contrib-spa-page-template"
+        jcr:title="Title"
+        cq:template="/conf/contrib-react-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="contrib/wcm/components/page/react-spacomponents-page/page">
+        sling:resourceType="contrib/wcm/components/page/react-spacomponents-page">
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
                 <phone

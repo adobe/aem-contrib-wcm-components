@@ -4,7 +4,7 @@
     <jcr:content
         cq:lastModified="{Date}2017-12-07T17:06:46.349+05:30"
         cq:lastModifiedBy="admin"
-        cq:policy="contrib/wcm/components/page/react-spacomponents-page/app/default"
+        cq:policy="contrib/wcm/components/page/default"
         jcr:primaryType="nt:unstructured"
         sling:resourceType="wcm/core/components/policies/mappings">
         <root

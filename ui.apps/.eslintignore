@@ -2,3 +2,4 @@
 /node_modules
 /target
 /src/content/jcr_root/apps/contrib/wcm/clientlibs/react-webcomponents
+/src/content/jcr_root/apps/contrib/wcm/clientlibs/react-spacomponents

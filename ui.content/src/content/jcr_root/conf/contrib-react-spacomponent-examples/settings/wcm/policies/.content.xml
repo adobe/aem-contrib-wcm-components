@@ -6,14 +6,14 @@
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
                 <responsivegrid jcr:primaryType="nt:unstructured">
-                    <policy_76194888503838
+                    <default
                         cq:styleDefaultClasses="cmp-examples-structure"
                         jcr:lastModified="{Date}2018-12-18T19:17:00.040Z"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Core Components Examples - Root"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/libs/wcm/foundation/components/responsivegrid,group:Core Components Examples,group:.core-wcm,group:.core-wcm-form]">
+                        components="[/libs/wcm/foundation/components/responsivegrid,group:Core Components Examples,group:Contribution Examples,group:.core-wcm,group:.core-wcm-form]">
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
                                 <mapping_1544531934044
@@ -27,7 +27,7 @@
                         <jcr:content
                             jcr:primaryType="nt:unstructured"
                             mergeList="{Boolean}true"/>
-                    </policy_76194888503838>
+                    </default>
                     <policy_1545309074617
                         cq:styleDefaultClasses="cmp-examples-structure__main"
                         jcr:lastModified="{Date}2019-01-08T16:59:45.043+01:00"
@@ -35,7 +35,7 @@
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Core Components Examples - Structure"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/libs/wcm/foundation/components/responsivegrid,group:Core Components Examples,group:.core-wcm,group:.core-wcm-form]">
+                        components="[/libs/wcm/foundation/components/responsivegrid,group:Core Components Examples,group:Contribution Examples,group:.core-wcm,group:.core-wcm-form]">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -80,7 +80,7 @@
             </components>
         </foundation>
     </wcm>
-    <core jcr:primaryType="nt:unstructured">
+    <contrib jcr:primaryType="nt:unstructured">
         <wcm jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
                 <embed jcr:primaryType="nt:unstructured">
@@ -411,23 +411,19 @@
                         </container>
                     </v1>
                 </container>
+                <page jcr:primaryType="nt:unstructured">
+                    <default
+                            jcr:lastModified="{Date}2019-02-14T14:27:11.516+01:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Core Components Examples - Page"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            appResourcesClientlib="cmp-examples.site"
+                            clientlibs="cmp-examples.base">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </default>
+                </page>
             </components>
         </wcm>
-    </core>
-    <contrib-react-spacomponent-examples jcr:primaryType="nt:unstructured">
-        <components jcr:primaryType="nt:unstructured">
-            <page jcr:primaryType="nt:unstructured">
-                <policy_212634895490169
-                    jcr:lastModified="{Date}2019-02-14T14:27:11.516+01:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    jcr:title="Core Components Examples - Page"
-                    sling:resourceType="wcm/core/components/policy/policy"
-                    appResourcesClientlib="cmp-examples.site"
-                    clientlibs="cmp-examples.base">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
-                </policy_212634895490169>
-            </page>
-        </components>
-    </contrib-react-spacomponent-examples>
+    </contrib>
 </jcr:root>
