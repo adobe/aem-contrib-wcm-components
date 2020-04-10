@@ -1,31 +1,29 @@
 import React from 'react';
 import { TextV2Model } from '../../../types';
-import PlaceHolder from "../../common/placeholder";
+import {AbstractCoreComponent} from "../../AbstractCoreComponent";
 
 export function isEmpty(props:TextV2Model): boolean{
     return props.text == null || props.text.length === 0;
 }
 
-export class Text<Model extends TextV2Model> extends React.Component<TextV2Model> {
+export class Text<Model extends TextV2Model> extends AbstractCoreComponent<TextV2Model> {
 
-    __isEmpty(): boolean{
+    isEmpty(): boolean{
         return isEmpty(this.props);
     }
 
     render(){
 
-        const isEmpty:boolean = this.__isEmpty();
+        const isEmpty:boolean = this.isEmpty();
 
         return (
             <>
                 { !isEmpty &&
                     <div dangerouslySetInnerHTML={{__html: this.props.text}}></div>         
                 }
-
-                <PlaceHolder
-                    isEmpty={isEmpty}
-                    componentTitle={'Contrib Text V2'}
-                />
+                {
+                    this.__renderPlaceHolder('Contrib Text V2')
+                }
             </>
         )
     }

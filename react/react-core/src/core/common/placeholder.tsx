@@ -27,7 +27,7 @@ class EditorPlaceHolder extends Component<PlaceHolderModel>{
     }
 
     showPlaceHolder() {
-        return this.props.isEmpty && this.isEditOrPreview();
+        return !this.props.hidePlaceHolder && this.props.isEmpty && this.isEditOrPreview();
     }
 
     isEditOrPreview() {

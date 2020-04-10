@@ -1,12 +1,12 @@
 import React, {MouseEvent} from 'react';
 import {ButtonV1Model} from "../../../types";
-import PlaceHolder from "../../common/placeholder";
+import {AbstractCoreComponent} from "../../AbstractCoreComponent";
 
 export function isEmpty(props:ButtonV1Model): boolean{
     return props.text == null || props.text.length === 0;
 }
 
-export class Button<Model extends ButtonV1Model> extends React.Component<ButtonV1Model> {
+export class Button<Model extends ButtonV1Model> extends AbstractCoreComponent<ButtonV1Model> {
 
     constructor(props:Model) {
         super(props);
@@ -27,13 +27,13 @@ export class Button<Model extends ButtonV1Model> extends React.Component<ButtonV
         );
     }
 
-    __isEmpty(): boolean{
+    isEmpty(): boolean{
         return isEmpty(this.props);
     }
 
     render(){
 
-        const isEmpty:boolean = this.__isEmpty();
+        const isEmpty:boolean = this.isEmpty();
 
         return (
             <>
@@ -52,11 +52,9 @@ export class Button<Model extends ButtonV1Model> extends React.Component<ButtonV
                         }
                     </div>
                 }
-
-                <PlaceHolder
-                    isEmpty={isEmpty}
-                    componentTitle={'Contrib Button V1'}
-                />
+                {
+                    this.__renderPlaceHolder('Contrib Button V1')
+                }
             </>
 
         )
