@@ -3,7 +3,7 @@ import {ButtonV1Model} from "../../../types";
 import PlaceHolder from "../../common/placeholder";
 
 export function isEmpty(props:ButtonV1Model): boolean{
-    return props.text != null && props.text.length > 0;
+    return props.text == null || props.text.length === 0;
 }
 
 export class Button<Model extends ButtonV1Model> extends React.Component<ButtonV1Model> {
