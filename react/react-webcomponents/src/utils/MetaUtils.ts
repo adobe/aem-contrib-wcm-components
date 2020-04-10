@@ -1,3 +1,4 @@
+import {EditorContextUtils,WCMMode} from "@adobe/core-contrib-core";
 /*
  * ADOBE CONFIDENTIAL
  *
@@ -22,7 +23,7 @@ export default class MetaUtils {
      *
      * @returns {Boolean} the result of the check of the existance of the window object
      */
-    static isBrowser() {
+    static isBrowser():boolean {
         try {
             return typeof window !== 'undefined';
         } catch (e) {
@@ -30,8 +31,9 @@ export default class MetaUtils {
         }
     }
 
-    static getWcmMode() {
-        return MetaUtils.getMetaPropertyValue('cq:wcmmode');
+    static getWcmMode():WCMMode {
+        const wcmModeString:string = MetaUtils.getMetaPropertyValue('cq:wcmmode');
+        return EditorContextUtils.parseWCMModeFromString(wcmModeString);
     }
 
     /**
@@ -40,7 +42,7 @@ export default class MetaUtils {
      * @param {string} propertyName  - name of the meta property
      * @return {string|undefined}
      */
-    static getMetaPropertyValue(propertyName:string) {
+    static getMetaPropertyValue(propertyName:string):any {
         if (this.isBrowser()) {
             const meta = document.head.querySelector('meta[property="' + propertyName + '"]');
             // @ts-ignore

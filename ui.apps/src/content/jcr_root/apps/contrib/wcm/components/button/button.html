@@ -1,13 +1,6 @@
 <core-button data-sly-use.button="com.adobe.cq.wcm.core.components.models.Button"
              icon="${button.icon}"
              link="${button.link}"
+             text="${button.text}"
              ariaLabel="${button.accessibilityLabel}">
-    ${button.text}
 </core-button>
-
-<sly
-     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-     data-sly-test.text="${button.text}">
-</sly>
-
-<sly data-sly-call="${templates.placeholder @ isEmpty = !text, classAppend='cmp-text'}"/>

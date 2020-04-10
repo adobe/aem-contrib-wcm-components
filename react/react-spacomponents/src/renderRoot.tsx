@@ -1,7 +1,7 @@
 import React from "react";
 
 import ReactDOM from "react-dom";
-import {EditorContextProvider} from "@adobe/core-contrib-core";
+import {EditorContextProvider,EditorContextUtils,WCMMode} from "@adobe/core-contrib-core";
 //@ts-ignore
 import {PathUtils} from '@adobe/cq-spa-page-model-manager';
 import {BrowserRouter} from 'react-router-dom';
@@ -11,7 +11,8 @@ import { ModelManager, Constants } from '@adobe/cq-spa-page-model-manager';
 
 import App from './components/App';
 
-const wcmmode:string = PathUtils.getMetaPropertyValue('cq:wcmmode');
+const wcmmodeString:string = PathUtils.getMetaPropertyValue('cq:wcmmode');
+const wcmmode:WCMMode = EditorContextUtils.parseWCMModeFromString(wcmmodeString);
 
 const render = (model:any) => {
     ReactDOM.render((

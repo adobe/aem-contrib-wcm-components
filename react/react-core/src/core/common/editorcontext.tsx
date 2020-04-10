@@ -1,7 +1,7 @@
 import React, {Context} from 'react';
 import {EditorContext} from "../../types";
 
-const context:Context<EditorContext> = React.createContext<EditorContext>({wcmmode:"disabled"});
+const context:Context<EditorContext> = React.createContext<EditorContext>({wcmmode:'disabled'});
 
 export const EditorContextProvider = context.Provider;
 

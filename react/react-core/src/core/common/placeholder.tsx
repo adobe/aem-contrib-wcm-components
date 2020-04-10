@@ -21,8 +21,9 @@ class EditorPlaceHolder extends Component<PlaceHolderModel>{
 
     renderPlaceHolder(emptyText: string) {
         return <div
-            className={'cq-placeholder ' + this.props.classAppend}
-            data-emptytext={emptyText}></div>;
+            className={'cq-placeholder ' + this.props.classAppend}>
+            {emptyText}
+        </div>;
     }
 
     showPlaceHolder() {

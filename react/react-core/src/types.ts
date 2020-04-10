@@ -7,12 +7,14 @@ export interface PlaceHolderModel extends EditorContext {
     emptyTextAppend?: string;
 }
 
+export type WCMMode = 'edit' | 'disabled' | 'preview';
+
 export interface EditorContext {
-    wcmmode?: string
+    wcmmode?: WCMMode
 }
 
 export interface ButtonV1Model {
-    text: string;
+    text?: string;
     link?: string;
     icon?: string;
     ariaLabel?: string;

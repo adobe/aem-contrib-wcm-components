@@ -1,16 +1,16 @@
 import React, { MouseEvent, Component } from 'react';
-
+import {WCMMode} from "@adobe/core-contrib-core";
 
 import {ButtonV1, ButtonV1Model,EditorContext, setEditorContext} from "@adobe/core-contrib-core";
 //@ts-ignore
-import { createCustomElement, DOMModel, byContentVal, byAttrVal, registerEvent } from "@adobe/react-webcomponent";
+import { createCustomElement, DOMModel, byChildContentVal, byAttrVal, registerEvent } from "@adobe/react-webcomponent";
 import MetaUtils from '../../utils/MetaUtils';
 
 
 
 
 class ButtonModel extends DOMModel {
-    @byContentVal text: string = "something";
+    @byAttrVal text?: string;
     @byAttrVal link?: string;
     @byAttrVal icon?: string;
 }
@@ -33,7 +33,7 @@ class ReactButton extends Component<ButtonModel> {
         )
     }
 }
-const wcmmode:string = MetaUtils.getWcmMode();
+const wcmmode:WCMMode = MetaUtils.getWcmMode();
 
 const editContext: EditorContext = {wcmmode:wcmmode};
 const ButtonCustomElement = createCustomElement(setEditorContext(ReactButton, editContext), ButtonModel, "element");

@@ -52,9 +52,9 @@ export class Button<Model extends ButtonV1Model> extends React.Component<ButtonV
                         }
                     </div>
                 }
-            
-                <PlaceHolder 
-                    isEmpty={isEmpty}  
+
+                <PlaceHolder
+                    isEmpty={isEmpty}
                     componentTitle={'Contrib Button V1'}
                 />
             </>

@@ -21,9 +21,9 @@ export class Text<Model extends TextV2Model> extends React.Component<TextV2Model
                 { !isEmpty &&
                     <div dangerouslySetInnerHTML={{__html: this.props.text}}></div>         
                 }
-            
-                <PlaceHolder 
-                    isEmpty={isEmpty}  
+
+                <PlaceHolder
+                    isEmpty={isEmpty}
                     componentTitle={'Contrib Text V2'}
                 />
             </>
