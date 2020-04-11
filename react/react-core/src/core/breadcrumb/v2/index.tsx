@@ -14,7 +14,7 @@ export interface BreadCrumbV2Model extends CoreComponent {
 }
 
 
-export function isEmpty(props:BreadCrumbV2Model): boolean{
+export function BreadCrumbV2IsEmptyFn(props:BreadCrumbV2Model): boolean{
     return props.items == null || props.items.length === 0;
 }
 
@@ -26,7 +26,7 @@ export class BreadCrumbV2<Model extends BreadCrumbV2Model> extends AbstractCoreC
     };
 
     isEmpty(): boolean {
-        return isEmpty(this.props)
+        return BreadCrumbV2IsEmptyFn(this.props)
     }
 
     renderBreadCrumbListItem(crumbItem:BreadCrumbV2ItemModel,index:number): JSX.Element{
@@ -79,7 +79,7 @@ export class BreadCrumbV2<Model extends BreadCrumbV2Model> extends AbstractCoreC
     render(){
         return (
             <>
-            {   !isEmpty(this.props) && this.renderBreadCrumbContainer() }
+            {   !this.isEmpty() && this.renderBreadCrumbContainer() }
             {
                 this.__renderPlaceHolder('BreadCrumbV2', 'has currently no underlying breadcrumbs')
             }
