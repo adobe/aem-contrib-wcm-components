@@ -1,12 +1,20 @@
 import React, {MouseEvent} from 'react';
-import {ButtonV1Model} from "../../../types";
+import {CoreComponent} from "../../../types";
 import {AbstractCoreComponent} from "../../AbstractCoreComponent";
 
-export function isEmpty(props:ButtonV1Model): boolean{
+export interface ButtonV1Model extends CoreComponent{
+    text?: string;
+    link?: string;
+    icon?: string;
+    ariaLabel?: string;
+    handleOnClick?(event: MouseEvent): void
+}
+
+export function ButtonV1IsEmptyFn(props:ButtonV1Model): boolean{
     return props.text == null || props.text.length === 0;
 }
 
-export class Button<Model extends ButtonV1Model> extends AbstractCoreComponent<ButtonV1Model> {
+export class ButtonV1<Model extends ButtonV1Model> extends AbstractCoreComponent<Model> {
 
     constructor(props:Model) {
         super(props);
@@ -28,7 +36,7 @@ export class Button<Model extends ButtonV1Model> extends AbstractCoreComponent<B
     }
 
     isEmpty(): boolean{
-        return isEmpty(this.props);
+        return ButtonV1IsEmptyFn(this.props);
     }
 
     render(){

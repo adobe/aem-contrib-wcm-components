@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
-import {PlaceHolderModel} from "../../types";
+import {EditorContext} from "../../types";
 import {withEditorContext} from "./editorcontext";
+
+export interface PlaceHolderModel extends EditorContext {
+    hidePlaceHolder: boolean
+    isEmpty: boolean
+    componentTitle?: string
+    classAppend?: string
+    emptyTextAppend?: string
+}
 
 class EditorPlaceHolder extends Component<PlaceHolderModel>{
 

@@ -1,5 +1,10 @@
 import React, {Context} from 'react';
-import {EditorContext} from "../../types";
+
+export type WCMMode = 'edit' | 'disabled' | 'preview';
+
+export interface EditorContext {
+    wcmmode?: WCMMode
+}
 
 const context:Context<EditorContext> = React.createContext<EditorContext>({wcmmode:'disabled'});
 
