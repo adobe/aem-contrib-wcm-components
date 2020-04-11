@@ -21,6 +21,7 @@ node
 node_modules
 
 dist
+coverage
 
 **/clientlibs/react-spacomponents/**/*
 **/clientlibs/react-webcomponents/**/*
