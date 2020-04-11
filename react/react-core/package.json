@@ -5,8 +5,7 @@
   "scripts": {
     "linter": "eslint --ext .ts,.tsx .",
     "linter:fix": "eslint --ext .ts,.tsx . --fix",
-    "test": "npm run build && cross-env NODE_ENV=test karma start --browsers=ChromeHeadless --single-run=true",
-    "test:debug": "npm run build && cross-env NODE_ENV=test karma start --browsers=Chrome_with_debugging",
+    "test": "jest --setupTestFrameworkScriptFile=src/setupTests.ts",
     "build": "webpack && tsc -p src/tsconfig.types.json",
     "build:production": "webpack --mode=production &&  tsc -p src/tsconfig.types.json",
     "build:types": "tsc -p src/tsconfig.types.json",
@@ -38,6 +37,9 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16.3": "1.7.2",
+    
     "babel-loader": "^8.0.6",
     "babel-plugin-istanbul": "^5.2.0",
     "chai": "^4.2.0",
