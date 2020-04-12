@@ -5,26 +5,26 @@ var nodeExternals = require('webpack-node-externals');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.ts',
+    entry: './src/index.js',
     mode: 'development',
     devtool: 'source-map',
     output: {
         globalObject: `typeof self !== 'undefined' ? self : this`,
         path: path.resolve(__dirname, 'dist'),
         filename: "index.js",
-        library: 'core',
+        library: 'core-spa',
         libraryTarget: 'umd'
     },
     module: {
         rules: [
             {
-                test: /\.ts$|\.tsx$/,
+                test: /\.js$|\.jsx$/,
                 exclude: /(node_modules|dist)/,
-                use: 'ts-loader',
+                use: 'babel-loader',
                 enforce: 'post',
             }].concat(isEnvironmentTest ?
             {
-                test: /\.ts$|\.tsx$/,
+                test: /\.js$|\.jsx$/,
                 include: path.resolve(__dirname, 'src'),
                 use: {
                     loader: 'istanbul-instrumenter-loader',
@@ -42,7 +42,7 @@ module.exports = {
         }
     }) : ''],
     resolve: {
-        extensions: ['.ts', '.tsx']
+        extensions: ['.js', '.jsx']
     },
     plugins: [
         new CleanWebpackPlugin()

@@ -1,0 +1,1 @@
+export * from './core/tabs/v2/tabs';

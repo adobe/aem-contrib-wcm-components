@@ -9,7 +9,7 @@ interface TestType extends CoreComponent{
     forceEmptyFlag:boolean
 }
 
-class ImplementingClass extends AbstractCoreComponent<TestType>{
+class ImplementingClass extends AbstractCoreComponent<TestType, any>{
 
     isEmpty(): boolean {
         return this.props.forceEmptyFlag;

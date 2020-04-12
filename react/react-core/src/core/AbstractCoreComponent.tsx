@@ -8,7 +8,7 @@ export interface CoreComponent {
 /**
  * AbstractCoreComponent - provides abstraction and helper methods to show a placeholder if the component is empty and author mode is on.
  */
-abstract class AbstractCoreComponent<Model extends CoreComponent> extends React.Component<Model> {
+abstract class AbstractCoreComponent<Model extends CoreComponent, State> extends React.Component<Model,State> {
 
     public static defaultProps = {
         hidePlaceHolder: false,

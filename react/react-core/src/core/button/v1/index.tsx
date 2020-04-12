@@ -14,7 +14,7 @@ export function ButtonV1IsEmptyFn(props:ButtonV1Model): boolean{
     return props.text == null || props.text.length === 0;
 }
 
-export class ButtonV1<Model extends ButtonV1Model> extends AbstractCoreComponent<Model> {
+export class ButtonV1<Model extends ButtonV1Model> extends AbstractCoreComponent<Model, any> {
 
     public static defaultProps = {
         hidePlaceHolder: false
