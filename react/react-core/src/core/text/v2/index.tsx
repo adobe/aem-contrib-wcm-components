@@ -1,6 +1,6 @@
 import React from 'react';
 import {CoreComponent} from '../../../types';
-import {AbstractCoreComponent} from "../../AbstractCoreComponent";
+import AbstractCoreComponent from "../../AbstractCoreComponent";
 
 export interface TextV2Model extends CoreComponent{
     text: string;
@@ -18,19 +18,13 @@ export class TextV2<Model extends TextV2Model> extends AbstractCoreComponent<Mod
         return TextV2IsEmptyFn(this.props);
     }
 
-    render(){
-
-        const isEmpty:boolean = this.isEmpty();
-
-        return (
-            <>
-                { !isEmpty &&
-                    <div dangerouslySetInnerHTML={{__html: this.props.text}}></div>         
-                }
-                {
-                    this.__renderPlaceHolder('Contrib Text V2')
-                }
-            </>
-        )
+    getEmptyPlaceHolderText(): string {
+        return 'Contrib Text V2';
     }
+
+    renderComponent(): JSX.Element {
+        return <div dangerouslySetInnerHTML={{__html: this.props.text}}></div>;
+    }
+
+
 }

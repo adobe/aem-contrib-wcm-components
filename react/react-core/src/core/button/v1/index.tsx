@@ -1,6 +1,6 @@
 import React, {MouseEvent} from 'react';
 import {CoreComponent} from "../../../types";
-import {AbstractCoreComponent} from "../../AbstractCoreComponent";
+import AbstractCoreComponent from "../../AbstractCoreComponent";
 
 export interface ButtonV1Model extends CoreComponent{
     text?: string;
@@ -21,6 +21,10 @@ export class ButtonV1<Model extends ButtonV1Model> extends AbstractCoreComponent
         this.handleOnClick = this.handleOnClick.bind(this);
     }
 
+    getEmptyPlaceHolderText(): string {
+        return 'Contrib Button V1';
+    }
+
     handleOnClick(event:MouseEvent){
         if(this.props.handleOnClick){
             this.props.handleOnClick(event);
@@ -39,32 +43,21 @@ export class ButtonV1<Model extends ButtonV1Model> extends AbstractCoreComponent
         return ButtonV1IsEmptyFn(this.props);
     }
 
-    render(){
-
-        const isEmpty:boolean = this.isEmpty();
-
+    renderComponent(){
         return (
-            <>
-                { !isEmpty &&
-                    <div className="button" onClick={this.handleOnClick}>
-                        {
-                            this.props.link &&
-                            <a aria-label={this.props.ariaLabel} className="cmp-button" href={this.props.link}>
-                                {this.getContent()}
-                            </a>
-                        }
-                        {   !this.props.link &&
-                        <button className="cmp-button">
-                            {this.getContent()}
-                        </button>
-                        }
-                    </div>
-                }
+            <div className="button" onClick={this.handleOnClick}>
                 {
-                    this.__renderPlaceHolder('Contrib Button V1')
+                    this.props.link &&
+                    <a aria-label={this.props.ariaLabel} className="cmp-button" href={this.props.link}>
+                        {this.getContent()}
+                    </a>
                 }
-            </>
-
+                {   !this.props.link &&
+                <button className="cmp-button">
+                    {this.getContent()}
+                </button>
+                }
+            </div>
         )
     }
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import {CoreComponent} from "../../../types";
-import {AbstractCoreComponent} from "../../AbstractCoreComponent";
+import AbstractCoreComponent from "../../AbstractCoreComponent";
 
 export interface BreadCrumbV2ItemModel {
     active: boolean
@@ -29,6 +29,10 @@ export class BreadCrumbV2<Model extends BreadCrumbV2Model> extends AbstractCoreC
         return BreadCrumbV2IsEmptyFn(this.props)
     }
 
+    getEmptyPlaceHolderText(): string {
+        return 'BreadCrumbV2';
+    }
+
     renderBreadCrumbListItem(crumbItem:BreadCrumbV2ItemModel,index:number): JSX.Element{
 
         const className = 'cmp-breadcrumb__item' + (crumbItem.active ? ' cmp-breadcrumb__item--active' : '');
@@ -36,6 +40,7 @@ export class BreadCrumbV2<Model extends BreadCrumbV2Model> extends AbstractCoreC
 
         return (
             <li className={className}
+                key={'crumbitem-' + index}
                 itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem">
                 {
                     !crumbItem.active && this.renderBreadCrumbLink(crumbItem,index)
@@ -58,7 +63,11 @@ export class BreadCrumbV2<Model extends BreadCrumbV2Model> extends AbstractCoreC
         )
     }
 
-    renderBreadCrumbContainer(){
+    renderBreadCrumbSpan(crumbItem:BreadCrumbV2ItemModel,index:number){
+        return <span itemProp="name">{crumbItem.title}</span>
+    }
+
+    renderComponent(){
         return (
             <nav className="cmp-breadcrumb"
                  aria-label={this.props.ariaLabelI18n}>
@@ -70,21 +79,6 @@ export class BreadCrumbV2<Model extends BreadCrumbV2Model> extends AbstractCoreC
                 </ol>
             </nav>
         )
-    }
-
-    renderBreadCrumbSpan(crumbItem:BreadCrumbV2ItemModel,index:number){
-        return <span itemProp="name">{crumbItem.title}</span>
-    }
-
-    render(){
-        return (
-            <>
-            {   !this.isEmpty() && this.renderBreadCrumbContainer() }
-            {
-                this.__renderPlaceHolder('BreadCrumbV2', 'has currently no underlying breadcrumbs')
-            }
-            </>
-        );
     }
 
 }

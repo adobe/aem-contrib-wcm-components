@@ -16,7 +16,7 @@ class EditorPlaceHolder extends Component<PlaceHolderModel>{
 
     render() {
         if (this.showPlaceHolder()) {
-            const part1: string = (this.props.componentTitle != null) ?  this.props.componentTitle +  ' - ' : '';
+            const part1: string = (this.props.componentTitle != null && this.props.componentTitle.length > 0) ?  this.props.componentTitle +  ' - ' : '';
             const part2: string = (this.props.emptyTextAppend != null) ?  this.props.emptyTextAppend : EditorPlaceHolder.DEFAULT_EMPTY_TEXT_LABEL;
             const emptyText = part1 + part2;
             
@@ -29,7 +29,7 @@ class EditorPlaceHolder extends Component<PlaceHolderModel>{
 
     renderPlaceHolder(emptyText: string) {
         return <div
-            className={'cq-placeholder ' + this.props.classAppend}>
+            className={'cq-placeholder' + (this.props.classAppend != null? ' ' + this.props.classAppend : '')}>
             {emptyText}
         </div>;
     }

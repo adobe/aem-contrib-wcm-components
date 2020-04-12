@@ -5,13 +5,22 @@ export interface CoreComponent {
     hidePlaceHolder: boolean
 }
 
-export abstract class AbstractCoreComponent<Model extends CoreComponent> extends React.Component<Model> {
+/**
+ * AbstractCoreComponent - provides abstraction and helper methods to show a placeholder if the component is empty and author mode is on.
+ */
+abstract class AbstractCoreComponent<Model extends CoreComponent> extends React.Component<Model> {
 
     public static defaultProps = {
         hidePlaceHolder: false,
     };
 
     abstract isEmpty():boolean;
+
+    abstract renderComponent():JSX.Element;
+
+    getEmptyPlaceHolderText():string{
+        return '';
+    }
 
     __hidePlaceHolder():boolean{
         return this.props.hidePlaceHolder;
@@ -28,6 +37,22 @@ export abstract class AbstractCoreComponent<Model extends CoreComponent> extends
         )
     }
 
+    render(){
+        const isEmpty:boolean = this.isEmpty();
+
+        return (
+            <>
+                { !isEmpty &&
+                    this.renderComponent()
+                }
+                {
+                    this.__renderPlaceHolder(this.getEmptyPlaceHolderText())
+                }
+            </>
+        )
+    }
 
 
 }
+
+export default AbstractCoreComponent;
