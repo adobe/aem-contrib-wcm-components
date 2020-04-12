@@ -6,7 +6,7 @@ export function TabsV2IsEmptyFn(props){
 }
 
 
-class Tabs extends Container {
+export class TabsV2 extends Container {
 
     constructor(props) {
         super(props);
@@ -20,9 +20,8 @@ class Tabs extends Container {
      * Overload childComponents getter to only return the active tab's items.
      * @returns {Object[]} An array with the components instantiated to JSX
      */
-    get childComponents() {
-        const childComponents = super.childComponents();
-        return childComponents[this.state.activeIndex];
+    get tabbedChildComponents() {
+        return this.childComponents[this.state.activeIndex];
     }
 
     handleTabNavClick(index){
@@ -58,8 +57,8 @@ class Tabs extends Container {
 
     }
 
-    get containerProps(){
-        let attrs = super.containerProps();
+    get tabContainerProps(){
+        let attrs = this.containerProps;
         attrs['className'] = attrs.className + ' cmp-tabs';
         attrs['data-cmp-is'] = 'tabs';
     }
@@ -69,14 +68,12 @@ class Tabs extends Container {
         const isEmpty = TabsV2IsEmptyFn(this.props);
 
         return (
-            <div {...this.containerProps}>
+            <div {...this.tabContainerProps}>
                 { !isEmpty && this.tabNavigation }
-                { !isEmpty && this.childComponents }
+                { !isEmpty && this.tabbedChildComponents }
                 { this.placeholderComponent }
             </div>
         )
     }
 
 }
-
-export default Tabs;

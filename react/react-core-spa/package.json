@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "linter": "eslint --ext .ts,.tsx .",
-    "linter:fix": "eslint --ext .ts,.tsx . --fix",
+    "linter": "eslint --ext .js,.jsx .",
+    "linter:fix": "eslint --ext .js,.jsx . --fix",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:debug": "jest --coverage --watchAll",

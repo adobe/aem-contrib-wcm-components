@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@adobe/core-contrib-core": "file:../react-core",
+    "@adobe/core-contrib-core-spa": "file:../react-core-spa",
     "@adobe/cq-react-editable-components": "^1.2.0",
     "@adobe/cq-spa-component-mapping": "^1.0.3",
     "@adobe/cq-spa-page-model-manager": "^1.0.7",
