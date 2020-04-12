@@ -1,8 +1,8 @@
 import React from "react";
-import {Container} from '@adobe/cq-react-editable-components';
+import {Container,ComponentMapping} from '@adobe/cq-react-editable-components';
 
 export function TabsV2IsEmptyFn(props){
-    return props.items == null || props.items.length === 0;
+    return props.cqItems == null || props.cqItems.length === 0;
 }
 
 
@@ -11,8 +11,10 @@ export class TabsV2 extends Container {
     constructor(props) {
         super(props);
         this.state = {
-            activeIndex: 0
-        }
+            activeIndex: 0,
+            componentMapping: this.props.componentMapping || ComponentMapping
+        };
+
         this.handleTabNavClick = this.handleTabNavClick.bind(this);
     }
 
@@ -31,13 +33,21 @@ export class TabsV2 extends Container {
     }
 
     get tabNavigation(){
+
+        let childComponents = [];
+
+        if (!this.props.cqItems || !this.props.cqItemsOrder) {
+            return childComponents;
+        }
+
         return (
             <ol role="tablist"
                 className="cmp-tabs__tablist"
-                aria-label={props.accessibilityLabel}
+                aria-label={this.props.accessibilityLabel}
                 aria-multiselectable="false">
                     {
-                        this.items.map((tab, index) => {
+                        this.props.cqItemsOrder.map((item, index) => {
+                            const tab = this.props.cqItems[item];
                             const isActive = (index === this.state.activeIndex);
                             return (
                                 <li role="tab"
@@ -45,7 +55,7 @@ export class TabsV2 extends Container {
                                     className={'cmp-tabs__tab' + isActive ? ' cmp-tabs__tab--active' : ''}
                                     tabIndex={isActive ? '0' : '-1'}
                                     data-cmp-hook-tabs="tab">
-                                    `${tab.title}
+                                    `${tab['cq:panelTitle']}
                                 </li>
                             )
                             
