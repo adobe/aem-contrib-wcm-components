@@ -21,7 +21,7 @@ export function BreadCrumbV2IsEmptyFn(props:BreadCrumbV2Model): boolean{
 export class BreadCrumbV2<Model extends BreadCrumbV2Model> extends AbstractCoreComponent<Model> {
 
     public static defaultProps = {
-        ariaLabelI18n: "Component",
+        ariaLabelI18n: "BreadCrumbV2",
         hidePlaceHolder: false
     };
 

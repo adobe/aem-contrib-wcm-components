@@ -3,9 +3,8 @@ import {CoreComponent} from '../../../types';
 import AbstractCoreComponent from "../../AbstractCoreComponent";
 
 export interface TextV2Model extends CoreComponent{
-    text: string;
-    type?: string;
-    linkDisabled: boolean
+    text?: string;
+    isRichText?: boolean
 }
 
 export function TextV2IsEmptyFn(props:TextV2Model): boolean{
@@ -13,6 +12,11 @@ export function TextV2IsEmptyFn(props:TextV2Model): boolean{
 }
 
 export class TextV2<Model extends TextV2Model> extends AbstractCoreComponent<Model> {
+
+    public static defaultProps = {
+        hidePlaceHolder: false,
+        isRichText: false
+    };
 
     isEmpty(): boolean{
         return TextV2IsEmptyFn(this.props);
@@ -22,8 +26,24 @@ export class TextV2<Model extends TextV2Model> extends AbstractCoreComponent<Mod
         return 'Contrib Text V2';
     }
 
+    renderRichText(){
+        const text:string = this.props.text as string;
+        return (
+            <div className="cmp-text" dangerouslySetInnerHTML={{__html: text}}></div>
+        )
+    }
+
+    renderPlainText(){
+        return (
+            <div className="cmp-text">
+                <p className="cmp-text__paragraph">{this.props.text}</p>
+            </div>
+        )
+    }
+
+
     renderComponent(): JSX.Element {
-        return <div dangerouslySetInnerHTML={{__html: this.props.text}}></div>;
+        return (this.props.isRichText) ? this.renderRichText() : this.renderPlainText();
     }
 
 

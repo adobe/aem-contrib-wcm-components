@@ -16,6 +16,10 @@ export function ButtonV1IsEmptyFn(props:ButtonV1Model): boolean{
 
 export class ButtonV1<Model extends ButtonV1Model> extends AbstractCoreComponent<Model> {
 
+    public static defaultProps = {
+        hidePlaceHolder: false
+    };
+
     constructor(props:Model) {
         super(props);
         this.handleOnClick = this.handleOnClick.bind(this);
