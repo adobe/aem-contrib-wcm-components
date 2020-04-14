@@ -2,17 +2,16 @@ import React from "react";
 
 import ReactDOM from "react-dom";
 import {EditorContextProvider,EditorContextUtils,WCMMode} from "@adobe/core-contrib-core";
-//@ts-ignore
+
 import {PathUtils} from '@adobe/cq-spa-page-model-manager';
 import {BrowserRouter} from 'react-router-dom';
-//@ts-ignore
 import { ModelManager, Constants } from '@adobe/cq-spa-page-model-manager';
-
 
 import App from './components/App';
 
-const wcmmodeString:string = PathUtils.getMetaPropertyValue('cq:wcmmode');
-const wcmmode:WCMMode = EditorContextUtils.parseWCMModeFromString(wcmmodeString);
+const wcmmodeString:string|undefined = PathUtils.getMetaPropertyValue('cq:wcmmode');
+
+const wcmmode:WCMMode = (wcmmodeString != null) ? EditorContextUtils.parseWCMModeFromString(wcmmodeString) : 'disabled';
 
 const render = (model:any) => {
     ReactDOM.render((
