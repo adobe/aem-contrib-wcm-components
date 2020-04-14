@@ -57,7 +57,7 @@ export class TabsV2 extends Container {
                                     className={'cmp-tabs__tab' + isActive ? ' cmp-tabs__tab--active' : ''}
                                     tabIndex={isActive ? '0' : '-1'}
                                     data-cmp-hook-tabs="tab">
-                                    ${tab['cq:panelTitle']}
+                                    {tab['cq:panelTitle']}
                                 </li>
                             )
                             
