@@ -1,5 +1,4 @@
 import React from 'react';
-//@ts-ignore
 import {Page, withComponentMappingContext } from "@adobe/cq-react-editable-components";
 import withRoute from '../utils/RouteHelper';
 

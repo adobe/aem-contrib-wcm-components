@@ -1,5 +1,4 @@
 import React from 'react';
-//@ts-ignore
 import {Page } from "@adobe/cq-react-editable-components";
 
 // This component is a variant of a React Page component mapped to the "structure/page" resource type
