@@ -4,7 +4,7 @@ const fs = require('fs');
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
-const clientLibRelativePath = '/apps/contrib/wcm/clientlibs/react-spacomponents';
+const clientLibRelativePath = '/apps/contrib/wcm/clientlibs/react-spacomponents/resources';
 const clientLibRoot = resolveApp('../../ui.apps/src/content/jcr_root' + clientLibRelativePath);
 
 module.exports = {

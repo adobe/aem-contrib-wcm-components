@@ -17,9 +17,14 @@ const render = (model:any) => {
     ReactDOM.render((
             <BrowserRouter>
                 <EditorContextProvider value={{wcmmode:wcmmode}}>
-                    //@ts-ignore
-                    <App cqChildren={ model[Constants.CHILDREN_PROP] } cqItems={ model[Constants.ITEMS_PROP] } cqItemsOrder={ model[Constants.ITEMS_ORDER_PROP] }
-                         cqPath={ ModelManager.rootPath } locationPathname={ window.location.pathname }/>
+
+                    {
+                        //@ts-ignore
+                        (<App cqChildren={ model[Constants.CHILDREN_PROP] } cqItems={ model[Constants.ITEMS_PROP] } cqItemsOrder={ model[Constants.ITEMS_ORDER_PROP] }
+                              cqPath={ ModelManager.rootPath } locationPathname={ window.location.pathname }/>
+                        )
+                    }
+
                 </EditorContextProvider>
             </BrowserRouter>),
         document.getElementById('root'));

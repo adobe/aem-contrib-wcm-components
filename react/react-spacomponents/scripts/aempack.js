@@ -36,6 +36,7 @@ aemPack({
         proxyUrl: computeProxyUrl(),
         proxyPort: proxyPort
     },
+    isInClientLibRoot: false,
     webpackConfig: webpackConfig,
     // webpackServerConfig: serverWebpackConfig,
     disableServerSideRendering: !developWithSSR,
