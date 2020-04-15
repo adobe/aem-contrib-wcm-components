@@ -1,5 +1,5 @@
 import React from "react";
-import {Container,ComponentMapping} from '@adobe/cq-react-editable-components';
+import {Container,ComponentMapping,EditorContext} from '@adobe/cq-react-editable-components';
 
 export function TabsV2IsEmptyFn(props){
     return props.cqItems == null || props.cqItems.length === 0;
@@ -22,8 +22,28 @@ export class TabsV2 extends Container {
      * Overload childComponents getter to only return the active tab's items.
      * @returns {Object[]} An array with the components instantiated to JSX
      */
-    get tabbedChildComponents() {
-        return this.childComponents[this.state.activeIndex];
+    tabbedChildComponents(isInEditor) {
+
+        if(isInEditor === true){
+            //for editing capabilities to work properly, we always need to render each item.
+            //we will hide the disabled items instead.
+            return (
+                <div>
+                    {
+                        this.childComponents.map((item, index) => {
+                            const isVisible = (this.state.activeIndex === index);
+                            const styles = { display: (!isVisible) ? 'none' : 'block'};
+                            return (
+                                <div style={styles} className={styles}>{this.childComponents[index]}</div>
+                            )
+                        })
+                    }
+                </div>
+            )
+        }else{
+            //when the editor is disabled, we can just show the active item only.
+            return this.childComponents[this.state.activeIndex];
+        }
     }
 
     handleTabNavClick(index){
@@ -34,7 +54,7 @@ export class TabsV2 extends Container {
         }
     }
 
-    get tabNavigation(){
+    tabNavigation(){
 
         let childComponents = [];
 
@@ -80,11 +100,15 @@ export class TabsV2 extends Container {
         const isEmpty = TabsV2IsEmptyFn(this.props);
 
         return (
-            <div {...this.tabContainerProps}>
-                { !isEmpty && this.tabNavigation }
-                { !isEmpty && this.tabbedChildComponents }
-                { this.placeholderComponent }
-            </div>
+            <EditorContext.Consumer>
+                {isInEditor =>  (
+                    <div {...this.tabContainerProps}>
+                        { !isEmpty && this.tabNavigation() }
+                        { !isEmpty && this.tabbedChildComponents(isInEditor) }
+                        { this.placeholderComponent }
+                    </div>
+                )}
+            </EditorContext.Consumer>
         )
     }
 

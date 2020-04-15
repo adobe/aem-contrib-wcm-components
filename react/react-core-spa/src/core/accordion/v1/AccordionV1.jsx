@@ -1,5 +1,5 @@
 import React from "react";
-import {Container,ComponentMapping} from '@adobe/cq-react-editable-components';
+import {Container,ComponentMapping,EditorContext} from '@adobe/cq-react-editable-components';
 
 export function AccordionV1IsEmptyFn(props){
     return props.cqItems == null || props.cqItems.length === 0;
@@ -22,9 +22,7 @@ export class AccordionV1 extends Container {
         const isActive = this.state.expandedItems.indexOf(itemKey) > -1;
         const isSingleExpansion = this.props.singleExpansion;
 
-
         let expandedItems = this.state.expandedItems;
-        console.log("old expanded items: ", expandedItems);
         if(isSingleExpansion){
             expandedItems = (isActive) ? [] : [itemKey];
         }else{
@@ -35,8 +33,6 @@ export class AccordionV1 extends Container {
                 expandedItems.push(itemKey);
             }
         }
-
-        console.log("new expanded items: ", expandedItems);
         this.setState({
             expandedItems: expandedItems
         });
@@ -54,17 +50,23 @@ export class AccordionV1 extends Container {
     }
 
 
-    displayItem(key) {
+    displayItem(key,isExpanded,isInEditor) {
 
         const indexToShow = this.props.cqItemsOrder.indexOf(key);
 
-        return (
-            <div data-sly-resource="${item.name @ decorationTagName='div'}"
-                 className="cmp-accordion__panel cmp-accordion__panel--expanded"
-                 role="region">
-                {this.childComponents[indexToShow]}
-            </div>
-        )
+        if(isInEditor === true || isExpanded){
+            const cssClass = isExpanded ? 'cmp-accordion__panel cmp-accordion__panel--expanded': 'cmp-accordion__panel cmp-accordion__panel--hidden';
+
+            return (
+                <div data-sly-resource="${item.name @ decorationTagName='div'}"
+                     className={cssClass}
+                     role="region">
+                    {this.childComponents[indexToShow]}
+                </div>
+            )
+        }
+
+        return null;
     }
 
     get accordionContent(){
@@ -87,7 +89,9 @@ export class AccordionV1 extends Container {
                                 <span className="cmp-accordion__icon"></span>
                             </button>
                         </h3>
-                        {isExpanded && this.displayItem(key)}
+                        <EditorContext.Consumer>
+                            {isInEditor => this.displayItem(key, isExpanded,isInEditor)}
+                        </EditorContext.Consumer>
                     </div>
                 )
             })
