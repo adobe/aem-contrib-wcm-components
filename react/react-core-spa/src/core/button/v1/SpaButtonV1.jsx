@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import {ButtonV1} from "aem-core-components-contributions-core";
+import {ButtonV1} from "aem-core-components-contributions-react-core";
 import {Link} from '../../../utils/Link';
 
 export class SpaButtonV1 extends ButtonV1{

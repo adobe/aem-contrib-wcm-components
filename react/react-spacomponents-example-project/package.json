@@ -1,0 +1,62 @@
+{
+  "name": "react-webcomponents",
+  "version": "0.1.0",
+  "dependencies": {
+    "aem-core-components-contributions-react-core": "file:/Users/raaijmak/workspace/aem-contrib-wcm-components/react/react-core",
+    "aem-core-components-contributions-react-spa": "file:/Users/raaijmak/workspace/aem-contrib-wcm-components/react/react-core-spa",
+    "@adobe/cq-react-editable-components": "file:/Users/raaijmak/workspace/spa-react-editable-components",
+    "@adobe/cq-spa-component-mapping": "file:/Users/raaijmak/workspace/spa-component-mapping",
+    "@adobe/cq-spa-page-model-manager": "file:/Users/raaijmak/workspace/spa-page-model-manager",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.31",
+    "@types/react": "^16.9.25",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-router": "^5.1.5",
+    "@types/react-router-dom": "^5.1.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "typescript": "^3.7.5",
+    "react-responsive-carousel": "^3.2.4"
+  },
+  "devDependencies": {
+    "aempack": "^1.1.9",
+    "del-cli": "^3.0.0",
+    "move-cli": "^1.2.1",
+    "cross-env": "^7.0.2",
+    "fs-extra": "^9.0.0",
+    "node-sass": "^4.13.1",
+    "mini-css-extract-plugin": "latest"
+  },
+  "scripts": {
+    "build": "npm run clean && react-scripts build && move-cli build ../../ui.apps/src/content/jcr_root/apps/contrib/wcm/clientlibs/react-spacomponents/resources",
+    "aempack": "cross-env NODE_ENV=development node scripts/aempack.js",
+    "start": "react-scripts start",
+    "install:link-deps": "npm install && npm run link-deps",
+    "link-deps": "npm link @adobe/cq-spa-page-model-manager && npm link @adobe/cq-spa-component-mapping && npm link @adobe/cq-react-editable-components",
+    "clean": "del ../../ui.apps/src/content/jcr_root/apps/contrib/wcm/clientlibs/react-spacomponents/resources --force",
+    "mv": "move-cli build ../../ui.apps/src/content/jcr_root/apps/contrib/wcm/clientlibs/react-spacomponents/resources",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

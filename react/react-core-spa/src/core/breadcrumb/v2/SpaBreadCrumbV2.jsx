@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import {BreadCrumbV2} from "aem-core-components-contributions-core";
+import {BreadCrumbV2} from "aem-core-components-contributions-react-core";
 import {Link} from '../../../utils/Link';
 
 export class SpaBreadCrumbV2 extends BreadCrumbV2{

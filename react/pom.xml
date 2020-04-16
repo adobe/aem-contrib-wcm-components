@@ -41,8 +41,8 @@
     <modules>
         <module>react-core</module>
         <module>react-core-spa</module>
-        <module>react-webcomponents</module>
-        <module>react-spacomponents</module>
+        <module>react-webcomponents-example-project</module>
+        <module>react-spacomponents-example-project</module>
     </modules>
 
 </project>
