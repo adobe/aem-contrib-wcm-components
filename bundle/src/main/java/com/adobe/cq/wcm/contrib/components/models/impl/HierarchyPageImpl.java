@@ -15,6 +15,7 @@ import com.day.cq.wcm.api.designer.Style;
 import com.day.cq.wcm.api.policies.ContentPolicy;
 import com.day.cq.wcm.api.policies.ContentPolicyManager;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -127,11 +128,11 @@ public class HierarchyPageImpl implements HierarchyPage {
 
     @Nonnull
     @Override
+    @JsonInclude(JsonInclude.Include.ALWAYS)
     public Map<String, ? extends HierarchyPage> getExportedChildren() {
         if (childPages == null) {
             childPages = getChildPageModels(request, HierarchyPage.class);
         }
-
         return childPages;
     }
 

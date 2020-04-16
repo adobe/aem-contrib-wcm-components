@@ -1,7 +1,22 @@
 {
-  "name": "@adobe/core-contrib-core",
+  "name": "aem-core-components-contributions-core",
   "version": "0.1.0",
-  "private": true,
+  "keywords": [
+    "adobe",
+    "aem",
+    "cq5",
+    "react",
+    "core",
+    "components"
+  ],
+  "description": "AEM - React Wrapper components - for the OOTB AEM Core Components",
+  "author": "Adobe Systems Inc. - Niek Raaijmakers",
+  "main": "dist/index.js",
+  "homepage": "https://github.com/adobe/aem-contrib-wcm-components/tree/feature/react-wrapper#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adobe/aem-contrib-wcm-components/tree/feature/react-wrapper"
+  },
   "scripts": {
     "linter": "eslint --ext .ts,.tsx .",
     "linter:fix": "eslint --ext .ts,.tsx . --fix",
@@ -72,7 +87,6 @@
     "webpack-cli": "^3.3.10",
     "webpack-node-externals": "^1.7.2"
   },
-  "main": "dist/index.js",
   "eslintConfig": {
     "extends": "react-app"
   },
