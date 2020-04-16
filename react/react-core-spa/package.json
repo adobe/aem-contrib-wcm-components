@@ -1,7 +1,6 @@
 {
-  "name": "@adobe/core-contrib-core-spa",
+  "name": "aem-core-components-contributions-spa",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "linter": "eslint --ext .js,.jsx .",
     "linter:fix": "eslint --ext .js,.jsx . --fix",
@@ -9,7 +8,7 @@
     "test:coverage": "jest --coverage",
     "test:debug": "jest --coverage --watchAll",
     "build": "webpack && tsc -p src/tsconfig.types.json",
-    "build:production": "webpack --mode=production &&  tsc -p src/tsconfig.types.json",
+    "build:production": "cross-env NODE_ENV=production webpack --mode=production &&  tsc -p src/tsconfig.types.json",
     "build:types": "tsc -p src/tsconfig.types.json",
     "docs": "jsdoc -c ./jsdoc_conf.json && doxdox \"src/**/*.+(js|jsx)\" --layout templates/DOCUMENTATION.hbs --output DOCUMENTATION.md",
     "readme": "node node_modules/markdown-include/bin/cli.js markdown-include.config.json",
@@ -24,19 +23,25 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "@types/jest": "^25.1.3",
-    "@adobe/cq-react-editable-components": "^1.2.0",
-    "@adobe/cq-spa-page-model-manager": "^1.1.1",
-    "@adobe/core-contrib-core": "file:../react-core",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-responsive-carousel": "^3.2.4",
+    "sprintf": "^0.1.5"
+  },
+  "peerDependencies": {
+    "aem-core-components-contributions-core": "0.1.0",
+    "@adobe/cq-react-editable-components": "^1.2.0",
+    "@adobe/cq-spa-component-mapping": "^1.0.3",
+    "@adobe/cq-spa-page-model-manager": "^1.1.1",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
-    "@adobe/cq-spa-component-mapping": "~1.0.3",
-    "@adobe/cq-spa-page-model-manager": "~1.1.0",
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
     "babel-loader": "^8.0.6",
     "babel-plugin-istanbul": "^5.2.0",
     "chai": "^4.2.0",

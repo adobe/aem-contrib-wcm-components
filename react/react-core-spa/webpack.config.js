@@ -1,18 +1,37 @@
-var path = require('path');
+/*
+ *  Copyright 2020 Adobe
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
 
-var isEnvironmentTest = process.env.NODE_ENV === 'test';
-var nodeExternals = require('webpack-node-externals');
+const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+
+const isEnvironmentTest = process.env.NODE_ENV === 'test';
+const isEnvironmentProd = process.env.NODE_ENV === 'production';
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const sourceMap = (isEnvironmentProd) ? '' : 'inline-source-map';
 
 module.exports = {
     entry: './src/index.js',
     mode: 'development',
-    devtool: 'inline-source-map',
+    devtool: sourceMap,
     output: {
         globalObject: `typeof self !== 'undefined' ? self : this`,
         path: path.resolve(__dirname, 'dist'),
         filename: "index.js",
-        library: 'core-spa',
+        library: 'cqSpaCoreComponents',
         libraryTarget: 'umd'
     },
     module: {
