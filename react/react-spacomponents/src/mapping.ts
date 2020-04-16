@@ -1,14 +1,13 @@
 import {BreadCrumbV2IsEmptyFn, TextV2, ButtonV1,ButtonV1IsEmptyFn,TextV2IsEmptyFn} from "@adobe/core-contrib-core";
-import {TabsV2,TabsV2IsEmptyFn,AccordionV1, AccordionV1IsEmptyFn} from "@adobe/core-contrib-core-spa";
+import {TabsV2,TabsV2IsEmptyFn,AccordionV1, AccordionV1IsEmptyFn,CarouselV1,CarouselV1IsEmptyFn} from "@adobe/core-contrib-core-spa";
 
-import {CarouselV1,CarouselV1IsEmptyFn} from './components/CarouselV1';
+
 import {MapTo} from '@adobe/cq-react-editable-components';
 import SpaBreadCrumb from './components/breadcrumb';
 import {withComponentMappingContext } from "@adobe/cq-react-editable-components";
 import withRoute from './utils/RouteHelper';
 import ContribPage from './components/Page';
 
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 MapTo('core/wcm/components/text/v2/text')(TextV2, {isEmpty: TextV2IsEmptyFn});
 MapTo('contrib/wcm/components/breadcrumb')(SpaBreadCrumb, {isEmpty: BreadCrumbV2IsEmptyFn});

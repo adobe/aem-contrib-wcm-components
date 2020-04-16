@@ -14,6 +14,7 @@ class ContribPage extends Page {
         attrs.className = (attrs.className || '') + ' ContribPage ' + (this.props.cssClassNames || '');
         return attrs
     }
+
 }
 
 export default withComponentMappingContext(withRoute(ContribPage));

@@ -39,7 +39,6 @@ export class AccordionV1 extends Container {
     }
 
     isItemExpanded(key){
-        console.log("isItemExpanded: " + key);
         return this.state.expandedItems.indexOf(key) > -1;
     }
 
@@ -58,8 +57,7 @@ export class AccordionV1 extends Container {
             const cssClass = isExpanded ? 'cmp-accordion__panel cmp-accordion__panel--expanded': 'cmp-accordion__panel cmp-accordion__panel--hidden';
 
             return (
-                <div data-sly-resource="${item.name @ decorationTagName='div'}"
-                     className={cssClass}
+                <div className={cssClass}
                      role="region">
                     {this.childComponents[indexToShow]}
                 </div>
@@ -79,7 +77,6 @@ export class AccordionV1 extends Container {
                 return (
                     <div
                         className="cmp-accordion__item"
-                        data-cmp-hook-accordion="item"
                         data-cmp-index={index}
                         data-cmp-expanded={isExpanded}>
                         <h3 data-sly-element="${accordion.headingElement @ context='elementName'}"
