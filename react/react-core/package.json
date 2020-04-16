@@ -101,5 +101,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "license": "Apache-2.0"
 }
