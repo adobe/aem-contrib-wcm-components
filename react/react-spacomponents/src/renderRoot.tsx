@@ -1,7 +1,7 @@
 import React from "react";
 
 import ReactDOM from "react-dom";
-import {EditorContextProvider,EditorContextUtils,WCMMode} from "@adobe/core-contrib-core";
+import {EditorContextProvider,EditorContextUtils,WCMMode} from "aem-core-components-contributions-core";
 
 import {PathUtils} from '@adobe/cq-spa-page-model-manager';
 import {BrowserRouter} from 'react-router-dom';
