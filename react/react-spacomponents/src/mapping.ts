@@ -1,4 +1,4 @@
-import {BreadCrumbV2IsEmptyFn, TextV2 ,ButtonV1IsEmptyFn,TextV2IsEmptyFn} from "aem-core-components-contributions-core";
+import {BreadCrumbV2IsEmptyFn, TextV2 ,ButtonV1IsEmptyFn,TextV2IsEmptyFn} from "aem-core-components-contributions-react-core";
 import {
     TabsV2,TabsV2IsEmptyFn,
     AccordionV1, AccordionV1IsEmptyFn,
@@ -6,7 +6,7 @@ import {
     ContainerV1, ContainerV1IsEmptyFn,
     SpaBreadCrumbV2,
     SpaButtonV1
-} from "aem-core-components-contributions-spa";
+} from "aem-core-components-contributions-react-spa";
 
 
 import {MapTo} from '@adobe/cq-react-editable-components';
