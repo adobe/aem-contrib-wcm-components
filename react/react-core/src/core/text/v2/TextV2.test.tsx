@@ -25,14 +25,14 @@ it('Has a proper isEmpty function', () => {
     const props:TextV2Model = {
         hidePlaceHolder: false,
         text: 'test',
-        isRichText: true
+        richText: true
     };
 
     expect(TextV2IsEmptyFn(props)).toBe(false);
 
     const propsEmpty:TextV2Model = {
         hidePlaceHolder: false,
-        isRichText: true,
+        richText: true,
         text: ''
     };
 

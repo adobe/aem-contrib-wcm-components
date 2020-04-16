@@ -20,7 +20,7 @@ import AbstractCoreComponent from "../../AbstractCoreComponent";
 
 export interface TextV2Model extends CoreComponent{
     text?: string;
-    isRichText?: boolean
+    richText?: boolean
 }
 
 export function TextV2IsEmptyFn(props:TextV2Model): boolean{
@@ -59,7 +59,7 @@ export class TextV2<Model extends TextV2Model> extends AbstractCoreComponent<Mod
 
 
     renderComponent(): JSX.Element {
-        return (this.props.isRichText) ? this.renderRichText() : this.renderPlainText();
+        return (this.props.richText) ? this.renderRichText() : this.renderPlainText();
     }
 
 
