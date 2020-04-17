@@ -1,7 +1,5 @@
 import React, { MouseEvent, Component } from 'react';
-import {WCMMode} from "@adobe/core-contrib-core";
-
-import {ButtonV1, ButtonV1Model,EditorContext, setEditorContext} from "@adobe/core-contrib-core";
+import {ButtonV1, WCMMode,EditorContext, setEditorContext} from "aem-core-components-contributions-react-core";
 //@ts-ignore
 import { createCustomElement, DOMModel, byChildContentVal, byAttrVal, registerEvent } from "@adobe/react-webcomponent";
 import MetaUtils from '../../utils/MetaUtils';

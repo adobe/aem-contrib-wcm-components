@@ -2,7 +2,7 @@
   "name": "react-spacomponents-example-project",
   "version": "0.1.0",
   "dependencies": {
-    "aem-core-components-contributions-react-core": "file:../react-core",
+    "aem-core-components-contributions-react-core": "^0.1.1",
     "aem-core-components-contributions-react-spa": "file:../react-core-spa",
     "@adobe/cq-react-editable-components": "^1.2.0",
     "@adobe/cq-spa-component-mapping": "^1.0.3",

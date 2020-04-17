@@ -1,4 +1,4 @@
-import {EditorContextUtils,WCMMode} from "@adobe/core-contrib-core";
+import {EditorContextUtils,WCMMode} from "aem-core-components-contributions-react-core";
 /*
  * ADOBE CONFIDENTIAL
  *

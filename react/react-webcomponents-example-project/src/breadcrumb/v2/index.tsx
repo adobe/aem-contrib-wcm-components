@@ -1,7 +1,6 @@
 import React, { MouseEvent, Component } from 'react';
-import {WCMMode, BreadCrumbV2ItemModel} from "@adobe/core-contrib-core";
+import {BreadCrumbV2,EditorContext, setEditorContext, WCMMode, BreadCrumbV2ItemModel} from "aem-core-components-contributions-react-core";
 
-import {BreadCrumbV2,EditorContext, setEditorContext} from "@adobe/core-contrib-core";
 //@ts-ignore
 import { createCustomElement, DOMModel, byChildrenRefArray, byBooleanAttrVal, byAttrVal, registerEvent } from "@adobe/react-webcomponent";
 import MetaUtils from '../../utils/MetaUtils';
