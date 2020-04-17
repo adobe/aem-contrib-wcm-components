@@ -1,5 +1,5 @@
 {
-  "name": "aem-core-components-contributions-react-spa",
+  "name": "aem-core-components-contributions-react-core-spa",
   "version": "0.1.1",
   "scripts": {
     "linter": "eslint --ext .js,.jsx .",

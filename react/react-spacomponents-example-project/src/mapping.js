@@ -14,7 +14,7 @@ import {
     ContainerV1, ContainerV1IsEmptyFn,
     SpaBreadCrumbV2,
     SpaButtonV1,
-} from "aem-core-components-contributions-react-spa";
+} from "aem-core-components-contributions-react-core-spa";
 
 
 import { MapTo,withComponentMappingContext, Container} from '@adobe/cq-react-editable-components';
