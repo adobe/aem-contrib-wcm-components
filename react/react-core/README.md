@@ -8,12 +8,12 @@ It serves as proposal to introduce react wrappers, that are compatible to be use
 
 Currently supported / exported components:
 
-AbstractCoreComponent
-BreadCrumb (V2)
-Button (V1)
-Text (V2)
-Teaser (V1)
-Title (V2)
+ - AbstractCoreComponent
+ - BreadCrumb (V2)
+ - Button (V1)
+ - Text (V2)
+ - Teaser (V1)
+ - Title (V2)
 
 Exported interfaces:
 
@@ -31,7 +31,7 @@ If you  need to extend the classes, please check the typescript definitions / so
 ## why such shitty docs??
 
 Well, I am not an engineer, I am a consultant, and work for the customer always comes first.
-I don't have time to provide extensive documentation at this point.
+I don't have time to provide extensive documentation at this point, although I would love to. 
 Perhaps in the future, but no promises! Feel free to improve the documentation by providing PR's.
 
 ## Legal disclaimer

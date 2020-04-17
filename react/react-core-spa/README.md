@@ -10,12 +10,12 @@ These are only for the spa editor since they have a dependency on @adobe/cq-reac
 
 Currently supported / exported components:
 
-Accordion (V1)
-Breadcrumb (v2) - using react-dom-router
-Button (v1) - using react-dom-router
-Container (V1)
-Carousel (V1)
-Tabs (v2)
+ - Accordion (V1)
+ - Breadcrumb (v2) - using react-dom-router
+ - Button (v1) - using react-dom-router
+ - Container (V1)
+ - Carousel (V1)
+ - Tabs (v2)
 
 ## how does this help me??
 
@@ -29,7 +29,7 @@ If you  need to extend the classes, source code, you can overload methods at wil
 ## why such shitty docs??
 
 Well, I am not an engineer, I am a consultant, and work for the customer always comes first.
-I don't have time to provide extensive documentation at this point.
+I don't have time to provide extensive documentation at this point, although I would love to. 
 Perhaps in the future, but no promises! Feel free to improve the documentation by providing PR's.
 
 ## Legal disclaimer
