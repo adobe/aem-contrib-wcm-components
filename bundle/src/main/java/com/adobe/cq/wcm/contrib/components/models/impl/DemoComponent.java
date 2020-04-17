@@ -19,19 +19,16 @@ import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ContainerExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid;
-import com.day.cq.wcm.foundation.model.responsivegrid.export.ResponsiveGridExporter;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.annotation.Nonnull;
 
 
-@Model(adaptables = SlingHttpServletRequest.class, resourceType = DemoComponent.RESOURCE_TYPE, adapters = {ContainerExporter.class,ComponentExporter.class, ResponsiveGridExporter.class})
-@JsonSerialize(as = ResponsiveGridExporter.class)
+@Model(adaptables = SlingHttpServletRequest.class, resourceType = DemoComponent.RESOURCE_TYPE, adapters = {ContainerExporter.class,ComponentExporter.class})
+@JsonSerialize(as = ContainerExporter.class)
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class DemoComponent extends ResponsiveGrid {
     

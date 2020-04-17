@@ -1,11 +1,12 @@
 package com.adobe.cq.wcm.contrib.components.models;
 
-import com.day.cq.wcm.foundation.model.responsivegrid.export.ResponsiveGridExporter;
+import com.adobe.cq.export.json.ContainerExporter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 
-public interface DemoContainerExporter extends ResponsiveGridExporter {
+public interface DemoContainerExporter extends ContainerExporter {
     
     @JsonInclude
     boolean isFullWidth();
+
 }
