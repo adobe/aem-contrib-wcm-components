@@ -9,7 +9,7 @@ export interface TempImageComponentModel extends CoreComponentModel{
 }
 
 export function ImageV2IsEmptyFn(props:TempImageComponentModel) {
-    return (!!props.src) && props.src.length > 0;
+    return (!props.src) || props.src.length === 0;
 }
 
 export class ImageV2 extends AbstractCoreComponent<TempImageComponentModel,CoreComponentState> {
