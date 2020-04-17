@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import {CoreComponent} from "../../../types";
+import {CoreComponentModel, CoreComponentState} from "../../../types";
 import AbstractCoreComponent from "../../AbstractCoreComponent";
 
 export interface BreadCrumbV2ItemModel {
@@ -24,7 +24,7 @@ export interface BreadCrumbV2ItemModel {
     title: string
 }
 
-export interface BreadCrumbV2Model extends CoreComponent {
+export interface BreadCrumbV2Model extends CoreComponentModel {
     items: BreadCrumbV2ItemModel[]
     ariaLabelI18n: string
 }
@@ -34,9 +34,10 @@ export function BreadCrumbV2IsEmptyFn(props:BreadCrumbV2Model): boolean{
     return props.items == null || props.items.length === 0;
 }
 
-export class BreadCrumbV2<Model extends BreadCrumbV2Model> extends AbstractCoreComponent<Model, any> {
+export class BreadCrumbV2<Model extends BreadCrumbV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     public static defaultProps = {
+        isInEditor: false,
         ariaLabelI18n: "BreadCrumbV2",
         hidePlaceHolder: false
     };

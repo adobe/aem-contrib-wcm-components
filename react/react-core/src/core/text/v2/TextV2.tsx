@@ -15,10 +15,10 @@
  */
 
 import React from 'react';
-import {CoreComponent} from '../../../types';
+import {CoreComponentModel, CoreComponentState} from '../../../types';
 import AbstractCoreComponent from "../../AbstractCoreComponent";
 
-export interface TextV2Model extends CoreComponent{
+export interface TextV2Model extends CoreComponentModel{
     text?: string;
     richText?: boolean
 }
@@ -27,10 +27,11 @@ export function TextV2IsEmptyFn(props:TextV2Model): boolean{
     return props.text == null || props.text.length === 0;
 }
 
-export class TextV2<Model extends TextV2Model> extends AbstractCoreComponent<Model, any> {
+export class TextV2<Model extends TextV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     public static defaultProps = {
         hidePlaceHolder: false,
+        isInEditor: false,
         isRichText: false
     };
 

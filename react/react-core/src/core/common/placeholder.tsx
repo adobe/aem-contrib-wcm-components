@@ -26,7 +26,7 @@ export interface PlaceHolderModel extends EditorContext {
     emptyTextAppend?: string
 }
 
-class EditorPlaceHolder extends Component<PlaceHolderModel>{
+class EditorPlaceHolder extends Component<PlaceHolderModel, any>{
 
     static DEFAULT_EMPTY_TEXT_LABEL: string = 'Please configure the component';
 
@@ -51,12 +51,9 @@ class EditorPlaceHolder extends Component<PlaceHolderModel>{
     }
 
     showPlaceHolder() {
-        return !this.props.hidePlaceHolder && this.props.isEmpty && this.isEditOrPreview();
+        return !this.props.hidePlaceHolder && this.props.isEmpty;
     }
 
-    isEditOrPreview() {
-        return this.props.wcmmode === 'edit' || this.props.wcmmode === 'preview';
-    }
 }
 
 export default withEditorContext(EditorPlaceHolder);

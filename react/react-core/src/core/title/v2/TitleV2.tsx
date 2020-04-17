@@ -15,10 +15,10 @@
  */
 
 import React from 'react';
-import {CoreComponent} from "../../../types";
+import {CoreComponentModel} from "../../../types";
 import AbstractCoreComponent from "../../AbstractCoreComponent";
 
-export interface TitleV2Model extends CoreComponent{
+export interface TitleV2Model extends CoreComponentModel{
     text?: string;
     linkURL?: string;
     linkDisabled: boolean;
@@ -32,6 +32,7 @@ export function TitleV2IsEmptyFn(props:TitleV2Model): boolean{
 export class TitleV2<Model extends TitleV2Model> extends AbstractCoreComponent<Model, any> {
 
     public static defaultProps = {
+        isInEditor: false,
         hidePlaceHolder: false
     };
 

@@ -22,3 +22,5 @@ export * from "./core/common/editorcontext";
 export * from './types';
 export * from "./core/util/EditorContextUtils";
 export * from "./core/title/v2/TitleV2";
+export * from "./core/image/v2/ImageV2";
+export * from "./core/teaser/v1/TeaserV1";

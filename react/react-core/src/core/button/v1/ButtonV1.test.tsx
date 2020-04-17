@@ -37,6 +37,7 @@ it('Renders a proper button with link', () => {
     let captured:boolean = false;
 
     const properties:ButtonV1Model = {
+        isInEditor: false,
         ariaLabel: "ThisIsAButton",
         hidePlaceHolder: false,
         icon: "iconCSSCls",
@@ -72,6 +73,7 @@ it('Renders a proper button with link', () => {
     let captured:boolean = false;
 
     const properties:ButtonV1Model = {
+        isInEditor: false,
         ariaLabel: "ThisIsAButton",
         hidePlaceHolder: false,
         icon: "iconCSSCls",

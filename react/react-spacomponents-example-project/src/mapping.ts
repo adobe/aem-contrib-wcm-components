@@ -1,4 +1,12 @@
-import {TitleV2, TitleV2IsEmptyFn, BreadCrumbV2IsEmptyFn, TextV2 ,ButtonV1IsEmptyFn,TextV2IsEmptyFn} from "aem-core-components-contributions-react-core";
+import {
+    ImageV2, ImageV2IsEmptyFn,
+    TitleV2, TitleV2IsEmptyFn,
+    BreadCrumbV2IsEmptyFn,
+    TextV2 ,
+    ButtonV1IsEmptyFn,TextV2IsEmptyFn,
+    TeaserV1,
+    TeaserV1IsEmptyFn
+} from "aem-core-components-contributions-react-core";
 import {
     TabsV2, TabsV2IsEmptyFn,
     AccordionV1, AccordionV1IsEmptyFn,
@@ -20,6 +28,8 @@ MapTo('contrib/wcm/components/breadcrumb')(withComponentMappingContext(SpaBreadC
 MapTo('contrib/wcm/components/button')(SpaButtonV1, {isEmpty: ButtonV1IsEmptyFn});
 MapTo('contrib/wcm/components/page/react-spacomponents-page')(withComponentMappingContext(withRoute(ContribPage)), {});
 MapTo('contrib/wcm/components/tabs')(withComponentMappingContext(TabsV2), {isEmpty: TabsV2IsEmptyFn});
+MapTo('contrib/wcm/components/teaser')(withComponentMappingContext(TeaserV1), {isEmpty: TeaserV1IsEmptyFn});
+MapTo('contrib/wcm/components/image')(withComponentMappingContext(ImageV2), {isEmpty: ImageV2IsEmptyFn});
 MapTo('contrib/wcm/components/title')(withComponentMappingContext(TitleV2), {isEmpty: TitleV2IsEmptyFn});
 MapTo('contrib/wcm/components/accordion')(withComponentMappingContext(AccordionV1), {isEmpty: AccordionV1IsEmptyFn});
 MapTo('contrib/wcm/components/carousel')(withComponentMappingContext(CarouselV1), {isEmpty: CarouselV1IsEmptyFn});

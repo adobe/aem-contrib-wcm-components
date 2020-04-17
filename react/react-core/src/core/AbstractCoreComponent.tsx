@@ -17,17 +17,24 @@
 import React from "react";
 import PlaceHolder from "./common/placeholder";
 
-export interface CoreComponent {
+export interface CoreComponentModel {
     hidePlaceHolder: boolean
+    isInEditor:boolean
 }
+
+export interface CoreComponentState {
+
+}
+
 
 /**
  * AbstractCoreComponent - provides abstraction and helper methods to show a placeholder if the component is empty and author mode is on.
  */
-abstract class AbstractCoreComponent<Model extends CoreComponent, State> extends React.Component<Model,State> {
+abstract class AbstractCoreComponent<Model extends CoreComponentModel, State extends CoreComponentState> extends React.Component<Model,State> {
 
     public static defaultProps = {
         hidePlaceHolder: false,
+        isInEditor: false
     };
 
     abstract isEmpty():boolean;
@@ -62,12 +69,11 @@ abstract class AbstractCoreComponent<Model extends CoreComponent, State> extends
                     this.renderComponent()
                 }
                 {
-                    this.__renderPlaceHolder(this.getEmptyPlaceHolderText())
+                    this.props.isInEditor && this.__renderPlaceHolder(this.getEmptyPlaceHolderText())
                 }
             </>
         )
     }
-
 
 }
 

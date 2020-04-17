@@ -15,10 +15,10 @@
  */
 
 import React, {MouseEvent} from 'react';
-import {CoreComponent} from "../../../types";
+import {CoreComponentModel, CoreComponentState} from "../../../types";
 import AbstractCoreComponent from "../../AbstractCoreComponent";
 
-export interface ButtonV1Model extends CoreComponent{
+export interface ButtonV1Model extends CoreComponentModel{
     text?: string;
     link?: string;
     icon?: string;
@@ -30,9 +30,10 @@ export function ButtonV1IsEmptyFn(props:ButtonV1Model): boolean{
     return props.text == null || props.text.length === 0;
 }
 
-export class ButtonV1<Model extends ButtonV1Model> extends AbstractCoreComponent<Model, any> {
+export class ButtonV1<Model extends ButtonV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     public static defaultProps = {
+        isInEditor: false,
         hidePlaceHolder: false
     };
 
