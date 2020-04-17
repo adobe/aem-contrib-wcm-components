@@ -1,5 +1,5 @@
 import React, { MouseEvent, Component } from 'react';
-import {ButtonV1, WCMMode,EditorContext, setEditorContext} from "aem-core-components-contributions-react-core";
+import {ButtonV1, WCMMode,EditorContext, setEditorContext,CoreComponentModel} from "aem-core-components-contributions-react-core";
 //@ts-ignore
 import { createCustomElement, DOMModel, byChildContentVal, byAttrVal, registerEvent } from "@adobe/react-webcomponent";
 import MetaUtils from '../../utils/MetaUtils';
@@ -7,10 +7,12 @@ import MetaUtils from '../../utils/MetaUtils';
 
 
 
-class ButtonModel extends DOMModel {
+class ButtonModel extends DOMModel implements CoreComponentModel{
     @byAttrVal text?: string;
     @byAttrVal link?: string;
     @byAttrVal icon?: string;
+    isInEditor = false;
+    hidePlaceHolder = false;
 }
 
 class ReactButton extends Component<ButtonModel> {
@@ -22,11 +24,8 @@ class ReactButton extends Component<ButtonModel> {
 
     render() {
         return (
-            <ButtonV1
+            <ButtonV1 {...this.props}
                 handleOnClick={this.handleOnClick}
-                text={this.props.text}
-                icon={this.props.icon}
-                link={this.props.link}
             />
         )
     }

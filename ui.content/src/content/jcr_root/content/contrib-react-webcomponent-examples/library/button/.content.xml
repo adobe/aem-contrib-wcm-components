@@ -114,7 +114,7 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Button"
-                            sling:resourceType="core/wcm/components/button/v1/button"/>
+                            sling:resourceType="contrib/wcm/components/button"/>
                     </component>
                     <info
                         jcr:primaryType="nt:unstructured"
@@ -172,7 +172,7 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Anchor Button"
-                            sling:resourceType="core/wcm/components/button/v1/button"
+                            sling:resourceType="contrib/wcm/components/button"
                             link="/content/contrib-react-webcomponent-examples/library/button"/>
                     </component>
                     <info
@@ -231,7 +231,7 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Contact Us"
-                            sling:resourceType="core/wcm/components/button/v1/button"
+                            sling:resourceType="contrib/wcm/components/button"
                             icon="email"/>
                     </component>
                     <info
