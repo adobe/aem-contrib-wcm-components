@@ -66,7 +66,7 @@ it('Renders rich text', () => {
 
     const richText = '<div class="myclass">richtext</div>';
     const expectedHtml = '<div class="cmp-text"><div class="myclass">richtext</div></div>';
-    const element = shallow(<TextV2 isRichText={true} text={richText}/>);
+    const element = shallow(<TextV2 richText={true} text={richText}/>);
 
     const actualHtml = element.html();
     expect(actualHtml).toEqual(expectedHtml);

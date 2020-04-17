@@ -32,7 +32,7 @@ export class TextV2<Model extends TextV2Model, State extends CoreComponentState>
     public static defaultProps = {
         hidePlaceHolder: false,
         isInEditor: false,
-        isRichText: false
+        richText: false
     };
 
     isEmpty(): boolean{
