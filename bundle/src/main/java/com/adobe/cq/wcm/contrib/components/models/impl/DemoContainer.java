@@ -27,8 +27,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.annotation.Nonnull;
@@ -41,7 +43,7 @@ public class DemoContainer extends ResponsiveGrid implements DemoContainerExport
     
     static final String RESOURCE_TYPE = "core-components-examples/components/demo";
     
-    @ValueMapValue
+    @ValueMapValue @Optional @Default(booleanValues = true)
     private boolean fullWidth;
     
     @Override
