@@ -17,6 +17,21 @@ Container (V1)
 Carousel (V1)
 Tabs (v2)
 
+## how does this help me??
+
+Please check the github source folder ( react maven sub module ) on how this all works together
+You leverage these classes by importing them and then exposing them using MapTo.
+Example provided in react-spacomponents-example-project >  in mapping.js.
+
+If you need nothing else, you just need to provide styling and you are done.
+If you  need to extend the classes, source code, you can overload methods at will, they are all overrideable. 
+
+## why such shitty docs??
+
+Well, I am not an engineer, I am a consultant, and work for the customer always comes first.
+I don't have time to provide extensive documentation at this point.
+Perhaps in the future, but no promises! Feel free to improve the documentation by providing PR's.
+
 ## Legal disclaimer
 
 This project is licensed under the Apache V2 License. See [LICENSE](LICENSE) for more information.
