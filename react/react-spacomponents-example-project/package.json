@@ -1,5 +1,5 @@
 {
-  "name": "react-webcomponents",
+  "name": "react-spacomponents-example-project",
   "version": "0.1.0",
   "dependencies": {
     "aem-core-components-contributions-react-core": "file:/Users/raaijmak/workspace/aem-contrib-wcm-components/react/react-core",

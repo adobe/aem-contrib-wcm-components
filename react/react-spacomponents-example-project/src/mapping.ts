@@ -1,6 +1,6 @@
 import {BreadCrumbV2IsEmptyFn, TextV2 ,ButtonV1IsEmptyFn,TextV2IsEmptyFn} from "aem-core-components-contributions-react-core";
 import {
-    TabsV2,TabsV2IsEmptyFn,
+    TabsV2, TabsV2IsEmptyFn,
     AccordionV1, AccordionV1IsEmptyFn,
     CarouselV1,CarouselV1IsEmptyFn,
     ContainerV1, ContainerV1IsEmptyFn,
@@ -9,11 +9,10 @@ import {
 } from "aem-core-components-contributions-react-spa";
 
 
-import {MapTo} from '@adobe/cq-react-editable-components';
-import {withComponentMappingContext } from "@adobe/cq-react-editable-components";
+import { MapTo,withComponentMappingContext} from '@adobe/cq-react-editable-components';
+
 import withRoute from './utils/RouteHelper';
 import ContribPage from './components/Page';
-
 
 MapTo('core/wcm/components/text/v2/text')(TextV2, {isEmpty: TextV2IsEmptyFn});
 MapTo('contrib/wcm/components/breadcrumb')(withComponentMappingContext(SpaBreadCrumbV2), {isEmpty: BreadCrumbV2IsEmptyFn});

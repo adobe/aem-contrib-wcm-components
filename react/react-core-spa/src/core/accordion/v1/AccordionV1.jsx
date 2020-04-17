@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import {Container,ComponentMapping,EditorContext} from '@adobe/cq-react-editable-components';
+import {Container,ComponentMapping} from '@adobe/cq-react-editable-components';
 
 export function AccordionV1IsEmptyFn(props){
     return props.cqItems == null || props.cqItems.length === 0;
@@ -65,11 +65,11 @@ export class AccordionV1 extends Container {
     }
 
 
-    displayItem(key,isExpanded,isInEditor) {
+    displayItem(key,isExpanded) {
 
         const indexToShow = this.props.cqItemsOrder.indexOf(key);
 
-        if(isInEditor === true || isExpanded){
+        if(this.pros.isInEditor === true || isExpanded){
             const cssClass = isExpanded ? 'cmp-accordion__panel cmp-accordion__panel--expanded': 'cmp-accordion__panel cmp-accordion__panel--hidden';
 
             return (
@@ -102,9 +102,8 @@ export class AccordionV1 extends Container {
                                 <span className="cmp-accordion__icon"></span>
                             </button>
                         </h3>
-                        <EditorContext.Consumer>
-                            {isInEditor => this.displayItem(key, isExpanded,isInEditor)}
-                        </EditorContext.Consumer>
+                        {this.displayItem(key, isExpanded)}
+
                     </div>
                 )
             })

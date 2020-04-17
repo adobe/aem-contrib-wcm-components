@@ -59,16 +59,13 @@ export class ContainerV1 extends React.Component {
                 <div ref={this.mainDiv}
                      id={this.props.id}
                      className="cmp-container">
-                    <EditorContext.Consumer>
-                        {isInEditor => {
-                            if (this.props.layout && this.props.layout === 'simple') {
-                                return <Container componentMapping={this.state.componentMapping} isInEditor={isInEditor} {...this.props} />
 
-                            } else {
-                                return <ResponsiveGrid componentMapping={this.state.componentMapping} isInEditor={isInEditor} {...this.props} />
-                            }
-                        }}
-                    </EditorContext.Consumer>
+                    {(this.props.layout && this.props.layout === 'simple')  &&
+                                <Container componentMapping={this.state.componentMapping} {...this.props} />}
+
+                    {(!this.props.layout || this.props.layout !== 'simple') &&
+                              <ResponsiveGrid componentMapping={this.state.componentMapping} {...this.props} />}
+
                 </div>
             </div>
         )

@@ -15,14 +15,14 @@
  */
 
 import React from 'react';
-import {Container,ComponentMapping,withEditorContext} from '@adobe/cq-react-editable-components';
+import {Container,ComponentMapping} from '@adobe/cq-react-editable-components';
 import {sprintf} from 'sprintf';
 
 export function CarouselV1IsEmptyFn(props){
     return props.cqItems == null || props.cqItems.length === 0;
 }
 
-class Carousel extends Container {
+export class CarouselV1 extends Container {
 
     interval;
 
@@ -164,6 +164,7 @@ class Carousel extends Container {
     }
 
 
+
     render() {
 
         const isEmpty = CarouselV1IsEmptyFn(this.props);
@@ -286,6 +287,3 @@ class Carousel extends Container {
     }
 
 }
-
-const CarouselWrapped = withEditorContext(Carousel);
-export {CarouselWrapped as CarouselV1};
