@@ -15,13 +15,16 @@
  */
 
 import React from "react";
-import {Container,ComponentMapping} from '@adobe/cq-react-editable-components';
+
+import {AbstractCoreContainerComponent} from "../../AbstractCoreContainerComponent";
+import {ComponentMapping} from '@adobe/cq-react-editable-components';
+
 
 export function AccordionV1IsEmptyFn(props){
     return props.cqItems == null || props.cqItems.length === 0;
 }
 
-export class AccordionV1 extends Container {
+export class AccordionV1 extends AbstractCoreContainerComponent {
 
     constructor(props) {
         super(props);
@@ -69,7 +72,7 @@ export class AccordionV1 extends Container {
 
         const indexToShow = this.props.cqItemsOrder.indexOf(key);
 
-        if(this.pros.isInEditor === true || isExpanded){
+        if(this.props.isInEditor === true || isExpanded){
             const cssClass = isExpanded ? 'cmp-accordion__panel cmp-accordion__panel--expanded': 'cmp-accordion__panel cmp-accordion__panel--hidden';
 
             return (

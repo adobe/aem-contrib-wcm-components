@@ -15,14 +15,15 @@
  */
 
 import React from "react";
-import {Container,ComponentMapping,EditorContext} from '@adobe/cq-react-editable-components';
+import {ComponentMapping} from '@adobe/cq-react-editable-components';
+import {AbstractCoreContainerComponent} from "../../AbstractCoreContainerComponent";
 
 export function TabsV2IsEmptyFn(props){
     return props.cqItems == null || props.cqItems.length === 0;
 }
 
 
-export class TabsV2 extends Container {
+export class TabsV2 extends AbstractCoreContainerComponent {
 
     constructor(props) {
         super(props);
@@ -38,9 +39,9 @@ export class TabsV2 extends Container {
      * Overload childComponents getter to only return the active tab's items.
      * @returns {Object[]} An array with the components instantiated to JSX
      */
-    tabbedChildComponents(isInEditor) {
+    tabbedChildComponents() {
 
-        if(isInEditor === true){
+        if(this.props.isInEditor === true){
             //for editing capabilities to work properly, we always need to render each item.
             //we will hide the disabled items instead.
             return (
@@ -116,15 +117,11 @@ export class TabsV2 extends Container {
         const isEmpty = TabsV2IsEmptyFn(this.props);
 
         return (
-            <EditorContext.Consumer>
-                {isInEditor =>  (
-                    <div {...this.tabContainerProps}>
-                        { !isEmpty && this.tabNavigation() }
-                        { !isEmpty && this.tabbedChildComponents(isInEditor) }
-                        { this.placeholderComponent }
-                    </div>
-                )}
-            </EditorContext.Consumer>
+            <div {...this.tabContainerProps}>
+                { !isEmpty && this.tabNavigation() }
+                { !isEmpty && this.tabbedChildComponents() }
+                { this.placeholderComponent }
+            </div>
         )
     }
 

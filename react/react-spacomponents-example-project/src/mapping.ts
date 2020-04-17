@@ -14,6 +14,7 @@ import { MapTo,withComponentMappingContext} from '@adobe/cq-react-editable-compo
 import withRoute from './utils/RouteHelper';
 import ContribPage from './components/Page';
 
+
 MapTo('core/wcm/components/text/v2/text')(TextV2, {isEmpty: TextV2IsEmptyFn});
 MapTo('contrib/wcm/components/breadcrumb')(withComponentMappingContext(SpaBreadCrumbV2), {isEmpty: BreadCrumbV2IsEmptyFn});
 MapTo('contrib/wcm/components/button')(SpaButtonV1, {isEmpty: ButtonV1IsEmptyFn});

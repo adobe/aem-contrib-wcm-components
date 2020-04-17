@@ -15,14 +15,16 @@
  */
 
 import React from 'react';
-import {Container,ComponentMapping} from '@adobe/cq-react-editable-components';
+
+import {AbstractCoreContainerComponent} from "../../AbstractCoreContainerComponent";
+import {ComponentMapping} from '@adobe/cq-react-editable-components';
 import {sprintf} from 'sprintf';
 
 export function CarouselV1IsEmptyFn(props){
     return props.cqItems == null || props.cqItems.length === 0;
 }
 
-export class CarouselV1 extends Container {
+export class CarouselV1 extends AbstractCoreContainerComponent {
 
     interval;
 
@@ -176,9 +178,7 @@ export class CarouselV1 extends Container {
                 {
                     !isEmpty && this.renderCarousel()
                 }
-                {
-
-                    this.placeHolderComponent}
+                { this.placeholderComponent }
             </div>
         )
 

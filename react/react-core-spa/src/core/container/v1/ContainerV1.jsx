@@ -15,13 +15,13 @@
  */
 
 import React from "react";
-import {Container, ResponsiveGrid, EditorContext, ComponentMapping} from '@adobe/cq-react-editable-components';
+import {Container, ResponsiveGrid, ComponentMapping} from '@adobe/cq-react-editable-components';
 
 export function ContainerV1IsEmptyFn(props) {
     return props.cqItems == null || props.cqItems.length === 0;
 }
 
-export class ContainerV1 extends React.Component {
+export class ContainerV1 extends Container {
 
     mainDiv;
 
@@ -61,7 +61,7 @@ export class ContainerV1 extends React.Component {
                      className="cmp-container">
 
                     {(this.props.layout && this.props.layout === 'simple')  &&
-                                <Container componentMapping={this.state.componentMapping} {...this.props} />}
+                              <Container componentMapping={this.state.componentMapping} {...this.props} />}
 
                     {(!this.props.layout || this.props.layout !== 'simple') &&
                               <ResponsiveGrid componentMapping={this.state.componentMapping} {...this.props} />}
