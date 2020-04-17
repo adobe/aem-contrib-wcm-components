@@ -25,7 +25,7 @@
                     jcr:lastModified="{Date}2019-02-15T20:21:58.794+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core/wcm/components/text/v2/text"
+                    sling:resourceType="contrib/wcm/components/text"
                     text="&lt;h1>Component Library &lt;a href=&quot;https://github.com/adobe/aem-core-wcm-components/releases/tag/core.wcm.components.reactor-2.8.0&quot;>2.8.0&lt;/a>&lt;/h1>&#xa;"
                     textIsRich="true"/>
                 <text
@@ -35,7 +35,7 @@
                     jcr:lastModified="{Date}2019-01-09T16:29:27.380+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core/wcm/components/text/v2/text"
+                    sling:resourceType="contrib/wcm/components/text"
                     text="&lt;p>Get to know the AEM Core Components with this collection of component examples - currently featuring a selection of the available components. For all components, visit our &lt;a href=&quot;https://github.com/adobe/aem-core-wcm-components&quot;>GitHub Project&lt;/a>.&lt;/p>&#xa;"
                     textIsRich="true"/>
                 <text_585499147

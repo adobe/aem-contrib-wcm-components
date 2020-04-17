@@ -2,14 +2,15 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2019-01-09T20:30:27.177+01:00"
+        cq:lastModified="{Date}2019-05-23T13:33:43.701+03:00"
         cq:lastModifiedBy="admin"
-        cq:tags="[contrib-react-spacomponent-examples:component-type/basic]"
+        cq:tags="[core-components-examples:component-type/template]"
         cq:template="/conf/contrib-react-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
-        jcr:description="Display a button or anchor button"
+        jcr:description="Display a breadcrumb navigation"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Button"
-        sling:resourceType="contrib/wcm/components/page/react-spacomponents-page">
+        jcr:title="Breadcrumb"
+        sling:resourceType="contrib/wcm/components/page/react-spacomponents-page"
+        navTitle="Breadcrumb">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
@@ -24,17 +25,17 @@
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="contrib/wcm/components/text"
-                    text="&lt;h1>Button&lt;sub>v1&lt;/sub>&lt;/h1>&#xa;"
+                    text="&lt;h1>Breadcrumb&lt;sub>v2&lt;/sub>&lt;/h1>&#xa;"
                     textIsRich="true"/>
                 <text
                     cq:styleIds="[1544762734201]"
                     jcr:created="{Date}2018-12-06T19:11:23.947+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2018-12-07T13:32:37.460+01:00"
+                    jcr:lastModified="{Date}2019-01-16T13:38:02.450+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="contrib/wcm/components/text"
-                    text="&lt;p>Button allows the display of a button or anchor button.&lt;/p>&#xa;"
+                    text="&lt;p>Breadcrumb allows navigation of the page hierarchy relative to the current page. It is commonly added to a page template, in the header or footer.&lt;/p>&#xa;"
                     textIsRich="true"/>
                 <teaser
                     cq:styleIds="[1550165685463]"
@@ -49,7 +50,7 @@
                     actionsEnabled="false"
                     descriptionFromPage="false"
                     fileReference="/content/dam/core-components-examples/library/github-logo.svg"
-                    linkURL="https://www.adobe.com/go/aem_cmp_tech_button_v1"
+                    linkURL="https://github.com/adobe/aem-core-wcm-components/blob/master/content/src/content/jcr_root/apps/core/wcm/components/breadcrumb/v2/breadcrumb"
                     textIsRich="true"
                     titleFromPage="false"/>
                 <teaser_556024830
@@ -65,7 +66,7 @@
                     actionsEnabled="false"
                     descriptionFromPage="false"
                     fileReference="/content/dam/core-components-examples/library/adobe-logo.svg"
-                    linkURL="https://www.adobe.com/go/aem_cmp_button_v1"
+                    linkURL="https://www.adobe.com/go/aem_cmp_breadcrumb_v2"
                     textIsRich="true"
                     titleFromPage="false"/>
                 <title_865328580
@@ -82,7 +83,7 @@
                     cq:styleIds="[1544759676459]"
                     jcr:created="{Date}2018-12-06T19:22:48.620+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2018-12-07T13:32:52.751+01:00"
+                    jcr:lastModified="{Date}2019-03-07T11:40:52.963+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Standard"
@@ -91,30 +92,32 @@
                 <text_1337506761
                     jcr:created="{Date}2018-12-06T19:23:41.968+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2018-12-07T13:32:55.756+01:00"
+                    jcr:lastModified="{Date}2019-03-07T11:50:44.360+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="contrib/wcm/components/text"
-                    text="&lt;p>Simple Button with only a text configured.&lt;/p>&#xa;"
+                    text="&lt;p>Simple breadcrumb with no configuration applied. Shows the current page in relation to the page hierarchy.&lt;/p>&#xa;"
                     textIsRich="true"/>
                 <demo
-                    jcr:created="{Date}2018-12-07T13:36:02.946+01:00"
+                    jcr:created="{Date}2018-12-07T12:55:03.496+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2018-12-07T13:36:02.946+01:00"
+                    jcr:lastModified="{Date}2018-12-07T12:55:03.496+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="core-components-examples/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="core-components-examples/components/demo/component">
-                        <button
-                            jcr:created="{Date}2018-12-07T13:36:34.343+01:00"
+                        <breadcrumb
+                            jcr:created="{Date}2019-03-06T14:11:01.819+01:00"
                             jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2018-12-07T13:37:57.049+01:00"
+                            jcr:lastModified="{Date}2019-05-21T10:21:29.728+03:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="Button"
-                            sling:resourceType="core/wcm/components/button/v1/button"/>
+                            sling:resourceType="core/wcm/components/breadcrumb/v2/breadcrumb"
+                            hideCurrent="false"
+                            showHidden="false"
+                            startLevel="2"/>
                     </component>
                     <info
                         jcr:primaryType="nt:unstructured"
@@ -136,44 +139,45 @@
                             reference="../../component"/>
                     </info>
                 </demo>
-                <title_290385000
+                <title_290384408_copy_1530128142
                     cq:styleIds="[1544759676459]"
                     jcr:created="{Date}2018-12-06T19:22:48.620+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2018-12-07T13:33:08.554+01:00"
+                    jcr:lastModified="{Date}2019-03-07T11:45:26.805+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="Linked"
+                    jcr:title="Navigation Start Level"
                     sling:resourceType="contrib/wcm/components/title"
                     type="h3"/>
-                <text_1337505001
+                <text_1337506761_copy_1034941677
                     jcr:created="{Date}2018-12-06T19:23:41.968+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2018-12-07T13:33:12.232+01:00"
+                    jcr:lastModified="{Date}2019-03-07T11:52:45.708+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="contrib/wcm/components/text"
-                    text="&lt;p>Button linked to a page. Buttons with links provided are rendered as anchors.&lt;/p>&#xd;&#xa;"
+                    text="&lt;p>The &lt;i>Navigation Start Level &lt;/i>is set to two by default, which is typically the site root. In this example, we increase it to three to display a breadcrumb for a section one level lower.&lt;/p>&#xd;&#xa;"
                     textIsRich="true"/>
-                <demo_1160408466
-                    jcr:created="{Date}2018-12-07T13:36:07.808+01:00"
+                <demo_copy_copy
+                    jcr:created="{Date}2018-12-07T12:55:03.496+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2018-12-07T13:36:07.808+01:00"
+                    jcr:lastModified="{Date}2018-12-07T12:55:03.496+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="core-components-examples/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="core-components-examples/components/demo/component">
-                        <button
-                            jcr:created="{Date}2018-12-07T13:36:37.955+01:00"
+                        <breadcrumb
+                            jcr:created="{Date}2019-03-06T14:11:01.819+01:00"
                             jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2018-12-07T13:38:48.047+01:00"
+                            jcr:lastModified="{Date}2019-05-21T10:21:36.131+03:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="Anchor Button"
-                            sling:resourceType="core/wcm/components/button/v1/button"
-                            link="/content/core-components-examples/library/button"/>
+                            sling:resourceType="core/wcm/components/breadcrumb/v2/breadcrumb"
+                            hideCurrent="false"
+                            showHidden="false"
+                            startLevel="3"/>
                     </component>
                     <info
                         jcr:primaryType="nt:unstructured"
@@ -194,45 +198,46 @@
                             sling:resourceType="core-components-examples/components/demo/json"
                             reference="../../component"/>
                     </info>
-                </demo_1160408466>
-                <title_290385001
+                </demo_copy_copy>
+                <title_290384408_copy
                     cq:styleIds="[1544759676459]"
                     jcr:created="{Date}2018-12-06T19:22:48.620+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2018-12-07T13:33:08.554+01:00"
+                    jcr:lastModified="{Date}2019-03-07T11:41:13.551+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="Icon"
+                    jcr:title="Show Hidden Navigation Items"
                     sling:resourceType="contrib/wcm/components/title"
                     type="h3"/>
-                <text_1337505003
+                <text_1337506761_copy_1888023046
                     jcr:created="{Date}2018-12-06T19:23:41.968+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2018-12-07T13:33:12.232+01:00"
+                    jcr:lastModified="{Date}2019-03-07T11:42:25.525+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="contrib/wcm/components/text"
-                    text="&lt;p>An icon identifier can be provided for rendering an icon in the button.&lt;/p>&#xd;&#xa;"
+                    text="&lt;p>By default, pages that are marked as &lt;i>Hide in Navigation &lt;/i> are not displayed in the breadcrumb. It is possible to configure a breadcrumb so that they are shown.&lt;/p>&#xa;"
                     textIsRich="true"/>
-                <demo_1160408467
-                    jcr:created="{Date}2018-12-07T13:36:07.808+01:00"
+                <demo_copy
+                    jcr:created="{Date}2018-12-07T12:55:03.496+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2018-12-07T13:36:07.808+01:00"
+                    jcr:lastModified="{Date}2018-12-07T12:55:03.496+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="core-components-examples/components/demo">
                     <component
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="core-components-examples/components/demo/component">
-                        <button
-                            jcr:created="{Date}2018-12-07T13:36:37.955+01:00"
+                        <breadcrumb
+                            jcr:created="{Date}2019-03-06T14:11:01.819+01:00"
                             jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2018-12-07T13:38:48.047+01:00"
+                            jcr:lastModified="{Date}2019-05-21T10:22:19.080+03:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="Contact Us"
-                            sling:resourceType="core/wcm/components/button/v1/button"
-                            icon="email"/>
+                            sling:resourceType="core/wcm/components/breadcrumb/v2/breadcrumb"
+                            hideCurrent="false"
+                            showHidden="true"
+                            startLevel="2"/>
                     </component>
                     <info
                         jcr:primaryType="nt:unstructured"
@@ -253,7 +258,67 @@
                             sling:resourceType="core-components-examples/components/demo/json"
                             reference="../../component"/>
                     </info>
-                </demo_1160408467>
+                </demo_copy>
+                <Copy_x0020_of_x0020_title_290384408_copy
+                    cq:styleIds="[1544759676459]"
+                    jcr:created="{Date}2018-12-06T19:22:48.620+01:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2019-05-21T15:07:14.089+03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Hide Current Page"
+                    sling:resourceType="contrib/wcm/components/title"
+                    type="h3"/>
+                <text_1337506761_copy_1888023047
+                    jcr:created="{Date}2018-12-06T19:23:41.968+01:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2019-05-21T15:14:05.708+03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="contrib/wcm/components/text"
+                    text="&lt;p>By default, the current page is&amp;nbsp;shown in the navigation. It is possible to configure a breadcrumb so that it is hidden.&lt;/p>&#xa;"
+                    textIsRich="true"/>
+                <Copy_x0020_of_x0020_demo_copy
+                    jcr:created="{Date}2018-12-07T12:55:03.496+01:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2018-12-07T12:55:03.496+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core-components-examples/components/demo">
+                    <component
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core-components-examples/components/demo/component">
+                        <breadcrumb
+                            jcr:created="{Date}2019-03-06T14:11:01.819+01:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2019-05-21T15:14:14.179+03:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core/wcm/components/breadcrumb/v2/breadcrumb"
+                            hideCurrent="true"
+                            showHidden="false"
+                            startLevel="2"/>
+                    </component>
+                    <info
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/wcm/components/tabs/v1/tabs">
+                        <properties
+                            cq:panelTitle="Properties"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/properties"
+                            reference="../../component"/>
+                        <markup
+                            cq:panelTitle="Markup"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/markup"
+                            reference="../../component"/>
+                        <json
+                            cq:panelTitle="JSON"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="core-components-examples/components/demo/json"
+                            reference="../../component"/>
+                    </info>
+                </Copy_x0020_of_x0020_demo_copy>
             </responsivegrid>
         </root>
         <image jcr:primaryType="nt:unstructured">
