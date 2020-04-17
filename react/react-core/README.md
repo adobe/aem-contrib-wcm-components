@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/adobe/aem-contrib-wcm-components.svg?style=svg)](https://circleci.com/gh/adobe/aem-contrib-wcm-components) [![codecov](https://codecov.io/gh/adobe/aem-contrib-wcm-components/branch/master/graph/badge.svg)](https://codecov.io/gh/adobe/aem-contrib-wcm-components)
 
 
-# AEM WCM Components - Community Contributions - React core proposal
+# AEM WCM Components - Community Contributions - React core proposal - Beta
 
 This is a branch of the AEM WCM Components - Community Contributions maintained by Niek Raaijmakers for now.
 It serves as proposal to introduce react wrappers, that are compatible to be used with web components or the spa editor.
@@ -11,7 +11,14 @@ Currently supported / exported components:
 AbstractCoreComponent
 BreadCrumb (V2)
 Button (V1)
-Text (v2)
+Text (V2)
+Teaser (V1)
+Title (V2)
+
+Exported interfaces:
+
+CoreComponentModel
+CoreComponentState
 
 ## Legal disclaimer
 
