@@ -15,22 +15,19 @@
  */
 
 import React from 'react';
-import {ButtonV1} from "aem-core-components-contributions-react-core";
-import {Link} from '../../../utils/Link';
+import {BreadCrumbV2} from "aem-core-components-contributions-react-core";
+import {Link} from '../../../../utils/Link';
 
-export class SpaButtonV1 extends ButtonV1{
+export class SpaBreadCrumbV2 extends BreadCrumbV2{
 
-    renderComponent(){
+    renderBreadCrumbLink(crumbItem,index){
         return (
-            <>
-                {
-                    this.props.link &&
-                    <Link  onClick={this.handleOnClick} aria-label={this.props.ariaLabel} className={this.baseCssCls} to={this.props.link}>
-                        {this.getContent()}
-                    </Link>
-                }
-                {   !this.props.link && super.renderComponent()  }
-            </>
+            <Link to={crumbItem.url}
+                  className="cmp-breadcrumb__item-link"
+                  itemProp="item">
+                {this.renderBreadCrumbSpan(crumbItem, index)}
+            </Link>
         )
     }
+
 }

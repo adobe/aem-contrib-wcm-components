@@ -14,11 +14,11 @@
  *  limitations under the License.
  */
 
-export * from './core/tabs/v2/TabsV2';
-export * from './core/accordion/v1/AccordionV1';
-export * from './core/carousel/v1/CarouselV1';
-export * from './core/container/v1/ContainerV1';
-export * from './core/breadcrumb/v2/SpaBreadCrumbV2';
-export * from './core/button/v1/SpaButtonV1';
-export * from './core/list/v2/SpaListV2';
+export * from './core/container/tabs/v2/TabsV2';
+export * from './core/container/accordion/v1/AccordionV1';
+export * from './core/container/carousel/v1/CarouselV1';
+export * from './core/container/container/v1/ContainerV1';
+export * from './core/layout/breadcrumb/v2/SpaBreadCrumbV2';
+export * from './core/authoring/button/v1/SpaButtonV1';
+export * from './core/authoring/list/v2/SpaListV2';
 export * from './utils/Link';

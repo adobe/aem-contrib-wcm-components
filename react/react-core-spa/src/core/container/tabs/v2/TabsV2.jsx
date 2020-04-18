@@ -16,7 +16,7 @@
 
 import React from "react";
 import {ComponentMapping} from '@adobe/cq-react-editable-components';
-import {AbstractCoreContainerComponent} from "../../AbstractCoreContainerComponent";
+import {AbstractCoreContainerComponent} from "../../../AbstractCoreContainerComponent";
 
 export function TabsV2IsEmptyFn(props){
     return props.cqItems == null || props.cqItems.length === 0;

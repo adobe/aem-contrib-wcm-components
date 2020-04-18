@@ -34,7 +34,7 @@ export class LanguageNavigationV1<Model extends LanguageNavigationV1Model, State
     constructor(props:Model) {
         super(props);
         this.baseCssCls = 'cmp-languagenavigation';
-        this.emptyPlaceHolderText = 'Contrib LanguageNavigation V1';
+        this.emptyPlaceHolderText = 'LanguageNavigationV1';
         this.navChildren = props.children;
     }
 
