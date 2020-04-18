@@ -27,14 +27,12 @@ interface TestType extends CoreComponentModel{
 
 class ImplementingClass extends AbstractCoreComponent<TestType, CoreComponentState>{
 
+    constructor(props:TestType) {
+        super(props, "base-class", "AwesomeComponent");
+    }
 
     isEmpty(): boolean {
         return this.props.forceEmptyFlag;
-    }
-
-
-    getEmptyPlaceHolderText(): string {
-        return 'AwesomeComponent';
     }
 
     renderComponent(): JSX.Element {

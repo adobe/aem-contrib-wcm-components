@@ -39,14 +39,9 @@ export class NavigationV1<Model extends NavigationV1Model, State extends CoreCom
     };
 
     constructor(props:Model) {
-        super(props, "cmp-navigation");
+        super(props, "cmp-navigation", 'NavigationV1');
         this.navChildren = props.children;
     }
-
-    getEmptyPlaceHolderText(): string {
-        return 'Contrib Navigation V1';
-    }
-
 
     isEmpty(): boolean{
         return NavigationV1IsEmptyFn(this.props);

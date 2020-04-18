@@ -19,20 +19,25 @@ export class ImageV2<Model extends TempImageComponentModel,State extends CoreCom
         isInEditor: false
     };
 
+
+    constructor(props: Model) {
+        super(props, 'cmp-image', 'ImageV2');
+    }
+
     isEmpty(): boolean {
         return ImageV2IsEmptyFn(this.props);
     }
 
     renderComponent(): JSX.Element {
-        const cssClassName = (this.props.isInEditor) ? 'cmp-image  cq-dd-image' : 'cmp-image';
+        const cssClassName = (this.props.isInEditor) ? this.baseCssCls + ' cq-dd-image' : this.baseCssCls;
 
         return (
             <div className={cssClassName}>
                 <img src={this.props.src}
-                     className="cmp-image__image"
+                     className={this.baseCssCls = '__image'}
                      alt={this.props.alt}/>
                 {
-                    !!(this.props.title) && <span className="cmp-image__title" itemProp="caption">{this.props.title}</span>
+                    !!(this.props.title) && <span className={this.baseCssCls + '__title'} itemProp="caption">{this.props.title}</span>
                 }
                 {
                     this.props.displayPopupTitle && (!!this.props.title) && <meta itemProp="caption" content={this.props.title}/>

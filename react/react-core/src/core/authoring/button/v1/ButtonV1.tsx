@@ -37,12 +37,8 @@ export class ButtonV1<Model extends ButtonV1Model, State extends CoreComponentSt
     };
 
     constructor(props:Model) {
-        super(props, "cmp-button");
+        super(props, "cmp-button", "ButtonV1");
         this.handleOnClick = this.handleOnClick.bind(this);
-    }
-
-    getEmptyPlaceHolderText(): string {
-        return 'Contrib Button V1';
     }
 
     handleOnClick(event:MouseEvent){

@@ -42,15 +42,11 @@ export class BreadCrumbV2<Model extends BreadCrumbV2Model, State extends CoreCom
     };
 
     constructor(props:Model) {
-        super(props, "cmp-breadcrumb");
+        super(props, "cmp-breadcrumb", 'BreadCrumbV2');
     }
 
     isEmpty(): boolean {
         return BreadCrumbV2IsEmptyFn(this.props)
-    }
-
-    getEmptyPlaceHolderText(): string {
-        return 'BreadCrumbV2';
     }
 
     renderBreadCrumbListItem(crumbItem:BreadCrumbV2ItemModel,index:number): JSX.Element{

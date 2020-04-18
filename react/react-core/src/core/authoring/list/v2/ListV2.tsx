@@ -30,13 +30,8 @@ export class ListV2<Model extends ListV2Model, State extends CoreComponentState>
         hidePlaceHolder: false
     };
 
-    getEmptyPlaceHolderText(): string {
-        return 'Contrib List V2';
-    }
-
-
     constructor(props: Model) {
-        super(props, 'cmp-list');
+        super(props, 'cmp-list', 'ListV2');
     }
 
     isEmpty(): boolean{

@@ -35,15 +35,11 @@ export class TextV2<Model extends TextV2Model, State extends CoreComponentState>
     };
 
     constructor(props: Model) {
-        super(props, 'cmp-text');
+        super(props, 'cmp-text', 'TextV2');
     }
 
     isEmpty(): boolean{
         return TextV2IsEmptyFn(this.props);
-    }
-
-    getEmptyPlaceHolderText(): string {
-        return 'Contrib Text V2';
     }
 
     renderRichText(){

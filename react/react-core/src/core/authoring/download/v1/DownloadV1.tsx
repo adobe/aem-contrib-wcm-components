@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 import React, {MouseEvent} from 'react';
-import {CoreComponentModel, CoreComponentState,AbstractCoreComponent} from "../../../..";
+import {CoreComponentModel, CoreComponentState,AbstractCoreComponent} from "../../../AbstractCoreComponent";
 
 
 export interface DownloadV1Model extends CoreComponentModel{
@@ -53,16 +53,12 @@ export class DownloadV1<Model extends DownloadV1Model, State extends CoreCompone
     };
 
     constructor(props:Model) {
-        super(props, "cmp-download");
+        super(props, "cmp-download", 'Contrib Download V1');
         this.handleOnClick = this.handleOnClick.bind(this);
         this.displayFileName = props.displayFilename && !!props.filename;
         this.displaySize = props.displaySize && !!props.size;
         this.displayFormat = props.displayFormat && !!props.format;
         this.handleOnClick = this.handleOnClick.bind(this);
-    }
-
-    getEmptyPlaceHolderText(): string {
-        return 'Contrib Download V1';
     }
 
     handleOnClick(event:MouseEvent){

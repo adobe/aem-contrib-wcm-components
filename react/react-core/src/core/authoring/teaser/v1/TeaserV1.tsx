@@ -35,7 +35,7 @@ export class TeaserV1<Model extends TeaserV1Model, State extends CoreComponentSt
     };
 
     constructor(props: Model) {
-        super(props, 'cmp-teaser');
+        super(props, 'cmp-teaser', 'TeaserV1');
     }
 
     isEmpty(): boolean {

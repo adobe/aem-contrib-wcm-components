@@ -38,19 +38,29 @@ export abstract class AbstractCoreComponent<Model extends CoreComponentModel, St
     };
 
     baseCssCls: string;
+    emptyPlaceHolderText: string;
 
-    constructor(props:Model,baseCssCls:string) {
+    /**
+     * Base Constructor
+     * @param props component properties
+     * @param baseCssCls the base BEM css class to be used for the component - this can be overloaded
+     * @param emptyPlaceHolderText empty placeholder label for when the component needs to be configured in author mode
+     */
+    constructor(props:Model,baseCssCls:string,emptyPlaceHolderText:string) {
         super(props);
         this.baseCssCls = baseCssCls;
+        this.emptyPlaceHolderText = emptyPlaceHolderText;
     }
 
+    /**
+     * Method that needs to be overloaded, to determine whether the component should be treated as 'empty'
+     */
     abstract isEmpty():boolean;
 
+    /**
+     * Render method that get's called if the component is not considered empty
+     */
     abstract renderComponent():JSX.Element;
-
-    getEmptyPlaceHolderText():string{
-        return '';
-    }
 
     __hidePlaceHolder():boolean{
         return this.props.hidePlaceHolder;
@@ -76,7 +86,7 @@ export abstract class AbstractCoreComponent<Model extends CoreComponentModel, St
                     this.renderComponent()
                 }
                 {
-                    this.props.isInEditor && this.__renderPlaceHolder(this.getEmptyPlaceHolderText())
+                    this.props.isInEditor && this.__renderPlaceHolder(this.emptyPlaceHolderText)
                 }
             </>
         )

@@ -15,15 +15,11 @@ export class SeparatorV1<Model extends CoreComponentModel, State extends CoreCom
 
 
     constructor(props: Model) {
-        super(props, 'cmp-separator');
+        super(props, 'cmp-separator', 'SeparatorV1');
     }
 
     isEmpty(): boolean{
         return SeparatorV1IsEmptyFn(this.props);
-    }
-
-    getEmptyPlaceHolderText(): string {
-        return 'Contrib Separator V2';
     }
 
     renderComponent(): JSX.Element {

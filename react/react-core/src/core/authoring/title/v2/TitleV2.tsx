@@ -35,10 +35,9 @@ export class TitleV2<Model extends TitleV2Model, State extends CoreComponentStat
         hidePlaceHolder: false
     };
 
-    getEmptyPlaceHolderText(): string {
-        return 'Contrib Title V2';
+    constructor(props: Model) {
+        super(props, 'cmp-title', 'TitleV2');
     }
-
 
     isEmpty(): boolean{
         return TitleV2IsEmptyFn(this.props);
