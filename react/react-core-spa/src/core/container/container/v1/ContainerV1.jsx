@@ -27,6 +27,7 @@ export class ContainerV1 extends Container {
 
     constructor(props) {
         super(props);
+        this.baseCssCls = 'cmp-container';
         this.state = {
             componentMapping: this.props.componentMapping || ComponentMapping,
         };
@@ -58,7 +59,7 @@ export class ContainerV1 extends Container {
             <div {...this.coreContainerProps}>
                 <div ref={this.mainDiv}
                      id={this.props.id}
-                     className="cmp-container">
+                     className={this.baseCssCls}>
 
                     {(this.props.layout && this.props.layout === 'simple')  &&
                               <Container componentMapping={this.state.componentMapping} {...this.props} />}

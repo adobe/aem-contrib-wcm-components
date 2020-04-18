@@ -34,7 +34,7 @@ export class ImageV2<Model extends TempImageComponentModel,State extends CoreCom
         return (
             <div className={cssClassName}>
                 <img src={this.props.src}
-                     className={this.baseCssCls = '__image'}
+                     className={this.baseCssCls + '__image'}
                      alt={this.props.alt}/>
                 {
                     !!(this.props.title) && <span className={this.baseCssCls + '__title'} itemProp="caption">{this.props.title}</span>

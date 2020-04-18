@@ -27,7 +27,7 @@ export function AccordionV1IsEmptyFn(props){
 export class AccordionV1 extends AbstractCoreContainerComponent {
 
     constructor(props) {
-        super(props);
+        super(props, "cmp-accordion");
         this.state = {
             componentMapping: this.props.componentMapping || ComponentMapping,
             expandedItems: this.props.expandedItems
@@ -63,7 +63,7 @@ export class AccordionV1 extends AbstractCoreContainerComponent {
 
     get accordionContainerProps(){
         let attrs = this.containerProps;
-        attrs['className'] = attrs.className + ' cmp-accordion';
+        attrs['className'] = attrs.className + ' ' + this.baseCssCls;
         attrs['data-cmp-is'] = 'accordion';
     }
 
@@ -73,7 +73,7 @@ export class AccordionV1 extends AbstractCoreContainerComponent {
         const indexToShow = this.props.cqItemsOrder.indexOf(key);
 
         if(this.props.isInEditor === true || isExpanded){
-            const cssClass = isExpanded ? 'cmp-accordion__panel cmp-accordion__panel--expanded': 'cmp-accordion__panel cmp-accordion__panel--hidden';
+            const cssClass = isExpanded ? `${this.baseCssCls}__panel ${this.baseCssCls}__panel--expanded`: `${this.baseCssCls}__panel ${this.baseCssCls}__panel--hidden`;
 
             return (
                 <div className={cssClass}
@@ -86,25 +86,36 @@ export class AccordionV1 extends AbstractCoreContainerComponent {
         return null;
     }
 
+    renderHeadingButton(key, item,buttonCssClass){
+        return (
+            <button className={buttonCssClass} onClick={() => { this.handleAccordionNavClick(key) }}>
+                <span className={this.baseCssCls + '__title'}>{item["cq:panelTitle"]}</span>
+                <span className={this.baseCssCls + '__icon'}></span>
+            </button>
+        )
+    }
+
     get accordionContent(){
         return (
 
             this.props.cqItemsOrder.map((key, index) => {
                 const item = this.props.cqItems[key];
                 const isExpanded = this.isItemExpanded(key);
-                const buttonCssClass = (isExpanded) ? 'cmp-accordion__button cmp-accordion__button--expanded' : 'cmp-accordion__button';
+                const buttonCssClass = (isExpanded) ? `${this.baseCssCls}__button ${this.baseCssCls}__button--expanded` : `${this.baseCssCls}__button`;
                 return (
                     <div
-                        className="cmp-accordion__item"
+                        className={this.baseCssCls + '__item'}
                         data-cmp-index={index}
                         data-cmp-expanded={isExpanded}>
-                        <h3 data-sly-element="${accordion.headingElement @ context='elementName'}"
-                            className="cmp-accordion__header">
-                            <button className={buttonCssClass} onClick={() => { this.handleAccordionNavClick(key) }}>
-                                <span className="cmp-accordion__title">{item["cq:panelTitle"]}</span>
-                                <span className="cmp-accordion__icon"></span>
-                            </button>
-                        </h3>
+                        {
+                            React.createElement(
+                                `${this.props.headingElement || 'h3'}`,
+                                {
+                                    className: this.baseCssCls + '__header',
+                                },
+                                this.renderHeadingButton(key,item,buttonCssClass)
+                            )
+                        }
                         {this.displayItem(key, isExpanded)}
 
                     </div>

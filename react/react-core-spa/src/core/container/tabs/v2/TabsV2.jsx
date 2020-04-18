@@ -26,7 +26,7 @@ export function TabsV2IsEmptyFn(props){
 export class TabsV2 extends AbstractCoreContainerComponent {
 
     constructor(props) {
-        super(props);
+        super(props, 'cmp-tabs');
         this.state = {
             activeIndex: 0,
             componentMapping: this.props.componentMapping || ComponentMapping
@@ -81,7 +81,7 @@ export class TabsV2 extends AbstractCoreContainerComponent {
 
         return (
             <ol role="tablist"
-                className="cmp-tabs__tablist"
+                className={this.baseCssCls + '__tablist'}
                 aria-label={this.props.accessibilityLabel}
                 aria-multiselectable="false">
                     {
@@ -91,7 +91,7 @@ export class TabsV2 extends AbstractCoreContainerComponent {
                             return (
                                 <li role="tab"
                                     onClick={() => this.handleTabNavClick(index)}
-                                    className={'cmp-tabs__tab' + isActive ? ' cmp-tabs__tab--active' : ''}
+                                    className={this.baseCssCls + '__tab' + isActive ? ' ' + this.baseCssCls + '__tab--active' : ''}
                                     tabIndex={isActive ? '0' : '-1'}
                                     data-cmp-hook-tabs="tab">
                                     {tab['cq:panelTitle']}
@@ -108,7 +108,7 @@ export class TabsV2 extends AbstractCoreContainerComponent {
 
     get tabContainerProps(){
         let attrs = this.containerProps;
-        attrs['className'] = attrs.className + ' cmp-tabs';
+        attrs['className'] = attrs.className + ' ' + this.baseCssCls;
         attrs['data-cmp-is'] = 'tabs';
     }
 

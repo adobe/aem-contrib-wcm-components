@@ -23,7 +23,7 @@ export class SpaBreadCrumbV2 extends BreadCrumbV2{
     renderBreadCrumbLink(crumbItem,index){
         return (
             <Link to={crumbItem.url}
-                  className="cmp-breadcrumb__item-link"
+                  className={this.baseCssCls + '__item-link'}
                   itemProp="item">
                 {this.renderBreadCrumbSpan(crumbItem, index)}
             </Link>
