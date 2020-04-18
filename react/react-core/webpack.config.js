@@ -61,9 +61,13 @@ module.exports = {
         }
     }) : ''],
     resolve: {
+        alias: {
+            'moment': 'moment/moment.js',
+            '../moment': 'moment/moment.js',
+        },
         extensions: ['.ts', '.tsx']
     },
     plugins: [
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
     ]
 };

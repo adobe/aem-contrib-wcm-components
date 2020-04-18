@@ -1,7 +1,7 @@
 import React from 'react';
 import {CoreComponentModel, CoreComponentState} from "../../../types";
 import AbstractCoreComponent from "../../AbstractCoreComponent";
-import {utc, Moment} from 'moment';
+import * as moment from 'moment';
 
 export interface ListV2Item {
     url?:string
@@ -52,7 +52,7 @@ export class ListV2<Model extends ListV2Model, State extends CoreComponentState>
 
     renderItemModificationDate(item:ListV2Item, index:number){
 
-        const date:Moment = utc(item.lastModified);
+        const date:moment.Moment = moment.utc(item.lastModified);
         const lastModifiedString = date.format(this.props.dateFormatString.toUpperCase());
 
         return (
