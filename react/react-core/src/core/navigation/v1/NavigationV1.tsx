@@ -6,7 +6,7 @@ export interface HasNavigationItems {
     children:NavigationV1Item[]
 }
 
-export interface NavigationV1Item extends HasNavigationItems{
+export interface NavigationV1ItemModel {
     level: number,
     active: boolean,
     title: string,
@@ -14,6 +14,9 @@ export interface NavigationV1Item extends HasNavigationItems{
     lastModified: number,
     description?: string,
     path: string,
+}
+export interface NavigationV1Item extends NavigationV1ItemModel, HasNavigationItems{
+
 }
 
 
@@ -28,6 +31,7 @@ export function NavigationV1IsEmptyFn(props:NavigationV1Model): boolean{
 export class NavigationV1<Model extends NavigationV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     navChildren: NavigationV1Item[];
+    baseCss: string;
 
     public static defaultProps = {
         isInEditor: false,
@@ -37,6 +41,7 @@ export class NavigationV1<Model extends NavigationV1Model, State extends CoreCom
 
     constructor(props:Model) {
         super(props);
+        this.baseCss = this.getBaseCssClss();
         this.navChildren = props.children;
     }
 
@@ -60,7 +65,7 @@ export class NavigationV1<Model extends NavigationV1Model, State extends CoreCom
         };
 
         return (
-            <nav className="cmp-navigation"
+            <nav className={this.baseCss}
                  role="navigation"
                  itemScope itemType="http://schema.org/SiteNavigationElement"
                  aria-label={this.props.accessibilityLabel}>
@@ -73,7 +78,7 @@ export class NavigationV1<Model extends NavigationV1Model, State extends CoreCom
         return (
             <>
                 {!!item.children && item.children.length > 0 &&  (
-                    <ul className="cmp-navigation__group">
+                    <ul className={this.baseCss + '__group'}>
                         {item.children.map(
                             (item,index) => { return this.renderNavItem(item,index)}
                         )}
@@ -86,18 +91,30 @@ export class NavigationV1<Model extends NavigationV1Model, State extends CoreCom
     renderLink(item:NavigationV1Item, isActive:boolean){
         return (
             <a href={item.url} title={item.title} aria-current={isActive && 'page'}
-               className="cmp-navigation__item-link">{item.title}</a>
+               className={this.baseCss + '__item-link'}>{item.title}</a>
         )
     }
     renderNavItem(item: NavigationV1Item, index: number) {
         const isActive = this.determineIsActive(item);
+        const cssClass = this.baseCss + '__item ' +
+                         this.baseCss + '__item--level-' + item.level + ' '
+                         + ' ' + this.getExtraNavItemCssClss(item, index)
+                         + (isActive ? ' ' + this.baseCss + '__item--active' : '');
         return (
-            <li key={'cmp-navigation__item-' + index} className={'cmp-navigation__item cmp-navigation__item--level-' + item.level + (isActive ? ' cmp-navigation__item--active' : '')}>
+            <li key={this.baseCss + '__item-' + index} className={cssClass}>
                     { this.renderLink(item, isActive) }
                     {
                         !!item.children && item.children.length > 0 && this.renderGroup(item)
                     }
             </li>
         )
+    }
+
+    getBaseCssClss() {
+        return "cmp-navigation";
+    }
+
+    getExtraNavItemCssClss(item: NavigationV1Item, index: number) {
+        return "";
     }
 }

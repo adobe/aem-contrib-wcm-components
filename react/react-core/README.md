@@ -8,8 +8,7 @@ It serves as proposal to introduce react wrappers, that are compatible to be use
 
 Currently supported / exported components:
 
- - AbstractCoreComponent
- - BreadCrumb (V2)
+### Page Authoring
  - Button (V1)
  - Text (V2)
  - Teaser (V1)
@@ -18,16 +17,28 @@ Currently supported / exported components:
  - Download (V1)
  - List (V2)
  - Separator (V1)
- - Navigation (V1)
  
-Exported interfaces:
+### Layout
+ - Navigation (V1)
+ - Language Navigation (V1)
+ - BreadCrumb (V2)
+ 
+### Abstraction
+-  AbstractCoreComponent
+-  CoreComponentModel (interface)
+-  CoreComponentState (interface)
 
-- CoreComponentModel
-- CoreComponentState
+###Form
+As of now I have no plans to provide support for form components.
+Feel free to assist with PR's.
+
+###Container 
+Container components won't be provided here as of now, but framework specific support libraries (react-core-spa).
 
 ## how does this help me??
 
-Please check the github source folder ( react maven sub module ) on how this all works together
+Please check the github source folder ( react maven sub module ) on how this all works together.
+In specific, check the example projects (spa / web component) to see exactly how you import / use this library.
 You leverage these classes in conjunction with web components / spa editor on top of the core components.
 
 If you need nothing else, you just need to provide styling and you are done.
