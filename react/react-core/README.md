@@ -15,6 +15,8 @@ Currently supported / exported components:
  - Teaser (V1)
  - Title (V2)
  - List (V2)
+ - Download (V1)
+ - List (V2)
 
 Exported interfaces:
 

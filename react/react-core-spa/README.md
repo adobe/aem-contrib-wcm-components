@@ -11,11 +11,15 @@ These are only for the spa editor since they have a dependency on @adobe/cq-reac
 Currently supported / exported components:
 
  - Accordion (V1)
- - Breadcrumb (v2) - using react-dom-router
- - Button (v1) - using react-dom-router
  - Container (V1)
  - Carousel (V1)
  - Tabs (v2)
+ 
+Routed core components (using react-dom-router)
+
+ - SpaBreadcrumb (v2) 
+ - SpaButton (V1) 
+ - SpaList (V2)
 
 ## how does this help me??
 

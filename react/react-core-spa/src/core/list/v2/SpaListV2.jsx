@@ -14,18 +14,17 @@
  *  limitations under the License.
  */
 
-export * from './core/button/v1/ButtonV1';
-export * from './core/text/v2/TextV2';
-export * from './core/breadcrumb/v2/BreadCrumbV2';
+import React from 'react';
+import {ListV2} from "aem-core-components-contributions-react-core";
+import {Link} from '../../../utils/Link';
 
-export * from "./core/common/editorcontext";
-export * from './types';
-export * from "./core/util/EditorContextUtils";
-export * from "./core/title/v2/TitleV2";
-export * from "./core/image/v2/ImageV2";
-export * from "./core/teaser/v1/TeaserV1";
+export class SpaListV2 extends ListV2{
 
-export * from "./core/list/v2/ListV2";
-export * from "./core/text/v2/TextV2";
-
-export * from "./core/download/v1/DownloadV1";
+    renderListAnchor(item, index){
+        return (
+            <Link className="cmp-list__item-link" to={item.url}>
+                {this.renderListItemContent(item,index)}
+            </Link>
+        )
+    }
+}
