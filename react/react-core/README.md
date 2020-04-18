@@ -17,11 +17,13 @@ Currently supported / exported components:
  - List (V2)
  - Download (V1)
  - List (V2)
-
+ - Separator (V1)
+ - Navigation (V1)
+ 
 Exported interfaces:
 
-CoreComponentModel
-CoreComponentState
+- CoreComponentModel
+- CoreComponentState
 
 ## how does this help me??
 

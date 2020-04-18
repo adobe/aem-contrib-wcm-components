@@ -29,3 +29,5 @@ export * from "./core/list/v2/ListV2";
 export * from "./core/text/v2/TextV2";
 
 export * from "./core/download/v1/DownloadV1";
+export * from "./core/separator/v1/SeparatorV1";
+export * from "./core/navigation/v1/NavigationV1";
