@@ -22,19 +22,15 @@ export class SpaButtonV1 extends ButtonV1{
 
     renderComponent(){
         return (
-            <div className="button" onClick={this.handleOnClick}>
+            <>
                 {
                     this.props.link &&
-                    <Link  aria-label={this.props.ariaLabel} className="cmp-button" to={this.props.link}>
+                    <Link  onClick={this.handleOnClick} aria-label={this.props.ariaLabel} className={this.baseCssCls} to={this.props.link}>
                         {this.getContent()}
                     </Link>
                 }
-                {   !this.props.link &&
-                <button className="cmp-button">
-                    {this.getContent()}
-                </button>
-                }
-            </div>
+                {   !this.props.link && super.renderComponent()  }
+            </>
         )
     }
 }

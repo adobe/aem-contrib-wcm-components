@@ -22,7 +22,7 @@ export class SpaListV2 extends ListV2{
 
     renderListAnchor(item, index){
         return (
-            <Link className="cmp-list__item-link" to={item.url}>
+            <Link className={this.baseCssCls + '__item-link'} to={item.url}>
                 {this.renderListItemContent(item,index)}
             </Link>
         )

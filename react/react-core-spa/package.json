@@ -35,7 +35,7 @@
     "sprintf": "^0.1.5"
   },
   "peerDependencies": {
-    "aem-core-components-contributions-react-core": "^0.1.4",
+    "aem-core-components-contributions-react-core": "^0.1.7",
     "@adobe/cq-react-editable-components": "^1.2.0",
     "@adobe/cq-spa-component-mapping": "^1.0.3",
     "@adobe/cq-spa-page-model-manager": "^1.1.1",

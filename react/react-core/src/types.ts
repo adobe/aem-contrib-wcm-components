@@ -15,9 +15,24 @@
  */
 import React from 'react';
 
-export * from './core/common/editorcontext';
-export * from './core/common/placeholder';
-export * from './core/AbstractCoreComponent';
-export * from './core/button/v1/ButtonV1';
-export * from './core/text/v2/TextV2';
-export * from './core/breadcrumb/v2/BreadCrumbV2';
+export * from "./core/common/editorcontext";
+export * from "./core/util/EditorContextUtils";
+export * from "./core/AbstractCoreComponent";
+
+export * from './core/authoring/button/v1/ButtonV1';
+export * from './core/authoring/text/v2/TextV2';
+
+export * from "./core/authoring/title/v2/TitleV2";
+export * from "./core/authoring/image/v2/ImageV2";
+export * from "./core/authoring/teaser/v1/TeaserV1";
+
+export * from "./core/authoring/list/v2/ListV2";
+export * from "./core/authoring/text/v2/TextV2";
+
+export * from "./core/authoring/download/v1/DownloadV1";
+export * from "./core/authoring/separator/v1/SeparatorV1";
+
+//layout
+export * from './core/layout/breadcrumb/v2/BreadCrumbV2';
+export * from "./core/layout/navigation/v1/NavigationV1";
+export * from "./core/layout/language-navigation/v1/LanguageNavigationV1";

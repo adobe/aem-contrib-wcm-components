@@ -30,12 +30,19 @@ export interface CoreComponentState {
 /**
  * AbstractCoreComponent - provides abstraction and helper methods to show a placeholder if the component is empty and author mode is on.
  */
-abstract class AbstractCoreComponent<Model extends CoreComponentModel, State extends CoreComponentState> extends React.Component<Model,State> {
+export abstract class AbstractCoreComponent<Model extends CoreComponentModel, State extends CoreComponentState> extends React.Component<Model,State> {
 
     public static defaultProps = {
         hidePlaceHolder: false,
         isInEditor: false
     };
+
+    baseCssCls: string;
+
+    constructor(props:Model,baseCssCls:string) {
+        super(props);
+        this.baseCssCls = baseCssCls;
+    }
 
     abstract isEmpty():boolean;
 
@@ -76,5 +83,3 @@ abstract class AbstractCoreComponent<Model extends CoreComponentModel, State ext
     }
 
 }
-
-export default AbstractCoreComponent;

@@ -19,7 +19,7 @@ import ReactDOM from 'react-dom';
 import {shallow} from 'enzyme';
 
 import {setEditorContext, EditorContext} from './common/editorcontext';
-import AbstractCoreComponent, {CoreComponentModel, CoreComponentState} from './AbstractCoreComponent';
+import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from './AbstractCoreComponent';
 
 interface TestType extends CoreComponentModel{
     forceEmptyFlag:boolean
