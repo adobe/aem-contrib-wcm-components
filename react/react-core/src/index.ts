@@ -24,3 +24,5 @@ export * from "./core/util/EditorContextUtils";
 export * from "./core/title/v2/TitleV2";
 export * from "./core/image/v2/ImageV2";
 export * from "./core/teaser/v1/TeaserV1";
+
+export * from "./core/list/v2/ListV2";

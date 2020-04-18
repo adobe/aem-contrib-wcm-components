@@ -1,6 +1,6 @@
 {
   "name": "aem-core-components-contributions-react-core",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "keywords": [
     "adobe",
     "aem",
@@ -36,6 +36,7 @@
     "tmprelease": "node release.js"
   },
   "dependencies": {
+    "moment": "^2.24.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",

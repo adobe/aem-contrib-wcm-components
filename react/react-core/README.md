@@ -14,6 +14,7 @@ Currently supported / exported components:
  - Text (V2)
  - Teaser (V1)
  - Title (V2)
+ - List (V2)
 
 Exported interfaces:
 

@@ -15,7 +15,7 @@
  */
 
 import React from 'react';
-import {CoreComponentModel} from "../../../types";
+import {CoreComponentModel, CoreComponentState} from "../../../types";
 import AbstractCoreComponent from "../../AbstractCoreComponent";
 
 export interface TitleV2Model extends CoreComponentModel{
@@ -29,7 +29,7 @@ export function TitleV2IsEmptyFn(props:TitleV2Model): boolean{
     return props.text == null || props.text.length === 0;
 }
 
-export class TitleV2<Model extends TitleV2Model> extends AbstractCoreComponent<Model, any> {
+export class TitleV2<Model extends TitleV2Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
     public static defaultProps = {
         isInEditor: false,
