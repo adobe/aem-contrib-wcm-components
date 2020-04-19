@@ -1,4 +1,3 @@
-import {EditorContextUtils,WCMMode} from "aem-core-components-contributions-react-core";
 /*
  * ADOBE CONFIDENTIAL
  *
@@ -31,9 +30,12 @@ export default class MetaUtils {
         }
     }
 
-    static getWcmMode():WCMMode {
-        const wcmModeString:string = MetaUtils.getMetaPropertyValue('cq:wcmmode');
-        return EditorContextUtils.parseWCMModeFromString(wcmModeString);
+    static getWcmMode():string {
+        return MetaUtils.getMetaPropertyValue('cq:wcmmode');
+    }
+
+    static isInEditor():boolean{
+        return this.getWcmMode() === 'edit';
     }
 
     /**

@@ -1,5 +1,5 @@
 import React, { MouseEvent, Component } from 'react';
-import {BreadCrumbV2,EditorContext, setEditorContext, WCMMode, BreadCrumbV2ItemModel} from "aem-core-components-contributions-react-core";
+import {BreadCrumbV2, BreadCrumbV2ItemModel} from "aem-core-components-contributions-react-core";
 
 //@ts-ignore
 import { createCustomElement, DOMModel, byChildrenRefArray, byBooleanAttrVal, byAttrVal, registerEvent } from "@adobe/react-webcomponent";
@@ -15,20 +15,21 @@ class BreadCrumbItemModel extends DOMModel implements BreadCrumbV2ItemModel{
 
 class BreadCrumbModel extends DOMModel{
     @byChildrenRefArray("div.breadcrumb-item", BreadCrumbItemModel) items: BreadCrumbItemModel[] = [];
+
 }
 
 class ReactBreadCrumb extends Component<BreadCrumbModel> {
     render() {
         return (
             <BreadCrumbV2
+                isInEditor={MetaUtils.isInEditor()}
                 items={this.props.items}
                 ariaLabelI18n={'BreadCrumb'}
             />
         )
     }
 }
-const wcmmode:WCMMode = MetaUtils.getWcmMode();
 
-const editContext: EditorContext = {wcmmode:wcmmode};
-const ButtonCustomElement = createCustomElement(setEditorContext(ReactBreadCrumb, editContext), BreadCrumbModel, "container");
+
+const ButtonCustomElement = createCustomElement(ReactBreadCrumb, BreadCrumbModel, "container");
 window.customElements.define("core-breadcrumb", ButtonCustomElement);
