@@ -1,7 +1,7 @@
 import React from "react";
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
-import {ImageV2,TitleV2} from "../../../..";
-
+import {ImageV2} from "../../../../core/authoring/image/v2/ImageV2";
+import {TitleV2} from "../../../../core/authoring/title/v2/TitleV2";
 
 export function TeaserV1IsEmptyFn(props:TeaserV1Model): boolean{
 

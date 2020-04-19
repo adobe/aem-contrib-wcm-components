@@ -70,7 +70,7 @@ export class TitleV2<Model extends TitleV2Model, State extends CoreComponentStat
             <div className={this.baseCssCls}>
                 {
                     React.createElement(
-                        `${this.props.type}`,
+                     this.props.type || 'h3',
                         {
                             className: this.baseCssCls + '__text',
                         },

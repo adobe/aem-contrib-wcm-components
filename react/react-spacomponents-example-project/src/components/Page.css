@@ -1,9 +1,6 @@
 /* Center and max-width the content */
-.ContribPage {
-    max-width: 1200px;
+.App{
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 12px;
-    padding: 0;
-    float: unset !important; 
-  }
-  
+}

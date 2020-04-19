@@ -9,7 +9,7 @@ This is a good place to submit your ideas and have them reviewed by the communit
 
 ## Installation
 
-First install : SP 6.5.3 + 
+First install : SP 6.5.4 + 
 Core components + examples
 
 then in the root folder run: 

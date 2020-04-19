@@ -1,9 +1,9 @@
 
 import React from 'react';
-import {ListV2} from "aem-core-components-contributions-react-core";
+import {TeaserV1} from "aem-core-components-contributions-react-core";
 import {Link} from '../../../../utils/Link';
 
-export class SpaListV2 extends ListV2{
+export class SpaTeaserV1 extends TeaserV1{
 
     generateLink(action, index){
         return (

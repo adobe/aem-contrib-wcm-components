@@ -471,42 +471,14 @@ public class HierarchyPageImpl implements HierarchyPage {
      */
     private Page getRootPage() {
         Page page = currentPage;
-        boolean isRootModel = false;
-
-        ContentPolicyManager contentPolicyManager = resource.getResourceResolver().adaptTo(ContentPolicyManager.class);
-
+        boolean isRootModel;
+        
         do {
-            page = page.getParent();
-
-            if (page == null) {
-                continue;
+            isRootModel =  page.getContentResource().getResourceType().equalsIgnoreCase("contrib/wcm/components/page/react-spacomponents-page/app");
+            
+            if(!isRootModel){
+                page= page.getParent();
             }
-
-            Template template = page.getTemplate();
-
-            if (template == null || !template.hasStructureSupport()) {
-                continue;
-            }
-
-            Resource pageContentResource = page.getContentResource();
-
-            if (pageContentResource == null) {
-                continue;
-            }
-
-            ContentPolicy pageContentPolicy = contentPolicyManager.getPolicy(pageContentResource);
-
-            if (pageContentPolicy == null) {
-                continue;
-            }
-
-            ValueMap properties = pageContentPolicy.getProperties();
-
-            if (properties == null) {
-                continue;
-            }
-
-            isRootModel = properties.containsKey(PR_IS_ROOT);
 
         } while(page != null && !isRootModel);
 
