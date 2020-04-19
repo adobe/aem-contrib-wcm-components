@@ -1,4 +1,4 @@
-import {NavigationV1Item, NavigationV1Model} from "./NavigationV1";
+import {NavigationV1Item} from "./NavigationV1";
 
 export const items:NavigationV1Item[] = [
     {

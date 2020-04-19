@@ -2,11 +2,8 @@ import React from 'react';
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
 
 
-export interface HasNavigationItems {
-    children:NavigationV1Item[]
-}
 
-export interface NavigationV1ItemModel {
+export interface NavigationV1Item {
     level: number,
     active: boolean,
     title: string,
@@ -14,33 +11,28 @@ export interface NavigationV1ItemModel {
     lastModified: number,
     description?: string,
     path: string,
-}
-export interface NavigationV1Item extends NavigationV1ItemModel, HasNavigationItems{
-
+    children?: NavigationV1Item[]
 }
 
-
-export interface NavigationV1Model extends CoreComponentModel, HasNavigationItems{
+export interface NavigationV1Model extends CoreComponentModel{
+    items:NavigationV1Item[]
     accessibilityLabel?: string
 }
 
 export function NavigationV1IsEmptyFn(props:NavigationV1Model): boolean{
-    return props.children == null || props.children.length === 0;
+    return props.items == null || props.items.length === 0;
 }
 
 export class NavigationV1<Model extends NavigationV1Model, State extends CoreComponentState> extends AbstractCoreComponent<Model, State> {
 
-    navChildren: NavigationV1Item[];
-
     public static defaultProps = {
         isInEditor: false,
         hidePlaceHolder: false,
-        children: []
+        items: []
     };
 
     constructor(props:Model) {
         super(props, "cmp-navigation", 'NavigationV1');
-        this.navChildren = props.children;
     }
 
     isEmpty(): boolean{
@@ -53,21 +45,27 @@ export class NavigationV1<Model extends NavigationV1Model, State extends CoreCom
 
     renderComponent(){
 
-        const item:HasNavigationItems = {
-            children: this.navChildren
-        };
+        const selfClone:NavigationV1Item = {
+            active: false,
+            lastModified: 0,
+            level: 0,
+            path: "",
+            title: "",
+            url: "",
+            children: this.props.items
+        }
 
         return (
             <nav className={this.baseCssCls}
                  role="navigation"
                  itemScope itemType="http://schema.org/SiteNavigationElement"
                  aria-label={this.props.accessibilityLabel}>
-                {this.renderGroup(item)}
+                {this.renderGroup(selfClone)}
             </nav>
         )
     }
 
-    renderGroup(item:HasNavigationItems){
+    renderGroup(item:NavigationV1Item){
         return (
             <>
                 {!!item.children && item.children.length > 0 &&  (

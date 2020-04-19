@@ -1,24 +1,28 @@
 import React from 'react';
-import {CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
-import {NavigationV1, NavigationV1ItemModel} from "../../navigation/v1/NavigationV1";
+import {CoreComponentState} from "../../../AbstractCoreComponent";
+import {NavigationV1, NavigationV1Item, NavigationV1Model} from "../../navigation/v1/NavigationV1";
 
-export interface HasLanguageNavigationItems{
-    children:LanguageNavigationV1Item[]
-}
-
-export interface LanguageNavigationV1Item extends HasLanguageNavigationItems,NavigationV1ItemModel{
+export interface LanguageNavigationV1Item extends NavigationV1Item{
+    level: number,
+    active: boolean,
+    title: string,
+    url: string,
+    lastModified: number,
+    description?: string,
+    path: string,
     locale: string,
     country: string,
     language: string,
+    children?: LanguageNavigationV1Item[]
 }
 
-
-export interface LanguageNavigationV1Model extends HasLanguageNavigationItems,CoreComponentModel{
+export interface LanguageNavigationV1Model extends NavigationV1Model{
+    items:LanguageNavigationV1Item[]
     accessibilityLabel?: string
 }
 
 export function LanguageNavigationV1IsEmptyFn(props:LanguageNavigationV1Model): boolean{
-    return props.children == null || props.children.length === 0;
+    return props.items == null || props.items.length === 0;
 }
 
 export class LanguageNavigationV1<Model extends LanguageNavigationV1Model, State extends CoreComponentState> extends NavigationV1<Model, State> {
@@ -28,14 +32,14 @@ export class LanguageNavigationV1<Model extends LanguageNavigationV1Model, State
     public static defaultProps = {
         isInEditor: false,
         hidePlaceHolder: false,
-        children: []
+        items: []
     };
 
     constructor(props:Model) {
         super(props);
         this.baseCssCls = 'cmp-languagenavigation';
         this.emptyPlaceHolderText = 'LanguageNavigationV1';
-        this.navChildren = props.children;
+        this.navChildren = props.items;
     }
 
     renderLink(item:LanguageNavigationV1Item, isActive:boolean){

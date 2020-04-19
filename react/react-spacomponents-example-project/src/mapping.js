@@ -14,6 +14,8 @@ import {
     ContainerV1, ContainerV1IsEmptyFn,
     SpaBreadCrumbV2,
     SpaButtonV1,
+    SpaNavigationV1,
+    SpaLanguageNavigationV1
 } from "aem-core-components-contributions-react-core-spa";
 
 
@@ -22,6 +24,9 @@ import { MapTo,withComponentMappingContext, Container} from '@adobe/cq-react-edi
 import withRoute from './utils/RouteHelper';
 import ContribPage from './components/Page';
 import Demo from './components/Demo';
+
+MapTo('contrib/wcm/components/language-navigation')(withComponentMappingContext(SpaLanguageNavigationV1));
+MapTo('contrib/wcm/components/navigation')(withComponentMappingContext(SpaNavigationV1));
 
 MapTo('contrib/wcm/components/text')(TextV2, {isEmpty: TextV2IsEmptyFn});
 MapTo('contrib/wcm/components/breadcrumb')(withComponentMappingContext(SpaBreadCrumbV2), {isEmpty: BreadCrumbV2IsEmptyFn});
@@ -34,6 +39,6 @@ MapTo('contrib/wcm/components/title')(withComponentMappingContext(TitleV2), {isE
 MapTo('contrib/wcm/components/accordion')(withComponentMappingContext(AccordionV1), {isEmpty: AccordionV1IsEmptyFn});
 MapTo('contrib/wcm/components/carousel')(withComponentMappingContext(CarouselV1), {isEmpty: CarouselV1IsEmptyFn});
 MapTo('contrib/wcm/components/container')(withComponentMappingContext(ContainerV1), {isEmpty: ContainerV1IsEmptyFn});
-MapTo('core-components-examples/components/demo')(withComponentMappingContext(Demo), {isEmpty: () => false});
-MapTo('core-components-examples/components/demo/component')(withComponentMappingContext(Container), {isEmpty: () => false});
+MapTo('core-components-examples/components/demo')(withComponentMappingContext(Demo));
+MapTo('core-components-examples/components/demo/component')(withComponentMappingContext(Container));
 

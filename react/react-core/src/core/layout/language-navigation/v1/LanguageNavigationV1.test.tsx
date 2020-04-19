@@ -38,7 +38,7 @@ it('Renders a basic navigation properly', () => {
     const properties:LanguageNavigationV1Model = {
         hidePlaceHolder: false,
         isInEditor: false,
-        children: items
+        items: items
     };
     const wrapper = shallow(<LanguageNavigationV1  {...properties} />);
     const nav = wrapper.find('nav');

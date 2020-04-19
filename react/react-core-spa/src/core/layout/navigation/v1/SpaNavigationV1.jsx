@@ -20,6 +20,14 @@ import {Link} from '../../../../utils/Link';
 
 export class SpaNavigationV1 extends NavigationV1{
 
+    isEmpty(){
+        return super.isEmpty();
+    }
+
+    renderComponent(){
+        return super.renderComponent();
+    }
+
     renderLink(item, isActive){
         return (
             <Link to={item.url}
