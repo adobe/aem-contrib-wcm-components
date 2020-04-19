@@ -15,7 +15,7 @@
  */
 
 import React, {MouseEvent} from 'react';
-import {CoreComponentModel, CoreComponentState,AbstractCoreComponent} from "../../../..";
+import {CoreComponentModel, CoreComponentState,AbstractCoreComponent} from "../../../AbstractCoreComponent";
 
 export interface ButtonV1Model extends CoreComponentModel{
     text?: string;

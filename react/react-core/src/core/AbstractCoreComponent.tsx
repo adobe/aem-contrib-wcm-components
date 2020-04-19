@@ -46,7 +46,7 @@ export abstract class AbstractCoreComponent<Model extends CoreComponentModel, St
      * @param baseCssCls the base BEM css class to be used for the component - this can be overloaded
      * @param emptyPlaceHolderText empty placeholder label for when the component needs to be configured in author mode
      */
-    constructor(props:Model,baseCssCls:string,emptyPlaceHolderText:string) {
+    protected constructor(props:Model,baseCssCls:string,emptyPlaceHolderText:string) {
         super(props);
         this.baseCssCls = baseCssCls;
         this.emptyPlaceHolderText = emptyPlaceHolderText;
