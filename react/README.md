@@ -14,7 +14,7 @@ First install :
 
 then in the root folder run: 
 
-maven clean intall -Drat.skip -PignoreCodeCoverageCheck,autoInstallPackage,autoInstallSinglePackage
+maven clean install -Drat.skip -PignoreCodeCoverageCheck,autoInstallPackage,autoInstallSinglePackage
 
 Check:
 http://localhost:4502/content/contrib-react-spacomponent-examples/library/button.html
