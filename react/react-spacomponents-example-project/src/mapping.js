@@ -5,6 +5,9 @@ import {
     TextV2 ,
     ButtonV1IsEmptyFn,TextV2IsEmptyFn,
     TeaserV1,
+    DownloadV1, DownloadV1IsEmptyFn,
+    SeparatorV1, SeparatorV1IsEmptyFn,
+    ListV2IsEmptyFn,
     TeaserV1IsEmptyFn
 } from "aem-core-components-contributions-react-core";
 import {
@@ -15,6 +18,7 @@ import {
     SpaBreadCrumbV2,
     SpaButtonV1,
     SpaNavigationV1,
+    SpaListV2,
     SpaLanguageNavigationV1
 } from "aem-core-components-contributions-react-core-spa";
 
@@ -25,9 +29,13 @@ import withRoute from './utils/RouteHelper';
 import ContribPage from './components/Page';
 import Demo from './components/Demo';
 
-MapTo('contrib/wcm/components/language-navigation')(withComponentMappingContext(SpaLanguageNavigationV1));
+MapTo('contrib/wcm/components/languagenavigation')(withComponentMappingContext(SpaLanguageNavigationV1));
 MapTo('contrib/wcm/components/navigation')(withComponentMappingContext(SpaNavigationV1));
 
+MapTo('contrib/wcm/components/list')(SpaListV2, {isEmpty: ListV2IsEmptyFn});
+MapTo('contrib/wcm/components/separator')(SeparatorV1, {isEmpty: SeparatorV1IsEmptyFn});
+
+MapTo('contrib/wcm/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
 MapTo('contrib/wcm/components/text')(TextV2, {isEmpty: TextV2IsEmptyFn});
 MapTo('contrib/wcm/components/breadcrumb')(withComponentMappingContext(SpaBreadCrumbV2), {isEmpty: BreadCrumbV2IsEmptyFn});
 MapTo('contrib/wcm/components/button')(SpaButtonV1, {isEmpty: ButtonV1IsEmptyFn});
