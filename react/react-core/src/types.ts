@@ -15,8 +15,6 @@
  */
 import React from 'react';
 
-export * from "./core/common/editorcontext";
-export * from "./core/util/EditorContextUtils";
 export * from "./core/AbstractCoreComponent";
 
 export * from './core/authoring/button/v1/ButtonV1';

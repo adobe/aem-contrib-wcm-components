@@ -16,8 +16,6 @@
 //general
 export * from './types';
 
-export * from "./core/common/editorcontext";
-export * from "./core/util/EditorContextUtils";
 export * from "./core/AbstractCoreComponent";
 
 export * from "./core/authoring/list/v2/ListV2";

@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import PlaceHolder from "./common/placeholder";
+import {EditorPlaceHolder} from "./common/placeholder";
 
 export interface CoreComponentModel {
     hidePlaceHolder: boolean
@@ -43,7 +43,7 @@ export abstract class AbstractCoreComponent<Model extends CoreComponentModel, St
     /**
      * Base Constructor
      * @param props component properties
-     * @param baseCssCls the base BEM css class to be used for the component - this can be overloaded
+     * @param baseCssCls the base BEM css class to be used for the component
      * @param emptyPlaceHolderText empty placeholder label for when the component needs to be configured in author mode
      */
     protected constructor(props:Model,baseCssCls:string,emptyPlaceHolderText:string) {
@@ -68,10 +68,8 @@ export abstract class AbstractCoreComponent<Model extends CoreComponentModel, St
 
     __renderPlaceHolder(title?:string, emptyText?:string):JSX.Element{
         return(
-            <PlaceHolder
+            <EditorPlaceHolder
                 emptyTextAppend={emptyText}
-                hidePlaceHolder={this.__hidePlaceHolder()}
-                isEmpty={this.isEmpty()}
                 componentTitle={title}
             />
         )
@@ -86,7 +84,7 @@ export abstract class AbstractCoreComponent<Model extends CoreComponentModel, St
                     this.renderComponent()
                 }
                 {
-                    this.props.isInEditor && this.__renderPlaceHolder(this.emptyPlaceHolderText)
+                    (isEmpty && this.props.isInEditor && !this.__hidePlaceHolder()) && this.__renderPlaceHolder(this.emptyPlaceHolderText)
                 }
             </>
         )
