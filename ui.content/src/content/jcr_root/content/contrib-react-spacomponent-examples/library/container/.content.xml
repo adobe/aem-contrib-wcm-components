@@ -102,25 +102,6 @@
                                 textIsRich="true"/>
                         </container>
                     </component>
-                    <info
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="contrib/wcm/components/tabs">
-                        <properties
-                            cq:panelTitle="Properties"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/properties"
-                            reference="../../component"/>
-                        <markup
-                            cq:panelTitle="Markup"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/markup"
-                            reference="../../component"/>
-                        <json
-                            cq:panelTitle="JSON"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/json"
-                            reference="../../component"/>
-                    </info>
                 </demo_975671813>
                 <title_290384498
                     cq:styleIds="[1544759676459]"
@@ -178,25 +159,7 @@
                             </image>
                         </container>
                     </component>
-                    <info
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="contrib/wcm/components/tabs">
-                        <properties
-                            cq:panelTitle="Properties"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/properties"
-                            reference="../../component"/>
-                        <markup
-                            cq:panelTitle="Markup"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/markup"
-                            reference="../../component"/>
-                        <json
-                            cq:panelTitle="JSON"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/json"
-                            reference="../../component"/>
-                    </info>
+                    
                 </demo_975671829>
                 <title_290384408
                     cq:styleIds="[1544759676459]"
@@ -240,25 +203,6 @@
                                 textIsRich="true"/>
                         </container>
                     </component>
-                    <info
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="contrib/wcm/components/tabs">
-                        <properties
-                            cq:panelTitle="Properties"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/properties"
-                            reference="../../component"/>
-                        <markup
-                            cq:panelTitle="Markup"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/markup"
-                            reference="../../component"/>
-                        <json
-                            cq:panelTitle="JSON"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/json"
-                            reference="../../component"/>
-                    </info>
                 </demo>
                 <title_290384412
                     cq:styleIds="[1544759676459]"
@@ -302,25 +246,6 @@
                                 textIsRich="true"/>
                         </container>
                     </component>
-                    <info
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="contrib/wcm/components/tabs">
-                        <properties
-                            cq:panelTitle="Properties"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/properties"
-                            reference="../../component"/>
-                        <markup
-                            cq:panelTitle="Markup"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/markup"
-                            reference="../../component"/>
-                        <json
-                            cq:panelTitle="JSON"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/json"
-                            reference="../../component"/>
-                    </info>
                 </demo_295699411>
                 <title_290384473
                     cq:styleIds="[1544759676459]"
@@ -421,25 +346,6 @@
                             </container_793091227_>
                         </container>
                     </component>
-                    <info
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="contrib/wcm/components/tabs">
-                        <properties
-                            cq:panelTitle="Properties"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/properties"
-                            reference="../../component"/>
-                        <markup
-                            cq:panelTitle="Markup"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/markup"
-                            reference="../../component"/>
-                        <json
-                            cq:panelTitle="JSON"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="core-components-examples/components/demo/json"
-                            reference="../../component"/>
-                    </info>
                 </demo_2146960736>
             </responsivegrid>
         </root>
