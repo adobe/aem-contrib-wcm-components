@@ -28,7 +28,7 @@ Currently supported / exported components:
 -  CoreComponentModel (interface)
 -  CoreComponentState (interface)
 
-###Form
+### Form
 As of now I have no plans to provide support for form components.
 Feel free to assist with PR's.
 

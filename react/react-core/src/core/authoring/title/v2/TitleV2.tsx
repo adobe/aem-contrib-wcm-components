@@ -43,14 +43,18 @@ export class TitleV2<Model extends TitleV2Model, State extends CoreComponentStat
         return TitleV2IsEmptyFn(this.props);
     }
 
+    generateLink(){
+        return (
+            <a className={this.baseCssCls + '__link'} href={this.props.linkURL ? this.props.linkURL : '#'}>
+                {this.props.text}
+            </a>
+        )
+    }
+
     getContents(){
 
         if( !this.props.linkDisabled){
-            return (
-                <a className={this.baseCssCls + '__link'} href={this.props.linkURL ? this.props.linkURL : '#'}>
-                    {this.props.text}
-                </a>
-            )
+            return this.generateLink();
         }
 
         return (

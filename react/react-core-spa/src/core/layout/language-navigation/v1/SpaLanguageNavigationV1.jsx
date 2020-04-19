@@ -15,21 +15,26 @@
  */
 
 import React from 'react';
-import {NavigationV1} from "aem-core-components-contributions-react-core";
+import {LanguageNavigationV1} from "aem-core-components-contributions-react-core";
 import {Link} from '../../../../utils/Link';
 
-export class SpaNavigationV1 extends NavigationV1{
+export class SpaLanguageNavigationV1 extends LanguageNavigationV1{
 
     renderLink(item, isActive){
-        return (
-            <Link to={item.url}
-                  className={this.baseCssCls + '__item-link'}
-                  aria-current={isActive && 'page'}
-                  title={item.title}
-                  itemProp="item">
-                {item.title}
-            </Link>
-        )
+        if(item.level > 0){
+            return (
+                <Link className={this.baseCssCls + '__item-link'}
+                      to={item.url}
+                      hrefLang={item.language}
+                      lang={item.language}
+                      rel="alternate"
+                      title={item.title}>{item.title}</Link>
+            )
+        }else{
+            return (
+                <span className={ this.baseCssCls + '__item-title'} lang={item.language}>{item.title}</span>
+            )
+        }
     }
 
 }

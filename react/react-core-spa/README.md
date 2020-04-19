@@ -20,10 +20,14 @@ Routed core components (using react-dom-router)
  - SpaBreadcrumb (v2) 
  - SpaButton (V1) 
  - SpaList (V2)
+ - SpaTeaser (V1)
+ - SpaTitle (V2)
+ - SpaNavigation (V1)
+ - SpaLanguageLanguage (V1)
 
 ## how does this help me??
 
-Please check the github source folder ( react maven sub module ) on how this all works together
+Please check the github source folder ( react maven sub module ) on how this all works together. 
 You leverage these classes by importing them and then exposing them using MapTo.
 Example provided in react-spacomponents-example-project >  in mapping.js.
 
