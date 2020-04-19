@@ -26,26 +26,6 @@ export function CarouselV1IsEmptyFn(props){
 
 export class CarouselV1 extends AbstractCoreContainerComponent {
 
-    interval;
-
-
-    static defaultProps = {
-        isInEditor: false,
-        autoplay: false,
-        cqItems: {},
-        cqItemsOrder: [],
-        accessibilityLabel: 'Carousel',
-        accessibility: {
-            play: 'Play',
-            pause: 'Pause',
-            next: 'Next',
-            previous: 'Previous',
-            slide: 'Slide %1$u of %2$u',
-            indicator: 'Slide %1$u',
-            indicators: 'Choose a slide to display'
-        }
-    };
-
     constructor(props) {
         super(props,"cmp-carousel");
 
@@ -122,7 +102,7 @@ export class CarouselV1 extends AbstractCoreContainerComponent {
         this.nextSlide();
     };
 
-    clearAutoPlay = () => {
+    clearAutoPlay(){
         clearInterval(this.interval);
     };
 
@@ -264,7 +244,7 @@ export class CarouselV1 extends AbstractCoreContainerComponent {
                 </button>
                 {
                     this.props.autoplay &&
-                    <>
+                    <React.Fragment>
                         <button className={`${this.baseCssCls}__action ${this.baseCssCls}__action--pause ` + (!this.state.autoPlay ? this.baseCssCls + '__action--disabled' : '')}
                                 type="button"
                                 aria-label={this.props.accessibility.pause}
@@ -280,7 +260,7 @@ export class CarouselV1 extends AbstractCoreContainerComponent {
                             <span className={this.baseCssCls + '__action-icon'}></span>
                             <span className={this.baseCssCls + '__action-text'}>{this.props.accessibility.play}</span>
                         </button>
-                    </>
+                    </React.Fragment>
                 }
 
             </div>
@@ -288,3 +268,20 @@ export class CarouselV1 extends AbstractCoreContainerComponent {
     }
 
 }
+
+CarouselV1.defaultProps = {
+    isInEditor: false,
+    autoplay: false,
+    cqItems: {},
+    cqItemsOrder: [],
+    accessibilityLabel: 'Carousel',
+    accessibility: {
+        play: 'Play',
+        pause: 'Pause',
+        next: 'Next',
+        previous: 'Previous',
+        slide: 'Slide %1$u of %2$u',
+        indicator: 'Slide %1$u',
+        indicators: 'Choose a slide to display'
+    }
+};

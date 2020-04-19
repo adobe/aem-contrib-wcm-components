@@ -22,7 +22,7 @@ export class SpaButtonV1 extends ButtonV1{
 
     renderComponent(){
         return (
-            <>
+            <React.Fragment>
                 {
                     this.props.link &&
                     <Link  onClick={this.handleOnClick} aria-label={this.props.ariaLabel} className={this.baseCssCls} to={this.props.link}>
@@ -30,7 +30,7 @@ export class SpaButtonV1 extends ButtonV1{
                     </Link>
                 }
                 {   !this.props.link && super.renderComponent()  }
-            </>
+            </React.Fragment>
         )
     }
 }
