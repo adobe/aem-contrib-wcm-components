@@ -410,20 +410,62 @@
                             </policy_1559057070844>
                         </container>
                     </v1>
+                    <policy_1587036451305
+                        jcr:lastModified="{Date}2020-04-16T13:27:43.576+02:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="test"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        backgroundColorEnabled="true"
+                        backgroundImageEnabled="true">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1587036451305>
                 </container>
                 <page jcr:primaryType="nt:unstructured">
                     <default
-                            jcr:lastModified="{Date}2019-02-14T14:27:11.516+01:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            jcr:title="Core Components Examples - Page"
-                            sling:resourceType="wcm/core/components/policy/policy"
-                            appResourcesClientlib="cmp-examples.site"
-                            clientlibs="cmp-examples.base">
+                        jcr:lastModified="{Date}2019-02-14T14:27:11.516+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Core Components Examples - Page"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        appResourcesClientlib="cmp-examples.site"
+                        clientlibs="cmp-examples.base">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                     </default>
                 </page>
+                <tabs jcr:primaryType="nt:unstructured">
+                    <policy_1586692855073
+                        jcr:lastModified="{Date}2020-04-14T14:15:13.920+02:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="test"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/wcm/foundation/components/responsivegrid,group:Contribution Examples,group:Core Components Examples]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1586692855073>
+                </tabs>
             </components>
         </wcm>
     </contrib>
+    <core jcr:primaryType="nt:unstructured">
+        <wcm jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <tabs jcr:primaryType="nt:unstructured">
+                    <v1 jcr:primaryType="nt:unstructured">
+                        <tabs jcr:primaryType="nt:unstructured">
+                            <policy_1586866451142
+                                jcr:lastModified="{Date}2020-04-14T14:14:28.874+02:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="test"
+                                sling:resourceType="wcm/core/components/policy/policy"
+                                components="group:Contribution Examples">
+                                <jcr:content jcr:primaryType="nt:unstructured"/>
+                            </policy_1586866451142>
+                        </tabs>
+                    </v1>
+                </tabs>
+            </components>
+        </wcm>
+    </core>
 </jcr:root>
