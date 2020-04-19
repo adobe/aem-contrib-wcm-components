@@ -6,8 +6,11 @@
 This branch is created to provide react support for the core components.
 ## Installation
 
-First install : SP 6.5.4 +  (this is for these examples only. for usage, 6.4 should suffice.)
-Core components + examples
+First install :
+
+- SP 6.5.4  
+- Core components 
+- Core components examples
 
 then in the root folder run: 
 
