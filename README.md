@@ -7,6 +7,10 @@ This repository was created to allow community contributions for AEM WCM Compone
 
 This is a good place to submit your ideas and have them reviewed by the community. It's also a good place for quick iterations. Once an idea matures and starts being used, we will consider it for inclusion into the Core Components.
 
+## Active Projects
+
+* [React Core Component – beta proposal](https://github.com/adobe/aem-contrib-wcm-components/tree/feature/react-wrapper/react/react-core)
+
 ## Mailing List
 
 For discussions and Q&A, you can use our public mailing list hosted on [googlegroups.com](https://groups.google.com/forum/#!forum/aem-core-components-dev). 
