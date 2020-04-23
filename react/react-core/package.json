@@ -21,7 +21,7 @@
   "scripts": {
     "linter": "eslint --ext .ts,.tsx .",
     "linter:fix": "eslint --ext .ts,.tsx . --fix",
-    "test": "jest",
+    "test": "jest ",
     "test:coverage": "jest --coverage",
     "test:debug": "jest --coverage --watchAll",
     "build": "webpack && tsc -p src/tsconfig.types.json",
@@ -36,6 +36,14 @@
     "tmprelease": "node release.js"
   },
   "dependencies": {
+    "moment": "^2.24.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-moment": "^0.9.7"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3",
+    "@types/react-dom": "^16.9.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -44,14 +52,17 @@
     "@types/jest": "^25.1.3",
     "@types/node": "^12.12.31",
     "@types/react": "^16.9.25",
-    "@types/react-dom": "^16.9.5",
-    "moment": "^2.24.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-moment": "^0.9.7",
-    "typescript": "^3.8.3"
-  },
-  "devDependencies": {
+    "ts-jest": "25.3.1",
+    "tslint-etc": "1.9.2",
+    "tslint-no-toplevel-property-access": "0.0.2",
+    "tslint-no-unused-expression-chai": "0.0.3",
+    "jest": "25.3.0",
+    "jest-environment-jsdom-fourteen": "1.0.1",
+    "jest-resolve": "25.3.0",
+    "jest-watch-typeahead": "0.4.2",
+    "tslint": "5.9.1",
+    "ts-loader": "^6.2.2",
+  
     "@adobe/cq-spa-component-mapping": "~1.0.3",
     "@adobe/cq-spa-page-model-manager": "~1.1.0",
     "@babel/cli": "^7.7.7",
@@ -75,17 +86,6 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "jest": "25.3.0",
-    "jest-environment-jsdom-fourteen": "1.0.1",
-    "jest-resolve": "25.3.0",
-    "jest-watch-typeahead": "0.4.2",
-    "typescript": "^3.8.3",
-    "tslint": "5.9.1",
-    "ts-loader": "^6.2.2",
-    "ts-jest": "25.3.1",
-    "tslint-etc": "1.9.2",
-    "tslint-no-toplevel-property-access": "0.0.2",
-    "tslint-no-unused-expression-chai": "0.0.3",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",
     "webpack-node-externals": "^1.7.2"

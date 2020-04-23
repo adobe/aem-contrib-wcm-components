@@ -4,9 +4,9 @@
   "dependencies": {
     "aem-core-components-contributions-react-core": "file:../react-core",
     "aem-core-components-contributions-react-core-spa": "file:../react-core-spa",
-    "@adobe/cq-react-editable-components": "^1.2.0",
-    "@adobe/cq-spa-component-mapping": "^1.0.3",
-    "@adobe/cq-spa-page-model-manager": "^1.1.1",
+    "@adobe/cq-react-editable-components": "file:/Users/raaijmak/workspace/spa-react-editable-components",
+    "@adobe/cq-spa-component-mapping": "file:/Users/raaijmak/workspace/spa-component-mapping",
+    "@adobe/cq-spa-page-model-manager": "file:/Users/raaijmak/workspace/spa-page-model-manager",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
