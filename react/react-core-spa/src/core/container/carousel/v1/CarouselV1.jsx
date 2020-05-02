@@ -18,11 +18,19 @@ import React from 'react';
 
 import {AbstractCoreContainerComponent} from "../../../AbstractCoreContainerComponent";
 import {ComponentMapping} from '@adobe/cq-react-editable-components';
-import {sprintf} from 'sprintf';
 
 export function CarouselV1IsEmptyFn(props){
     return props.cqItems == null || props.cqItems.length === 0;
 }
+
+const formatFn = (value, args) => {
+    var content = value;
+    for (var i = 0; i < args.length; i++) {
+        var replacement = '{' + i + '}';
+        content = content.replace(replacement, args[i]);
+    }
+    return content;
+};
 
 export class CarouselV1 extends AbstractCoreContainerComponent {
 
@@ -40,8 +48,8 @@ export class CarouselV1 extends AbstractCoreContainerComponent {
             pause: 'Pause',
             next: 'Next',
             previous: 'Previous',
-            slide: 'Slide %1$u of %2$u',
-            indicator: 'Slide %1$u',
+            slide: 'Slide {0} of {1}',
+            indicator: 'Slide %{0}',
             indicators: 'Choose a slide to display'
         }
     };
@@ -66,14 +74,6 @@ export class CarouselV1 extends AbstractCoreContainerComponent {
             this.autoPlay();
         }
 
-    }
-
-    handleOnButtonPrev(){
-        this.prevSlide();
-    }
-
-    handleOnButtonNext(){
-        this.nextSlide();
     }
 
     handleOnMouseEnter(){
@@ -192,7 +192,7 @@ export class CarouselV1 extends AbstractCoreContainerComponent {
         const display = !!(isActive || this.props.isInEditor);
 
         const cssClass = isActive ? `${this.baseCssCls}__item ${this.baseCssCls}__item--active` : `${this.baseCssCls}__item`;
-        const ariaLabel = sprintf(this.props.accessibility.slide, (index + 1), this.props.cqItemsOrder.length);
+        const ariaLabel = formatFn(this.props.accessibility.slide, [(index + 1), this.props.cqItemsOrder.length]);
 
         return (
             <div key={'item-' + index}
@@ -230,7 +230,7 @@ export class CarouselV1 extends AbstractCoreContainerComponent {
                         const item = this.props.cqItems[key];
 
                         const cssClass = (index === this.state.activeIndex) ? `${this.baseCssCls}__indicator ${this.baseCssCls}__indicator--active` : `${this.baseCssCls}__indicator`;
-                        const ariaLabelItem = sprintf(this.props.accessibility.indicator, (index + 1));
+                        const ariaLabelItem = formatFn(this.props.accessibility.indicator, [(index + 1)]);
                         return (
                             <li
                                 key={'item-' + index}
