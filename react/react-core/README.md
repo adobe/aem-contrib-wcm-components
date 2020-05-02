@@ -6,6 +6,8 @@
 This is a branch of the AEM WCM Components - Community Contributions maintained by Niek Raaijmakers for now.
 It serves as proposal to introduce react wrappers, that are compatible to be used with web components or the spa editor.
 
+[Introduction Video and Demo](https://www.youtube.com/watch?v=9759AhM7fAc)
+
 Currently supported / exported components:
 
 ### Page Authoring
