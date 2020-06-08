@@ -15,7 +15,7 @@ import {Route} from 'react-router-dom';
 const withRoute = (WrappedComponent, extension) => {
     return class CompositeRoute extends Component {
         render() {
-              //@ts-ignore
+              // @ts-ignore
             let routePath = this.props.cqPath;
             if (!routePath) {
                 return <WrappedComponent {...this.props}/>;

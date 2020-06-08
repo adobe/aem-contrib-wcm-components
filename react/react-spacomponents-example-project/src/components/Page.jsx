@@ -8,9 +8,9 @@ import './Page.css';
 class ContribPage extends Page {
 
     get containerProps() {
-        //@ts-ignore
+        // @ts-ignore
         let attrs = super.containerProps;
-          //@ts-ignore
+          // @ts-ignore
         attrs.className = (attrs.className || '') + ' ContribPage ' + (this.props.cssClassNames || '');
         return attrs
     }
