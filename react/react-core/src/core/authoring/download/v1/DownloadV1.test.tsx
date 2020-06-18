@@ -16,7 +16,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
 
 
 import {DownloadV1, DownloadV1Model} from "./DownloadV1";
@@ -58,11 +58,9 @@ it('Renders out properly', () => {
         url: "/content/core-components-examples/library/page-authoring/download/jcr:content/root/responsivegrid/demo_68071479/component/download/file.coredownload.jpeg/lava-into-ocean.jpg"
     };
 
-    const wrapper = shallow(<DownloadV1  {...props} />);
-
-    const properties = wrapper.find('.cmp-download__property');
-
-    expect(properties).toHaveLength(3);
+    const wrapper = mount(<DownloadV1  {...props} />);
+    wrapper.contains('.cmp-download__property');
+    expect(wrapper.find('.cmp-download__property')).toHaveLength(3);
 
     const button = wrapper.find('.cmp-download__action');
     expect(button).toHaveLength(1);
