@@ -1,10 +1,10 @@
 import React from 'react';
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
-import * as moment from 'moment';
 
 export interface ListV2Item {
     url?:string
     lastModified?:number
+    lastModifiedFormatted?:string
     description?:string
     path:string
     title:string
@@ -50,11 +50,9 @@ export class ListV2<Model extends ListV2Model, State extends CoreComponentState>
 
     renderItemModificationDate(item:ListV2Item, index:number){
 
-        const date:moment.Moment = moment.utc(item.lastModified);
-        const lastModifiedString = date.format(this.props.dateFormatString.toUpperCase());
-
+        const dateStringToDisplay = item.lastModifiedFormatted ? item.lastModifiedFormatted : "";
         return (
-            <span className={this.baseCssCls + '__item-date'}>{lastModifiedString}</span>
+            <span className={this.baseCssCls + '__item-date'}>{dateStringToDisplay}</span>
         )
     }
 

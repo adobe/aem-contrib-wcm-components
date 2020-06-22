@@ -1,6 +1,6 @@
 {
   "name": "aem-core-components-contributions-react-core",
-  "version": "0.1.12",
+  "version": "0.1.14",
   "keywords": [
     "adobe",
     "aem",
@@ -45,7 +45,6 @@
     "@types/node": "^12.12.31",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
-    "moment": "^2.24.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-moment": "^0.9.7",
