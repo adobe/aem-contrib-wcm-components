@@ -1,0 +1,65 @@
+<ng-container *ngIf="isAllowedComponentsApplicable(); else container">
+    <div [class]="getAllowedComponentListPlaceholderClassNames()">
+        <div [attr.data-text]="getAllowedComponentListLabel()" [class]="allowedComponentListTitleClassNames"></div>
+        <ng-container *ngFor="let allowedComponent of getAllowedComponents()">
+            <div [attr.data-cq-data-path]="allowedComponent.path"
+                 [attr.data-emptytext]="allowedComponent.title"
+                 [class]="allowedComponentClassNames"></div>
+        </ng-container>
+    </div>
+</ng-container>
+<ng-template #container>
+    
+    <div class="carousel">
+        <div id="{{id}}" class="{{class}}" role="group" [attr.aria-roledescription]="accessibilityLabel">
+            <div class="{{class}}__content" (mouseenter)="handleOnMouseEnter()" (mouseleave)="handleOnMouseLeave()"
+            >
+                <div *ngFor="let itemKey of cqItemsOrder; let i = index"
+                     [class]="getSlideCssClass(i)"
+                     id="{{id}}-item-{{i}}"
+                     role="tabpanel"
+                     [attr.aria-label]="getSlideAriaLabel(i)">
+                    <div
+                            [aemModelProvider]
+                            [cqItem]="getItem(itemKey)"
+                            [cqPath]="getDataPath(itemKey)"
+                            [itemName]="itemKey"
+                            [attr.data-cq-data-path]="getDataPath(itemKey)"></div>
+                </div>
+                
+                <div class="{{class}}__actions">
+                    <button class="{{class}}__action {{class}}__action--previous"
+                            type="button"
+                            [attr.aria-label]="accessibility.previous"
+                            (click)="handleOnButtonPrev()">
+                        <span class="{{class}}__action-icon"></span>
+                        <span class="{{class}}__action-text" [innerText]="accessibility.previous"></span>
+                    </button>
+                    <button class="{{class}}__action {{class}}__action--next"
+                            type="button"
+                            [attr.aria-label]="accessibility.next"
+                            (click)="handleOnButtonNext()">
+                        <span class="{{class}}__action-icon"></span>
+                        <span class="{{class}}__action-text" [innerText]="accessibility.next"></span>
+                    </button>
+                
+                </div>
+                <ol class="{{class}}__indicators" role="tablist" [attr.aria-label]="accessibility.indicators">
+                    <li *ngFor="let itemKey of cqItemsOrder; let i = index"
+                        [class]="getIndicatorCssClass(i)"
+                        role="tab"
+                        (click)="handleIndicatorClick(i)"
+                        [attr.aria-controls]="getAriaControlsId(i)"
+                        [attr.aria-label]="getIndicatorAriaLabel(i)" [innerText]="cqItems[itemKey]['cq:panelTitle']"></li>
+                </ol>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div *ngIf="isInEditMode;"
+         [attr.data-cq-data-path]="placeholderPath"
+         [class]="getPlaceholderClassNames()">
+    </div>
+    
+</ng-template>

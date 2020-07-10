@@ -1,0 +1,50 @@
+<div *ngIf="isEmpty; then placeHolderBlock else componentBlock"></div>
+
+<ng-template #placeHolderBlock>
+    <core-placeholder componentTitle="ButtonV1"></core-placeholder>
+</ng-template>
+
+<ng-template #componentBlock>
+    <div class="{{containerCssClass}}">
+        <div [ngSwitch]="titleType">
+            <h1 *ngSwitchCase="'h1'" class="{{class}}__title">
+                <a *ngIf="url" class="{{class}}__title-link" [href]="url">{{title}}</a>
+            </h1>
+            <h2 *ngSwitchCase="'h2'" class="{{class}}__title">
+                <a *ngIf="url" class="{{class}}__title-link" [href]="url">{{title}}</a>
+            </h2>
+            <h4 *ngSwitchCase="'h4'" class="{{class}}__title">
+                <a *ngIf="url" class="{{class}}__title-link" [href]="url">{{title}}</a>
+            </h4>
+            <h5 *ngSwitchCase="'h5'" class="{{class}}__title">
+                <a *ngIf="url" class="{{class}}__title-link" [href]="url">{{title}}</a>
+            </h5>
+            <h6 *ngSwitchCase="'h6'" class="{{class}}__title">
+                <a *ngIf="url" class="{{class}}__title-link" [href]="url">{{title}}</a>
+            </h6>
+            <h3 *ngSwitchDefault  class="{{class}}__title">
+                <a *ngIf="url" class="{{class}}__title-link" [href]="url">{{title}}</a>
+            </h3>
+        </div>
+       
+        <div class="{{class}}__description" *ngIf="isDisplayingDescription" [innerHTML]="description | safeHtml"></div>
+        <dl *ngIf="isDisplayingProperties" class="{{class}}__properties">
+            <div *ngIf="isDisplayingFilename" class="{{class}}__property {{class}}__property--filename">
+                <dt class="{{class}}__property-label">{{labels.filename}}</dt>
+                <dd class="{{class}}__property-content">{{filename}}</dd>
+            </div>
+            <div *ngIf="isDisplayingFilesize" class="{{class}}__property {{class}}__property--size">
+                <dt class="{{class}}__property-label">{{labels.filesize}}</dt>
+                <dd class="{{class}}__property-content">{{size}}</dd>
+            </div>
+            <div *ngIf="isDisplayingFileformat" class="{{class}}__property {{class}}__property--format">
+                <dt class="{{class}}__property-label">{{labels.fileformat}}</dt>
+                <dd class="{{class}}__property-content">{{format}}</dd>
+            </div>
+        </dl>
+        
+        <a *ngIf="isDisplayingDownloadButton" class="{{class}}__action" href="{{url}}">
+            <span class="{{class}}__action-text">{{actionText}}</span>
+        </a>
+    </div>
+</ng-template>

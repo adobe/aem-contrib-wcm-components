@@ -1,0 +1,62 @@
+<div *ngIf="isEmpty; then placeHolderBlock else componentBlock"></div>
+
+<ng-template #placeHolderBlock>
+    <core-placeholder componentTitle="NavigationV1"></core-placeholder>
+</ng-template>
+
+<ng-template #componentBlock>
+    
+    <nav class="{{class}}"
+         role="navigation"
+         itemScope itemType="http://schema.org/SiteNavigationElement"
+         [attr.aria-label]="accessibilityLabel">
+        <ul class="{{class}}__group">
+            <ng-container *ngFor="let childItem of items; let i = index">
+                <ng-container [ngTemplateOutlet]="navigationItem" [ngTemplateOutletContext]="{item:childItem}"></ng-container>
+            </ng-container>
+        </ul>
+    </nav>
+
+</ng-template>
+
+<ng-template #navigationGroup let-item='item'>
+    <ul class="{{class}}__group">
+        <ng-container *ngFor="let childItem of item.children; let i = index">
+            <ng-container [ngTemplateOutlet]="navigationItem" [ngTemplateOutletContext]="{item:childItem}"></ng-container>
+        </ng-container>
+    </ul>
+</ng-template>
+
+
+<ng-template #navigationItem let-item='item'>
+    <li [ngClass]="getItemCssClass(item)">
+        <ng-container [ngTemplateOutlet]="navigationLink" [ngTemplateOutletContext]="{item:item}"></ng-container>
+        <ng-container *ngIf="!!item.children && item.children.length > 0" [ngTemplateOutlet]="navigationGroup"
+                      [ngTemplateOutletContext]="{item:item}"></ng-container>
+    </li>
+</ng-template>
+
+<ng-template #navigationLink let-item='item'>
+    <ng-container *ngIf="isItemRouted(item)" [ngTemplateOutlet]="routedLink" [ngTemplateOutletContext]="{item:item}"></ng-container>
+    <ng-container *ngIf="!isItemRouted(item)" [ngTemplateOutlet]="staticLink" [ngTemplateOutletContext]="{item:item}"></ng-container>
+</ng-template>
+
+
+<ng-template #routedLink let-item='item'>
+    <a class="{{class}}__item-link"
+       title="{{item.title}}"
+       routerLink="{{item.url}}"
+       routerLinkActive="active"
+       [attr.aria-current]="item.active">
+        {{item.title}}
+    </a>
+</ng-template>
+
+<ng-template #staticLink let-item='item'>
+    <a class="{{class}}__item-link"
+       title="{{item.title}}"
+       href="{{item.url}}"
+       [attr.aria-current]="item.active">
+        {{item.title}}
+    </a>
+</ng-template>

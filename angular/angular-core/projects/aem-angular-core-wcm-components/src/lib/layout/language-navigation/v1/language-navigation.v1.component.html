@@ -1,0 +1,58 @@
+<div *ngIf="isEmpty; then placeHolderBlock else componentBlock"></div>
+
+<ng-template #placeHolderBlock>
+    <core-placeholder componentTitle="LanguageNavigationV1"></core-placeholder>
+</ng-template>
+
+<ng-template #componentBlock>
+    
+    <nav class="{{class}}"
+         role="navigation"
+         itemScope itemType="http://schema.org/SiteNavigationElement"
+         [attr.aria-label]="accessibilityLabel">
+        <ul class="{{class}}__group">
+            <ng-container *ngFor="let childItem of items; let i = index">
+                <ng-container [ngTemplateOutlet]="navigationItem" [ngTemplateOutletContext]="{item:childItem}"></ng-container>
+            </ng-container>
+        </ul>
+    </nav>
+
+</ng-template>
+
+<ng-template #navigationGroup let-item='item'>
+    <ul class="{{class}}__group">
+        <ng-container *ngFor="let childItem of item.children; let i = index">
+            <ng-container [ngTemplateOutlet]="navigationItem" [ngTemplateOutletContext]="{item:childItem}"></ng-container>
+        </ng-container>
+    </ul>
+</ng-template>
+
+
+<ng-template #navigationItem let-item='item'>
+    <li [ngClass]="getItemCssClass(item)">
+        <ng-container *ngIf="item.level===0">
+            <ng-container [ngTemplateOutlet]="navigationSpan" [ngTemplateOutletContext]="{item:item}"></ng-container>
+        </ng-container>
+        <ng-container *ngIf="item.level!==0">
+            <ng-container [ngTemplateOutlet]="navigationLink" [ngTemplateOutletContext]="{item:item}"></ng-container>
+        </ng-container>
+        <ng-container *ngIf="!!item.children && item.children.length > 0" [ngTemplateOutlet]="navigationGroup"
+                      [ngTemplateOutletContext]="{item:item}"></ng-container>
+    </li>
+</ng-template>
+
+<ng-template #navigationSpan let-item='item'>
+    <span class="{{class}}__item-title" lang="{{item.language}}">{{item.title}}</span>
+</ng-template>
+
+<ng-template #navigationLink let-item='item'>
+    <a class="{{class}}__item-link"
+       title="{{item.title}}"
+       href="{{item.url}}"
+       [attr.hrefLang]="item.language"
+       lang="{{item.language}}"
+       rel="alternate"
+       [attr.aria-current]="item.active">
+        {{item.title}}
+    </a>
+</ng-template>

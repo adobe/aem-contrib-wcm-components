@@ -1,0 +1,8 @@
+<div *ngIf="isEmpty; then placeHolderBlock else componentBlock"></div>
+
+<ng-template #placeHolderBlock>
+    <core-placeholder componentTitle="ButtonV1"></core-placeholder>
+</ng-template>
+<ng-template #componentBlock>
+    <div class="cmp-default-wrapper" [innerHTML]="html | safeHtml"></div>
+</ng-template>

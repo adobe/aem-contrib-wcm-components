@@ -1,0 +1,45 @@
+<div *ngIf="isEmpty; then placeHolderBlock else componentBlock"></div>
+
+<ng-template #placeHolderBlock>
+    <core-placeholder componentTitle="BreadCrumbV2"></core-placeholder>
+</ng-template>
+
+<ng-template #componentBlock>
+    <nav class="{{class}}"
+         [attr.aria-label]="ariaLabelI18n">
+        <ol class="{{class}}__list">
+            <ng-container *ngFor="let item of items; let i = index">
+                <li [ngClass]="getItemCssClass(item)">
+    
+                    <ng-container *ngIf="isItemRouted(item) && !item.active" [ngTemplateOutlet]="routedLink" [ngTemplateOutletContext]="{item:item}"></ng-container>
+                    <ng-container *ngIf="!isItemRouted(item) && !item.active" [ngTemplateOutlet]="staticLink" [ngTemplateOutletContext]="{item:item}"></ng-container>
+                    <ng-container *ngIf="item.active" [ngTemplateOutlet]="title" [ngTemplateOutletContext]="{item:item}"></ng-container>
+                    
+                    <span *ngIf="item.active" itemProp="name">{{item.title}}</span>
+                    <meta itemProp="position" content="{{i}}"/>
+                </li>
+            </ng-container>
+        </ol>
+    </nav>
+</ng-template>
+
+<ng-template #routedLink let-item='item'>
+    <a class="{{class}}__item-link"
+       routerLink="{{ item.url }}"
+       routerLinkActive="active">
+        <ng-container [ngTemplateOutlet]="title" [ngTemplateOutletContext]="{item:item}"></ng-container>
+    </a>
+</ng-template>
+
+
+<ng-template #staticLink let-item='item'>
+    <a class="{{class}}__item-link"
+       href="{{item.url}}">
+        <ng-container [ngTemplateOutlet]="title" [ngTemplateOutletContext]="{item:item}"></ng-container>
+    </a>
+</ng-template>
+
+
+<ng-template #title let-item='item'>
+    <span itemProp="name">{{item.title}}</span>
+</ng-template>

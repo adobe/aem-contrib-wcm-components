@@ -1,0 +1,38 @@
+<div *ngIf="isEmpty; then placeHolderBlock else componentBlock"></div>
+
+<ng-template #placeHolderBlock>
+    <core-placeholder componentTitle="ImageV2"></core-placeholder>
+</ng-template>
+
+<ng-template #componentBlock>
+    <div *ngIf="hasLink; else staticBlock" [ngClass]="ddCssClass">
+        <ng-container *ngIf="routed">
+            <ng-container *ngTemplateOutlet="routedLink"></ng-container>
+        </ng-container>
+        <ng-container *ngIf="!routed">
+            <ng-container *ngTemplateOutlet="staticLink"></ng-container>
+        </ng-container>
+    </div>
+    <ng-template #staticBlock>
+        <div [ngClass]="ddCssClass">
+            <img [attr.src]="src" class="{{class}}__image" alt="{{alt}}" />
+            <meta *ngIf="hasTitle" itemprop="caption" content="Component">
+        </div>
+    </ng-template>
+</ng-template>
+
+
+<ng-template #routedLink>
+    <a routerLink="{{link}}"
+       routerLinkActive="active">
+        <img [attr.src]="src" class="{{class}}__image" alt="{{alt}}"/>
+        <meta *ngIf="hasTitle" itemprop="caption" content="Component">
+    </a>
+</ng-template>
+
+<ng-template #staticLink>
+    <a href="{{link}}">
+        <img [attr.src]="src" class="{{class}}__image" alt="{{alt}}"/>
+        <meta *ngIf="hasTitle" itemprop="caption" content="Component">
+    </a>
+</ng-template>

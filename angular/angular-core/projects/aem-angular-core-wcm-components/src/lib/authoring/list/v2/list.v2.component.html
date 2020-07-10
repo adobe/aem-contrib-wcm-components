@@ -1,0 +1,33 @@
+<div *ngIf="isEmpty; then placeHolderBlock else componentBlock"></div>
+
+<ng-template #placeHolderBlock>
+    <core-placeholder componentTitle="ListV2"></core-placeholder>
+</ng-template>
+
+<ng-template #componentBlock>
+    <ul class="{{class}}">
+        <li *ngFor="let item of items" class="{{class}}__item">
+            <article>
+                <ng-container [ngTemplateOutlet]="item.url && linkItems ? linkedTitle : plainTitle" [ngTemplateOutletContext]="{item:item}"></ng-container>
+                <span *ngIf="item.description" class="{{class}}__item-description">{{item.description}}</span>
+            </article>
+        </li>
+    </ul>
+</ng-template>
+
+
+<ng-template #linkedTitle let-item='item'>
+    <a *ngIf="isItemRouted(item)" class="{{class}}__item-link"
+       routerLink="{{item.url}}"
+       routerLinkActive="active">
+        <ng-container [ngTemplateOutlet]="plainTitle" [ngTemplateOutletContext]="{item:item}"></ng-container>
+    </a>
+    <a *ngIf="!isItemRouted(item)" href="{{item.url}}">
+        <ng-container [ngTemplateOutlet]="plainTitle" [ngTemplateOutletContext]="{item:item}"></ng-container>
+    </a>
+</ng-template>
+
+<ng-template #plainTitle let-item='item'>
+    <span class="{{class}}__item-title">{{item.title}}</span>
+    <span *ngIf="showModificationDate && item.lastModifiedFormatted" class="{{class}}__item-date">{{item.lastModifiedFormatted}}</span>
+</ng-template>

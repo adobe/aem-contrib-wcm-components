@@ -1,0 +1,45 @@
+<ng-container *ngIf="isAllowedComponentsApplicable(); else container">
+    <div [class]="getAllowedComponentListPlaceholderClassNames()">
+        <div [attr.data-text]="getAllowedComponentListLabel()" [class]="allowedComponentListTitleClassNames"></div>
+        <ng-container *ngFor="let allowedComponent of getAllowedComponents()">
+            <div [attr.data-cq-data-path]="allowedComponent.path"
+                 [attr.data-emptytext]="allowedComponent.title"
+                 [class]="allowedComponentClassNames"></div>
+        </ng-container>
+    </div>
+</ng-container>
+
+<ng-template #container>
+    
+    <div class="{{class}}__item"
+         data-cmp-hook-accordion="item"
+         *ngFor="let itemKey of cqItemsOrder">
+        <h3 class="{{class}}__header">
+            <button id="accordion-dca50b5feb-button-0" class="{{getButtonClass(itemKey)}}"
+                    aria-controls="accordion-dca50b5feb-panel-0" data-cmp-hook-accordion="button"
+                    (click)="onClick(itemKey)">
+                <span class="{{class}}__title" [innerText]="getButtonTitle(itemKey)"></span>
+                <span class="{{class}}__icon"></span>
+            </button>
+        </h3>
+        <div  data-cmp-hook-accordion="panel"
+              *ngIf="isActiveItemNameSet"
+              [class]="getItemClass(itemKey)"
+              role="region"
+              [ngStyle]="getItemStyle(itemKey)"
+              aria-labelledby="accordion-dca50b5feb-button-0">
+            <div
+                 [aemModelProvider]
+                 [cqItem]="getItem(itemKey)"
+                 [cqPath]="getDataPath(itemKey)"
+                 [itemName]="itemKey"
+                 [attr.data-cq-data-path]="getDataPath(itemKey)"></div>
+        </div>
+    </div>
+    
+    <div *ngIf="isInEditMode;"
+         [attr.data-cq-data-path]="placeholderPath"
+         [class]="getPlaceholderClassNames()">
+    </div>
+
+</ng-template>

@@ -1,0 +1,39 @@
+<div *ngIf="isEmpty; then placeHolderBlock else componentBlock"></div>
+
+<ng-template #placeHolderBlock>
+    <core-placeholder componentTitle="ButtonV1"></core-placeholder>
+</ng-template>
+<ng-template #componentBlock>
+    <div *ngIf="link; then linkBlock else staticBlock"></div>
+</ng-template>
+
+<ng-template #linkBlock>
+    <ng-container *ngIf="routed">
+        <ng-container *ngTemplateOutlet="routedLink"></ng-container>
+    </ng-container>
+    <ng-container *ngIf="!routed">
+        <ng-container *ngTemplateOutlet="staticLink"></ng-container>
+    </ng-container>
+</ng-template>
+<ng-template #staticBlock>
+    <button (click)="onClick()">
+        <span *ngIf="icon" class="{{iconClass}}"></span>
+        <span class="{{class}}__text" [innerText]="text"></span>
+    </button>
+</ng-template>
+
+<ng-template #routedLink>
+    <a routerLink="{{link}}"
+       routerLinkActive="active"
+       (click)="onClick()">
+        <span *ngIf="icon" class="{{iconClass}}"></span>
+        <span class="{{class}}__text" [innerText]="text"></span>
+    </a>
+</ng-template>
+
+<ng-template #staticLink>
+    <a [href]="link" (click)="onClick()">
+        <span *ngIf="icon" class="{{iconClass}}"></span>
+        <span class="{{class}}__text" [innerText]="text"></span>
+    </a>
+</ng-template>

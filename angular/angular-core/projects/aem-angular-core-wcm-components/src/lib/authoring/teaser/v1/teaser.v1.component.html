@@ -1,0 +1,24 @@
+<div *ngIf="isEmpty; then placeHolderBlock else componentBlock"></div>
+
+<ng-template #placeHolderBlock>
+    <core-placeholder componentTitle="TeaserV1"></core-placeholder>
+</ng-template>
+
+<ng-template #componentBlock>
+    
+    <div class="{{class}}__image">
+        <div class="{{class}}">
+            <core-image-v2 [src]="imagePath" [title]="title"></core-image-v2>
+        </div>
+    </div>
+    <div class="{{class}}__content">
+        <div *ngIf="pretitle" class="{{class}}__pretitle">{{pretitle}}</div>
+        <core-title-v2 [routed]="routed" [linkURL]="linkURL" [text]="title" [type]="titleType"></core-title-v2>
+        <div *ngIf="description" class="{{class}}__description" [innerHTML]="description | safeHtml"></div>
+        <div *ngIf="actionsEnabled" class="{{class}}__action-container">
+            <a *ngFor="let action of actions"  class="{{class}}__action-link" href="{{action.URL}}">{{action.title}}</a>
+        </div>
+        
+    </div>
+
+</ng-template>

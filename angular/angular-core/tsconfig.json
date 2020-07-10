@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "aem-angular-core-wcm-components": [
+        "dist/aem-angular-core-wcm-components/aem-angular-core-wcm-components",
+        "dist/aem-angular-core-wcm-components"
+      ],
+      "aem-angular-core-spa-wcm-components": [
+        "dist/aem-angular-core-spa-wcm-components/aem-angular-core-spa-wcm-components",
+        "dist/aem-angular-core-spa-wcm-components"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}
