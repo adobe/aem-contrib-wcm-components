@@ -75,7 +75,7 @@ export class ListV2<Model extends ListV2Model, State extends CoreComponentState>
         return (
             <li className={this.baseCssCls + '__item'} key={"cmp-list-" + index}>
                 <article>
-                    {this.props.linkItems && this.renderListAnchor(item,index)}
+                    {this.props.linkItems && !!item.url && this.renderListAnchor(item,index)}
                     {!this.props.linkItems && this.renderListItemContent(item,index)}
                     {this.props.showDescription && this.renderListItemDescription(item,index)}
                 </article>
@@ -86,7 +86,7 @@ export class ListV2<Model extends ListV2Model, State extends CoreComponentState>
     renderComponent(){
 
         return (
-            <ul className="cmp-list">
+            <ul className={this.baseCssCls}>
                 {this.props.items.map((item, index) => this.renderListItem(item, index))}
             </ul>
         )

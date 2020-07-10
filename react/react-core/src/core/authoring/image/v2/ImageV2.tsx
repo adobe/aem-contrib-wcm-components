@@ -6,6 +6,7 @@ export interface TempImageComponentModel extends CoreComponentModel{
     alt: string
     displayPopupTitle?: boolean
     title?: string
+    link?: string
 }
 
 export function ImageV2IsEmptyFn(props:TempImageComponentModel) {
@@ -24,15 +25,17 @@ export class ImageV2<Model extends TempImageComponentModel,State extends CoreCom
         super(props, 'cmp-image', 'ImageV2');
     }
 
-    isEmpty(): boolean {
-        return ImageV2IsEmptyFn(this.props);
+    generateLink(){
+        return (
+            <a className={this.baseCssCls + '__link'} href={this.props.link ? this.props.link : '#'}>
+                {this.getInnerContents()}
+            </a>
+        )
     }
 
-    renderComponent(): JSX.Element {
-        const cssClassName = (this.props.isInEditor) ? this.baseCssCls + ' cq-dd-image' : this.baseCssCls;
-
+    getInnerContents(){
         return (
-            <div className={cssClassName}>
+            <>
                 <img src={this.props.src}
                      className={this.baseCssCls + '__image'}
                      alt={this.props.alt}/>
@@ -42,6 +45,27 @@ export class ImageV2<Model extends TempImageComponentModel,State extends CoreCom
                 {
                     this.props.displayPopupTitle && (!!this.props.title) && <meta itemProp="caption" content={this.props.title}/>
                 }
+            </>
+        );
+    }
+
+    getContents(){
+        if( this.props.link && this.props.link.trim().length > 0){
+            return this.generateLink();
+        }
+        return this.getInnerContents();
+    }
+
+    isEmpty(): boolean {
+        return ImageV2IsEmptyFn(this.props);
+    }
+
+    renderComponent(): JSX.Element {
+        const cssClassName = (this.props.isInEditor) ? this.baseCssCls + ' cq-dd-image' : this.baseCssCls;
+
+        return (
+            <div className={cssClassName}>
+                {this.getContents()}
             </div>
         )
     }

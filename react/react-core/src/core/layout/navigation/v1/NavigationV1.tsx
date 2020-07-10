@@ -53,7 +53,7 @@ export class NavigationV1<Model extends NavigationV1Model, State extends CoreCom
             title: "",
             url: "",
             children: this.props.items
-        }
+        };
 
         return (
             <nav className={this.baseCssCls}
