@@ -1,0 +1,35 @@
+{
+    "localizedFragmentVariationPath": "/content/experience-fragments/angulartest/master/jcr:content",
+    "pathConfigured": true,
+    ":items": {
+        "component1": {
+            "title": "Component1",
+            ":type": "app/components/comp1"
+        },
+        "component2": {
+            "title": "Component2",
+            ":type": "app/components/comp2"
+        },
+        "component3": {
+            "title": "Component3",
+            ":type": "app/components/comp3"
+        },
+        "component4": {
+            "title": "Component4",
+            ":type": "app/components/comp2"
+        },
+        "component5": {
+            "title": "Component5",
+            ":type": "app/components/comp1"
+        }
+    },
+    ":itemsOrder": [
+        "component1",
+        "component3",
+        "component5",
+        "component2",
+        "component4"
+    ],
+    "classNames": "aem-xf myCustomCssClass",
+    ":type": "core/wcm/components/experiencefragment/v2/experiencefragment"
+}

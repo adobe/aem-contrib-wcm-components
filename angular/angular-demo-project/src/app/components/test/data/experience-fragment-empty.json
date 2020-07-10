@@ -1,0 +1,9 @@
+{
+    "localizedFragmentVariationPath": "/content/experience-fragments/angulartest/master/jcr:content",
+    "pathConfigured": false,
+    ":items": {
+    },
+    ":itemsOrder": [],
+    "classNames": "aem-xf",
+    ":type": "core/wcm/components/experiencefragment/v2/experiencefragment"
+}

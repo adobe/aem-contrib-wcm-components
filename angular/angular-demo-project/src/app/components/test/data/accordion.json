@@ -1,0 +1,37 @@
+{
+  ":items":
+  {
+    "component1":
+    {
+      "cq:panelTitle": "Tab1",
+      "title": "Component1",
+      ":type": "app/components/comp1"
+      
+    },
+    "component2":
+    {
+      "cq:panelTitle": "Tab2",
+      "title": "Component2",
+      ":type": "app/components/comp2"
+    },
+    "component3":
+    {
+      "cq:panelTitle": "Tab3",
+      "title": "Component3",
+      ":type": "app/components/comp3"
+    },
+    "component4":
+    {
+      "cq:panelTitle": "Tab4",
+      "title": "Component4",
+      ":type": "app/components/comp2"
+    },
+    "component5":
+    {
+      "cq:panelTitle": "Tab5",
+      "title": "Component5",
+      ":type": "app/components/comp1"
+    }
+  },
+  ":itemsOrder": ["component1", "component3", "component5", "component2", "component4"]
+}
