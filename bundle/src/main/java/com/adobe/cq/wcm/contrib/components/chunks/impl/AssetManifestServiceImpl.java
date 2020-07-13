@@ -26,34 +26,9 @@ public class AssetManifestServiceImpl implements AssetManifestService {
  
     @Override
     public Map<String,String> getManifest(SlingHttpServletRequest request) throws IOException {
-        if (request.getResource().getPath().contains("/angular/")) {
-            return resolveAngularManifest(request);
-        } else {
-            return resolveReactManifest(request);
-        }
-    }
-    
-    private Map<String,String> resolveReactManifest(SlingHttpServletRequest request) throws IOException {
-    
-        final Resource assetManifestResource = request.getResourceResolver().getResource(PATH_REACT_MANIFEST);
-    
-        if(assetManifestResource != null){
-            InputStream file = assetManifestResource.adaptTo(InputStream.class);
-            String fileString = IOUtils.toString(file);
-        
-        
-            ObjectMapper objectMapper = new ObjectMapper();
-            return objectMapper.readValue(fileString, new TypeReference<Map<String, String>>() {});
-        
-        }else{
-            throw new IOException("Could not load manifest file!");
-        }
-    }
-    
-    private Map<String,String> resolveAngularManifest(SlingHttpServletRequest request) throws IOException {
     
         final Resource assetManifestResource = request.getResourceResolver().getResource(PATH_ANGULAR_MANIFEST);
-        
+    
         if(assetManifestResource != null){
             InputStream file = assetManifestResource.adaptTo(InputStream.class);
             String fileString = IOUtils.toString(file);
@@ -67,20 +42,20 @@ public class AssetManifestServiceImpl implements AssetManifestService {
                 Map.Entry<String,Object> entry = iterator.next();
             
                 Object val = entry.getValue();
-               
+            
                 if(val instanceof String){
                     String keySuffix = getExtensionSuffix(entry.getValue().toString());
                     computed.put(entry.getKey() + keySuffix, manifest.getPublicPath() + entry.getValue().toString());
                 }else if(val instanceof List){
-                    
+                
                     List subScripts = (List) entry.getValue();
-                    
+                
                     for(Object subScript: subScripts){
                         final String value = subScript.toString();
                         String keySuffix = getExtensionSuffix(value);
                         computed.put(entry.getKey() + keySuffix, manifest.getPublicPath() + value);
                     }
-                 
+                
                 }
             }
             return computed;
@@ -88,6 +63,7 @@ public class AssetManifestServiceImpl implements AssetManifestService {
         }else{
             throw new IOException("Could not load manifest file!");
         }
+      
     }
     
     private String getExtensionSuffix(String value){

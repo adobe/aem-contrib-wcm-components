@@ -13,7 +13,7 @@ import java.io.IOException;
 @Component(
         service = {Servlet.class},
         property = {
-                "sling.servlet.resourceTypes=wknd-events/angular/chunks/static-css",
+                "sling.servlet.resourceTypes=contrib/wcm/chunks/static-css",
                 "sling.servlet.methods=GET"
         }
 )
