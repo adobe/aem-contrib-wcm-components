@@ -30,8 +30,6 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-import javax.annotation.Nonnull;
-
 
 @Model(adaptables = SlingHttpServletRequest.class, resourceType = DemoContainer.RESOURCE_TYPE, adapters = {ContainerExporter.class,ComponentExporter.class})
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
@@ -49,7 +47,6 @@ public class DemoContainer extends ResponsiveGrid implements DemoContainerExport
         return super.getParent();
     }
     
-    @Nonnull
     @Override
     public String getExportedType() {
         return RESOURCE_TYPE;

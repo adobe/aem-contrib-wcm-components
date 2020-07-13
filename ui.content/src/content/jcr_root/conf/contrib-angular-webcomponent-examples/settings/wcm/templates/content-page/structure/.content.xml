@@ -5,9 +5,9 @@
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
         cq:lastModified="{Date}2019-01-14T12:37:39.517+01:00"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/contrib-react-webcomponent-examples/settings/wcm/templates/content-page"
+        cq:template="/conf/contrib-angular-webcomponent-examples/settings/wcm/templates/content-page"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="contrib/wcm/components/page/react-webcomponents-page">
+        sling:resourceType="contrib/wcm/components/page/angular-webcomponents-page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
@@ -25,7 +25,7 @@
                     jcr:lastModified="{Date}2018-12-20T16:16:40.169Z"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="contrib-react-webcomponent-examples/components/show-menu"/>
+                    sling:resourceType="contrib-angular-webcomponent-examples/components/show-menu"/>
                 <image_1442382866
                     jcr:created="{Date}2019-01-08T17:48:01.449+01:00"
                     jcr:createdBy="admin"
@@ -35,9 +35,9 @@
                     sling:resourceType="core/wcm/components/image/v2/image"
                     altValueFromDAM="true"
                     displayPopupTitle="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/aem-corecomponents-logo.svg"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/aem-corecomponents-logo.svg"
                     isDecorative="false"
-                    linkURL="/content/contrib-react-webcomponent-examples/library"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library"
                     titleValueFromDAM="true"/>
             </responsivegrid_1409995310>
             <responsivegrid_1755067073
@@ -58,9 +58,9 @@
                     sling:resourceType="core/wcm/components/image/v2/image"
                     altValueFromDAM="true"
                     displayPopupTitle="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/aem-corecomponents-logo.svg"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/aem-corecomponents-logo.svg"
                     isDecorative="false"
-                    linkURL="/content/contrib-react-webcomponent-examples/library"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library"
                     titleValueFromDAM="true"/>
                 <navigation
                     jcr:created="{Date}2018-12-20T12:48:21.218Z"
@@ -70,7 +70,7 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="core/wcm/components/navigation/v1/navigation"
                     collectAllPages="false"
-                    navigationRoot="/content/contrib-react-webcomponent-examples/library"
+                    navigationRoot="/content/contrib-angular-webcomponent-examples/library"
                     skipNavigationRoot="true"
                     structureDepth="1"/>
             </responsivegrid_1755067073>
@@ -109,7 +109,7 @@
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="core/wcm/components/text/v2/text"
-                    text="&lt;p>Built with &lt;a href=&quot;https://github.com/adobe/aem-core-wcm-components/releases/tag/core.wcm.components.reactor-2.8.0&quot;>Core Components 2.8.0&lt;/a>.&lt;/p>&#xa;"
+                    text="&lt;p>Built with &lt;a href=&quot;https://github.com/adobe/aem-core-wcm-components/releases/tag/core.wcm.components.angularor-2.8.0&quot;>Core Components 2.8.0&lt;/a>.&lt;/p>&#xa;"
                     textIsRich="true"/>
             </responsivegrid_2176569853>
         </root>

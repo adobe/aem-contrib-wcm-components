@@ -414,7 +414,7 @@
             </components>
         </wcm>
     </core>
-    <contrib-react-webcomponent-examples jcr:primaryType="nt:unstructured">
+    <contrib-angular-webcomponent-examples jcr:primaryType="nt:unstructured">
         <components jcr:primaryType="nt:unstructured">
             <page jcr:primaryType="nt:unstructured">
                 <policy_212634895490169
@@ -429,5 +429,5 @@
                 </policy_212634895490169>
             </page>
         </components>
-    </contrib-react-webcomponent-examples>
+    </contrib-angular-webcomponent-examples>
 </jcr:root>

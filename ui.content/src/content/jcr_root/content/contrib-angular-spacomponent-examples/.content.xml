@@ -3,16 +3,16 @@
     jcr:primaryType="cq:Page">
     <library/>
     <jcr:content
-        cq:allowedTemplates="[/conf/contrib-react-spacomponent-examples/settings/wcm/templates/.*]"
+        cq:allowedTemplates="[/conf/contrib-angular-spacomponent-examples/settings/wcm/templates/.*]"
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
         cq:lastModified="{Date}2018-12-06T19:40:56.470+01:00"
         cq:lastModifiedBy="admin"
         jcr:primaryType="nt:unstructured"
-        jcr:title="React SPA - Core Components"
+        jcr:title="Angular SPA - Core Components"
         sling:redirect="{Boolean}true"
         sling:redirectStatus="{Long}302"
         sling:resourceType="foundation/components/redirect"
-        redirectTarget="/content/contrib-react-spacomponent-examples/library">
+        redirectTarget="/content/contrib-angular-spacomponent-examples/library">
         <image jcr:primaryType="nt:unstructured">
             <file/>
         </image>

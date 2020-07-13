@@ -5,11 +5,11 @@
         cq:lastModified="{Date}2019-01-16T13:38:02.466+01:00"
         cq:lastModifiedBy="admin"
         cq:tags="[core-components-examples:component-type/reference]"
-        cq:template="/conf/contrib-react-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
+        cq:template="/conf/contrib-angular-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
         jcr:description="Display a list of pages"
         jcr:primaryType="cq:PageContent"
         jcr:title="List"
-        sling:resourceType="contrib/wcm/components/page/react-spacomponents-page">
+        sling:resourceType="contrib/wcm/components/page/angular-spacomponents-page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
@@ -117,7 +117,7 @@
                             childDepth="1"
                             linkItems="false"
                             listFrom="children"
-                            parentPage="/content/contrib-react-spacomponent-examples/library"
+                            parentPage="/content/contrib-angular-spacomponent-examples/library"
                             showDescription="false"
                             showModificationDate="false"
                             sortOrder="asc"/>
@@ -163,7 +163,7 @@
                             childDepth="1"
                             linkItems="false"
                             listFrom="static"
-                            pages="[/content/contrib-react-spacomponent-examples/library/carousel,/content/contrib-react-spacomponent-examples/library/teaser,/content/contrib-react-spacomponent-examples/library/text]"
+                            pages="[/content/contrib-angular-spacomponent-examples/library/carousel,/content/contrib-angular-spacomponent-examples/library/teaser,/content/contrib-angular-spacomponent-examples/library/text]"
                             showDescription="false"
                             showModificationDate="false"
                             sortOrder="asc"
@@ -211,7 +211,7 @@
                             linkItems="false"
                             listFrom="search"
                             query="Carousel"
-                            searchIn="/content/contrib-react-spacomponent-examples/library"
+                            searchIn="/content/contrib-angular-spacomponent-examples/library"
                             showDescription="false"
                             showModificationDate="false"
                             sortOrder="asc"
@@ -263,7 +263,7 @@
                             sortOrder="asc"
                             tags="[core-components-examples:component-type/basic]"
                             tagsMatch="any"
-                            tagsSearchRoot="/content/contrib-react-spacomponent-examples/library"/>
+                            tagsSearchRoot="/content/contrib-angular-spacomponent-examples/library"/>
                     </component>
                    
                 </demo_491373107>
@@ -307,7 +307,7 @@
                             linkItems="false"
                             listFrom="children"
                             orderBy="title"
-                            parentPage="/content/contrib-react-spacomponent-examples/library"
+                            parentPage="/content/contrib-angular-spacomponent-examples/library"
                             showDescription="false"
                             showModificationDate="false"
                             sortOrder="desc"/>
@@ -354,7 +354,7 @@
                             linkItems="false"
                             listFrom="children"
                             maxItems="4"
-                            parentPage="/content/contrib-react-spacomponent-examples/library"
+                            parentPage="/content/contrib-angular-spacomponent-examples/library"
                             showDescription="false"
                             showModificationDate="false"
                             sortOrder="asc"/>
@@ -400,7 +400,7 @@
                             childDepth="1"
                             linkItems="true"
                             listFrom="children"
-                            parentPage="/content/contrib-react-spacomponent-examples/library"
+                            parentPage="/content/contrib-angular-spacomponent-examples/library"
                             showDescription="true"
                             showModificationDate="true"
                             sortOrder="asc"/>

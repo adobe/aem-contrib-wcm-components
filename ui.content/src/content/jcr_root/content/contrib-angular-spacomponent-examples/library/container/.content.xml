@@ -4,11 +4,11 @@
     <jcr:content
         cq:lastModified="{Date}2019-06-11T19:56:33.712+02:00"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/contrib-react-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
+        cq:template="/conf/contrib-angular-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
         jcr:description="Group and layout components"
         jcr:primaryType="cq:PageContent"
         jcr:title="Container"
-        sling:resourceType="contrib/wcm/components/page/react-spacomponents-page">
+        sling:resourceType="contrib/wcm/components/page/angular-spacomponents-page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">

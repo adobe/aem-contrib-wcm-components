@@ -4,12 +4,12 @@
     <jcr:content
         cq:lastModified="{Date}2019-01-09T20:30:27.177+01:00"
         cq:lastModifiedBy="admin"
-        cq:tags="[contrib-react-webcomponent-examples:component-type/basic]"
-        cq:template="/conf/contrib-react-webcomponent-examples/settings/wcm/templates/content-page"
+        cq:tags="[contrib-angular-webcomponent-examples:component-type/basic]"
+        cq:template="/conf/contrib-angular-webcomponent-examples/settings/wcm/templates/content-page"
         jcr:description="Display a button or anchor button"
         jcr:primaryType="cq:PageContent"
         jcr:title="Button"
-        sling:resourceType="contrib/wcm/components/page/react-webcomponents-page">
+        sling:resourceType="contrib/wcm/components/page/angular-webcomponents-page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
@@ -48,7 +48,7 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="false"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/github-logo.svg"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/github-logo.svg"
                     linkURL="https://www.adobe.com/go/aem_cmp_tech_button_v1"
                     textIsRich="true"
                     titleFromPage="false"/>
@@ -64,7 +64,7 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="false"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/adobe-logo.svg"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/adobe-logo.svg"
                     linkURL="https://www.adobe.com/go/aem_cmp_button_v1"
                     textIsRich="true"
                     titleFromPage="false"/>
@@ -173,7 +173,7 @@
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Anchor Button"
                             sling:resourceType="contrib/wcm/components/button"
-                            link="/content/contrib-react-webcomponent-examples/library/button"/>
+                            link="/content/contrib-angular-webcomponent-examples/library/button"/>
                     </component>
                     <info
                         jcr:primaryType="nt:unstructured"

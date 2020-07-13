@@ -4,7 +4,7 @@
     <jcr:content
         cq:lastModified="{Date}2019-05-28T18:24:48.274+03:00"
         cq:lastModifiedBy="admin"
-        cq:policy="contrib-react-webcomponent-examples/components/page/policy_212634895490169"
+        cq:policy="contrib-angular-webcomponent-examples/components/page/policy_212634895490169"
         jcr:primaryType="nt:unstructured"
         sling:resourceType="wcm/core/components/policies/mappings">
         <root

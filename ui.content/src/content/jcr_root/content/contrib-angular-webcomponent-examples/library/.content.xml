@@ -4,11 +4,11 @@
     <jcr:content
         cq:lastModified="{Date}2019-05-29T18:25:56.781+03:00"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/contrib-react-webcomponent-examples/settings/wcm/templates/content-page"
+        cq:template="/conf/contrib-angular-webcomponent-examples/settings/wcm/templates/content-page"
         jcr:description="AEM Core Components - Component Library"
         jcr:primaryType="cq:PageContent"
         jcr:title="Component Library"
-        sling:resourceType="contrib/wcm/components/page/react-webcomponents-page">
+        sling:resourceType="contrib/wcm/components/page/angular-webcomponents-page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
@@ -26,7 +26,7 @@
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="core/wcm/components/text/v2/text"
-                    text="&lt;h1>Component Library &lt;a href=&quot;https://github.com/adobe/aem-core-wcm-components/releases/tag/core.wcm.components.reactor-2.8.0&quot;>2.8.0&lt;/a>&lt;/h1>&#xa;"
+                    text="&lt;h1>Component Library &lt;a href=&quot;https://github.com/adobe/aem-core-wcm-components/releases/tag/core.wcm.components.angularor-2.8.0&quot;>2.8.0&lt;/a>&lt;/h1>&#xa;"
                     textIsRich="true"/>
                 <text
                     cq:styleIds="[1544762734201]"
@@ -63,8 +63,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/accordion.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/accordion"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/accordion.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/accordion"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -89,8 +89,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/breadcrumb.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/breadcrumb/hidden/level-1/level-2/breadcrumb"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/breadcrumb.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/breadcrumb/hidden/level-1/level-2/breadcrumb"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -115,8 +115,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/button.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/button"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/button.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/button"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -141,8 +141,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/carousel.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/carousel"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/carousel.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/carousel"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -167,8 +167,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/container.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/container"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/container.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/container"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -193,8 +193,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/content-fragment.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/content-fragment"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/content-fragment.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/content-fragment"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -219,8 +219,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/content-fragment-list.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/content-fragment-list"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/content-fragment-list.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/content-fragment-list"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -245,8 +245,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/download.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/download"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/download.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/download"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -271,8 +271,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/embed.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/embed"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/embed.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/embed"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -297,8 +297,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/experience-fragment.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/experience-fragment"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/experience-fragment.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/experience-fragment"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -323,8 +323,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/image.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/image"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/image.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/image"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -349,8 +349,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/language-navigation.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/language-navigation/language-structure/us/en/language-navigation"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/language-navigation.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/language-navigation/language-structure/us/en/language-navigation"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -375,8 +375,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/list.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/list"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/list.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/list"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -401,8 +401,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/navigation.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/navigation"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/navigation.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/navigation"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -427,8 +427,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/separator.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/separator"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/separator.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/separator"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -453,8 +453,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/social-sharing.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/social-sharing"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/social-sharing.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/social-sharing"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -479,8 +479,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/tabs.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/tabs"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/tabs.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/tabs"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -505,8 +505,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/teaser.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/teaser"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/teaser.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/teaser"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -531,8 +531,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/text.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/text"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/text.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/text"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
@@ -557,8 +557,8 @@
                     sling:resourceType="core/wcm/components/teaser/v1/teaser"
                     actionsEnabled="false"
                     descriptionFromPage="true"
-                    fileReference="/content/dam/contrib-react-webcomponent-examples/library/components/title.svg"
-                    linkURL="/content/contrib-react-webcomponent-examples/library/title"
+                    fileReference="/content/dam/contrib-angular-webcomponent-examples/library/components/title.svg"
+                    linkURL="/content/contrib-angular-webcomponent-examples/library/title"
                     textIsRich="true"
                     titleFromPage="true">
                     <cq:responsive jcr:primaryType="nt:unstructured">

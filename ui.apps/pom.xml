@@ -62,23 +62,6 @@
                 <artifactId>content-package-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>org.apache.sling</groupId>
-                <artifactId>htl-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>validate-htl-scripts</id>
-                        <goals>
-                            <goal>validate</goal>
-                        </goals>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <generateJavaClasses>true</generateJavaClasses>
-                            <generatedJavaClassesPrefix>org.apache.sling.scripting.sightly</generatedJavaClassesPrefix>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
                 <executions>
@@ -213,6 +196,11 @@
             <artifactId>org.apache.sling.scripting.sightly.compiler.java</artifactId>
             <version>1.0.24-1.4.0</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.cq</groupId>
+            <artifactId>core.wcm.components.all</artifactId>
+            <type>zip</type>
         </dependency>
 
         <!-- AEM APIs -->

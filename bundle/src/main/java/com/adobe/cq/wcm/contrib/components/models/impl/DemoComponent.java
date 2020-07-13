@@ -24,8 +24,6 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 
-import javax.annotation.Nonnull;
-
 
 @Model(adaptables = SlingHttpServletRequest.class, resourceType = DemoComponent.RESOURCE_TYPE, adapters = {ContainerExporter.class,ComponentExporter.class})
 @JsonSerialize(as = ContainerExporter.class)
@@ -34,7 +32,6 @@ public class DemoComponent extends ResponsiveGrid {
     
     static final String RESOURCE_TYPE = "core-components-examples/components/demo/component";
     
-    @Nonnull
     @Override
     public String getExportedType() {
         return RESOURCE_TYPE;

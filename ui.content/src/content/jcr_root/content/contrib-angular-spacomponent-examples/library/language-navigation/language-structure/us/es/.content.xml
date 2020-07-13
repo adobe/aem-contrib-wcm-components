@@ -4,12 +4,12 @@
     <jcr:content
         cq:lastModified="{Date}2019-06-06T10:01:12.686+03:00"
         cq:lastModifiedBy="admin"
-        cq:redirectTarget="/content/contrib-react-spacomponent-examples/library/language-navigation/language-structure/us/es/language-navigation"
-        cq:template="/conf/contrib-react-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
+        cq:redirectTarget="/content/contrib-angular-spacomponent-examples/library/language-navigation/language-structure/us/es/language-navigation"
+        cq:template="/conf/contrib-angular-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
         jcr:primaryType="cq:PageContent"
         jcr:language="es_ES"
         jcr:title="Spanish"
-        sling:resourceType="contrib/wcm/components/page/react-spacomponents-page"
+        sling:resourceType="contrib/wcm/components/page/angular-spacomponents-page"
         navTitle="Español">
         <image jcr:primaryType="nt:unstructured">
             <file/>

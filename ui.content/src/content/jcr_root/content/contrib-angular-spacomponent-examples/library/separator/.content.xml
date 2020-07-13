@@ -5,11 +5,11 @@
         cq:lastModified="{Date}2019-01-09T20:29:55.738+01:00"
         cq:lastModifiedBy="admin"
         cq:tags="[core-components-examples:component-type/social]"
-        cq:template="/conf/contrib-react-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
+        cq:template="/conf/contrib-angular-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
         jcr:description="Display a section divider"
         jcr:primaryType="cq:PageContent"
         jcr:title="Separator"
-        sling:resourceType="contrib/wcm/components/page/react-spacomponents-page">
+        sling:resourceType="contrib/wcm/components/page/angular-spacomponents-page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
