@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:template="/conf/contrib-react-webcomponent-examples/settings/wcm/templates/contrib-spa-app-template"
+        cq:template="/conf/contrib-angular-webcomponent-examples/settings/wcm/templates/contrib-spa-app-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="contrib/wcm/components/page/react-spacomponents-page/app"/>
+        sling:resourceType="contrib/wcm/components/page/angular-spacomponents-page/app"/>
 </jcr:root>

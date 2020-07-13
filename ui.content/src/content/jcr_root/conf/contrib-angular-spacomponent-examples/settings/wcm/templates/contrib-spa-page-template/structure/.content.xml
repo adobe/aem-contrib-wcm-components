@@ -5,10 +5,10 @@
         cq:deviceGroups="[mobile/groups/responsive]"
         cq:lastModified="{Date}2020-04-19T08:54:17.330+02:00"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/contrib-react-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
+        cq:template="/conf/contrib-angular-spacomponent-examples/settings/wcm/templates/contrib-spa-page-template"
         jcr:primaryType="cq:PageContent"
         jcr:title="Title"
-        sling:resourceType="contrib/wcm/components/page/react-spacomponents-page">
+        sling:resourceType="contrib/wcm/components/page/angular-spacomponents-page">
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
                 <phone
@@ -33,7 +33,7 @@
                 sling:resourceType="contrib/wcm/components/navigation"
                 accessibilityLabel="navigation"
                 collectAllPages="true"
-                navigationRoot="/content/contrib-react-spacomponent-examples/library"
+                navigationRoot="/content/contrib-angular-spacomponent-examples/library"
                 structureStart="1">
                 <cq:responsive jcr:primaryType="nt:unstructured">
                     <default
