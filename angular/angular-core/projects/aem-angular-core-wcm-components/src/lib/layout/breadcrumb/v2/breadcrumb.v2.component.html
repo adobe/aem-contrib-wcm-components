@@ -1,7 +1,7 @@
 <div *ngIf="isEmpty; then placeHolderBlock else componentBlock"></div>
 
 <ng-template #placeHolderBlock>
-    <core-placeholder componentTitle="BreadCrumbV2"></core-placeholder>
+    <core-placeholder *ngIf="shouldShowPlaceHolder" componentTitle="BreadCrumbV2"></core-placeholder>
 </ng-template>
 
 <ng-template #componentBlock>

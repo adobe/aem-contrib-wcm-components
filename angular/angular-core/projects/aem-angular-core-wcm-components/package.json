@@ -1,6 +1,6 @@
 {
   "name": "aem-angular-core-wcm-components",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "peerDependencies": {
     "@angular/common": "^9.1.12",
     "@angular/core": "^9.1.12"

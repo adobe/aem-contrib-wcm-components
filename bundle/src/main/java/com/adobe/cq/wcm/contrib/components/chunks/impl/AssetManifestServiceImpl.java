@@ -21,8 +21,7 @@ import java.util.Map;
 @Component(service = AssetManifestService.class)
 public class AssetManifestServiceImpl implements AssetManifestService {
     
-    private static final String PATH_REACT_MANIFEST = "/apps/we-retail-journal/clientlibs/clientlib-site/resources/asset-manifest.json";
-    private static final String PATH_ANGULAR_MANIFEST = "/apps/wknd-events/clientlibs/angular-app/resources/stats.json";
+    private static final String PATH_ANGULAR_MANIFEST = "/apps/contrib/wcm/clientlibs/clientlib-site-angular/resources/stats.json";
  
     @Override
     public Map<String,String> getManifest(SlingHttpServletRequest request) throws IOException {

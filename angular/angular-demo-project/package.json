@@ -29,11 +29,12 @@
     "@adobe/cq-angular-editable-components": "~1.2.0",
     "@adobe/cq-spa-component-mapping": "~1.0.3",
     "@adobe/cq-spa-page-model-manager": "~1.0.7",
-    "aem-angular-core-spa-wcm-components": "^0.0.3",
+    "aem-angular-core-spa-wcm-components": "^0.0.4",
     "aem-angular-core-wcm-components": "^0.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "core-js": "^3.6.5"
   },
   "devDependencies": {
     "aempack": "^1.1.9",

@@ -15,5 +15,6 @@
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <workspaceFilter version="1.0">
+    <filter root="/apps/contrib/wcm/clientlib-site-angular"/>
     <filter root="/apps/contrib/wcm/components"/>
 </workspaceFilter>

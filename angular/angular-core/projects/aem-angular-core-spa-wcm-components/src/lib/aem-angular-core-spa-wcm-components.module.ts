@@ -18,7 +18,7 @@ import {AbstractContainerComponent} from "./containers/AbstractContainerComponen
         ContainerV1Component,
         AbstractContainerComponent,
     ],
-    exports: [
+    entryComponents: [
         AccordionV1Component,
         CarouselV1Component,
         TabsV2Component,

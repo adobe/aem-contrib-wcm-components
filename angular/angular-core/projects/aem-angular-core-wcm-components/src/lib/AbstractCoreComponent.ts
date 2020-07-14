@@ -17,14 +17,17 @@
 
 import {Input} from "@angular/core";
 import {CoreComponentModel} from "./model/CoreComponentModel";
+import {Utils} from "@adobe/cq-angular-editable-components";
 
 /**
  * AbstractCoreComponent
  * provides shared functionality / properties across all core component controllers
  */
 export abstract class AbstractCoreComponent implements CoreComponentModel{
-    hidePlaceHolder: boolean = false;
-    @Input() isInEditor = false;
+
+    /** Force disable the placeholder at all times. This is useful for nested components. **/
+    @Input() hidePlaceHolder: boolean = false;
+
     @Input() cqForceReload = false;
     @Input() cqPath;
 
@@ -35,8 +38,15 @@ export abstract class AbstractCoreComponent implements CoreComponentModel{
      */
     public abstract get isEmpty():boolean;
 
-    public shouldShowPlaceHolder():boolean {
-        return (this.isEmpty && this.isInEditor === true && this.hidePlaceHolder !== false);
+    /**
+     * Returns whether to show the placeholder for the editors, if we cannot display the component.
+     */
+    public get shouldShowPlaceHolder():boolean {
+        return (this.isEmpty && this.isInEditor === true && this.hidePlaceHolder !== true);
+    }
+
+    public get isInEditor(){
+        return Utils.isInEditor();
     }
 
 }
