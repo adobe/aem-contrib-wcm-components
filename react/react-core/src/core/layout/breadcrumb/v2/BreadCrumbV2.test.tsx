@@ -16,9 +16,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {shallow} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 
 import {BreadCrumbV2, BreadCrumbV2ItemModel} from './BreadCrumbV2';
+import { MemoryRouter } from 'react-router-dom';
 
 
 
@@ -44,6 +45,23 @@ it('Renders breadcrumb items if provided', () => {
 
 
     const wrapper = shallow(<BreadCrumbV2  hidePlaceHolder={false} items={items}/>);
+    expect(wrapper.find("li")).toHaveLength(3);
+
+    expect(wrapper.find(".cmp-breadcrumb__item--active").text()).toEqual("Item3");
+});
+
+
+
+
+it('Renders routed breadcrumb items if provided', () => {
+    let items:BreadCrumbV2ItemModel[] = [
+        {active:false,url:'/content/some/url.html',title:'Item1', routed: true},
+        {active:false,url:'/content/some/url.html',title:'Item2', routed: true},
+        {active:true,url:'/content/some/url.html',title:'Item3', routed: true}
+    ];
+
+
+    const wrapper = mount(<MemoryRouter><BreadCrumbV2  hidePlaceHolder={false} items={items}/></MemoryRouter>);
     expect(wrapper.find("li")).toHaveLength(3);
 
     expect(wrapper.find(".cmp-breadcrumb__item--active").text()).toEqual("Item3");

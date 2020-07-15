@@ -1,7 +1,9 @@
 import React from 'react';
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
+import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
+import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
+import {RoutedLink} from "../../../routing/RoutedLink";
 
-export interface TempImageComponentModel extends CoreComponentModel{
+export interface TempImageComponentModel extends RoutedCoreComponentModel{
     src: string
     alt: string
     displayPopupTitle?: boolean
@@ -27,9 +29,9 @@ export class ImageV2<Model extends TempImageComponentModel,State extends CoreCom
 
     generateLink(){
         return (
-            <a className={this.baseCssCls + '__link'} href={this.props.link ? this.props.link : '#'}>
+            <RoutedLink className={this.baseCssCls + '__link'} isRouted={this.props.routed} to={this.props.link}>
                 {this.getInnerContents()}
-            </a>
+            </RoutedLink>
         )
     }
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
+import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
+import {RoutedLink} from "../../../routing/RoutedLink";
 
 
 
-export interface NavigationV1Item {
+export interface NavigationV1Item extends RoutedModel{
     level: number,
     active: boolean,
     title: string,
@@ -14,7 +16,7 @@ export interface NavigationV1Item {
     children?: NavigationV1Item[]
 }
 
-export interface NavigationV1Model extends CoreComponentModel{
+export interface NavigationV1Model extends RoutedCoreComponentModel{
     items:NavigationV1Item[]
     accessibilityLabel?: string
 }
@@ -81,8 +83,8 @@ export class NavigationV1<Model extends NavigationV1Model, State extends CoreCom
 
     renderLink(item:NavigationV1Item, isActive:boolean){
         return (
-            <a href={item.url} title={item.title} aria-current={isActive && 'page'}
-               className={this.baseCssCls + '__item-link'}>{item.title}</a>
+            <RoutedLink isRouted={isItemRouted(this.props,item)} to={item.url} title={item.title} aria-current={isActive && 'page'}
+               className={this.baseCssCls + '__item-link'}>{item.title}</RoutedLink>
         )
     }
     renderNavItem(item: NavigationV1Item, index: number) {

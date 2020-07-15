@@ -1,7 +1,9 @@
 import React from 'react';
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
+import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
+import {RoutedCoreComponentModel, RoutedModel, isItemRouted} from "../../../routing/RoutedCoreComponent";
+import {RoutedLink} from "../../../routing/RoutedLink";
 
-export interface ListV2Item {
+export interface ListV2Item extends RoutedModel{
     url?:string
     lastModified?:number
     lastModifiedFormatted?:string
@@ -11,7 +13,7 @@ export interface ListV2Item {
 }
 
 
-export interface ListV2Model extends CoreComponentModel{
+export interface ListV2Model extends RoutedCoreComponentModel{
     items:ListV2Item[]
     dateFormatString: string
     showDescription: boolean
@@ -59,9 +61,9 @@ export class ListV2<Model extends ListV2Model, State extends CoreComponentState>
     renderListAnchor(item:ListV2Item, index:number){
 
         return (
-            <a className={this.baseCssCls + '__item-link'} href={item.url}>
+            <RoutedLink isRouted={isItemRouted(this.props, item)} className={this.baseCssCls + '__item-link'} to={item.url}>
                 {this.renderListItemContent(item,index)}
-            </a>
+            </RoutedLink>
         )
     }
 

@@ -16,9 +16,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
 
 import {ButtonV1, ButtonV1Model} from './ButtonV1';
+import { MemoryRouter } from 'react-router-dom';
 
 
 it('Renders without crashing', () => {
@@ -43,14 +44,15 @@ it('Renders a proper button with link', () => {
         icon: "iconCSSCls",
         link: "/content/some/link.html",
         text: "SomeText",
+        routed:true,
         handleOnClick(event): void {
             captured = true;
         }
-    }
+    };
 
-    const wrapper = shallow(<ButtonV1  {...properties} />);
+    const wrapper = mount(<MemoryRouter><ButtonV1  {...properties} /></MemoryRouter>);
 
-    const button = wrapper.find('.cmp-button');
+    const button = wrapper.find('a.cmp-button');
     expect(button).toHaveLength(1);
     button.simulate('click');
     expect(captured).toEqual(true);
@@ -83,7 +85,7 @@ it('Renders a proper button with link', () => {
         }
     };
 
-    const wrapper = shallow(<ButtonV1  {...properties} />);
+    const wrapper = mount(<ButtonV1  {...properties} />);
 
     const button = wrapper.find('.cmp-button');
     expect(button).toHaveLength(1);

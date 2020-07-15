@@ -15,9 +15,11 @@
  */
 
 import React, {MouseEvent} from 'react';
-import {CoreComponentModel, CoreComponentState,AbstractCoreComponent} from "../../../AbstractCoreComponent";
+import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
+import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
+import {RoutedLink} from "../../../routing/RoutedLink";
 
-export interface ButtonV1Model extends CoreComponentModel{
+export interface ButtonV1Model extends RoutedCoreComponentModel{
     text?: string;
     link?: string;
     icon?: string;
@@ -62,16 +64,13 @@ export class ButtonV1<Model extends ButtonV1Model, State extends CoreComponentSt
     renderComponent(){
 
         const isLink =  (!!this.props.link);
-        const type = isLink ? 'a' : 'button';
         let props = this.generateAttributes(isLink);
 
-        return  (
-           React.createElement(
-                type,
-                props,
-                this.getContent()
-           )
-        )
+        if(isLink){
+            return <RoutedLink isRouted={this.props.routed} to={this.props.link} {...props} children={this.getContent()} />
+        }else{
+            return <button {...props}>{this.getContent()}</button>
+        }
     }
 
     generateAttributes(isLink: boolean) {

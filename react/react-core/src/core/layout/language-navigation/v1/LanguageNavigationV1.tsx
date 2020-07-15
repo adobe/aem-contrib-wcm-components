@@ -1,8 +1,10 @@
 import React from 'react';
 import {CoreComponentState} from "../../../AbstractCoreComponent";
 import {NavigationV1, NavigationV1Item, NavigationV1Model} from "../../navigation/v1/NavigationV1";
+import {RoutedLink} from "../../../routing/RoutedLink";
+import {isItemRouted} from "../../../routing/RoutedCoreComponent";
 
-export interface LanguageNavigationV1Item extends NavigationV1Item{
+export interface LanguageNavigationV1Item extends NavigationV1Item {
     level: number,
     active: boolean,
     title: string,
@@ -46,12 +48,14 @@ export class LanguageNavigationV1<Model extends LanguageNavigationV1Model, State
 
         if(item.level > 0){
             return (
-                <a className={this.baseCssCls + '__item-link'}
-                   href={item.url}
-                   hrefLang={item.language}
-                   lang={item.language}
-                   rel="alternate"
-                   title={item.title}>{item.title}</a>
+                <RoutedLink
+                    isRouted={isItemRouted(this.props, item)}
+                    className={this.baseCssCls + '__item-link'}
+                    to={item.url}
+                    hrefLang={item.language}
+                    lang={item.language}
+                    rel="alternate"
+                    title={item.title}>{item.title}</RoutedLink>
             )
         }else{
             return (

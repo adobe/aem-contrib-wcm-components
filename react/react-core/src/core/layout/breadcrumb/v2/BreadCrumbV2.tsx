@@ -16,14 +16,16 @@
 
 import React from 'react';
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
+import {isItemRouted, RoutedCoreComponentModel, RoutedModel} from "../../../routing/RoutedCoreComponent";
+import {RoutedLink} from "../../../routing/RoutedLink";
 
-export interface BreadCrumbV2ItemModel {
+export interface BreadCrumbV2ItemModel extends RoutedModel{
     active: boolean
     url: string
     title: string
 }
 
-export interface BreadCrumbV2Model extends CoreComponentModel {
+export interface BreadCrumbV2Model extends RoutedCoreComponentModel {
     items: BreadCrumbV2ItemModel[]
     ariaLabelI18n: string
 }
@@ -71,11 +73,13 @@ export class BreadCrumbV2<Model extends BreadCrumbV2Model, State extends CoreCom
 
     renderBreadCrumbLink(crumbItem:BreadCrumbV2ItemModel,index:number){
         return (
-            <a href={crumbItem.url}
-                      className={`${this.baseCssCls}__item-link`}
-                      itemProp="item">
+            <RoutedLink
+                        to={crumbItem.url}
+                        isRouted={isItemRouted(this.props,crumbItem)}
+                        className={`${this.baseCssCls}__item-link`}
+                        itemProp="item">
                 {this.renderBreadCrumbSpan(crumbItem, index)}
-            </a>
+            </RoutedLink>
         )
     }
 

@@ -16,10 +16,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {shallow} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 
 import {items} from "./LanguageNavigationV1TestMockItems";
 import {LanguageNavigationV1, LanguageNavigationV1Model} from "./LanguageNavigationV1";
+import { MemoryRouter } from 'react-router-dom';
 
 
 it('Renders without crashing', () => {
@@ -41,6 +42,21 @@ it('Renders a basic navigation properly', () => {
         items: items
     };
     const wrapper = shallow(<LanguageNavigationV1  {...properties} />);
+    const nav = wrapper.find('nav');
+
+    expect(nav).toHaveLength(1);
+});
+
+
+it('Renders a basic navigation properly even with routing', () => {
+
+    const properties:LanguageNavigationV1Model = {
+        hidePlaceHolder: false,
+        isInEditor: false,
+        items: items,
+        routed: true
+    };
+    const wrapper = mount(<MemoryRouter><LanguageNavigationV1  {...properties} /></MemoryRouter>);
     const nav = wrapper.find('nav');
 
     expect(nav).toHaveLength(1);

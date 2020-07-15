@@ -2,19 +2,19 @@ import React from "react";
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
 import {ImageV2} from "../../../../core/authoring/image/v2/ImageV2";
 import {TitleV2} from "../../../../core/authoring/title/v2/TitleV2";
+import {RoutedLink} from "../../../routing/RoutedLink";
+import {RoutedCoreComponentModel, isItemRouted, RoutedModel} from "../../../routing/RoutedCoreComponent";
 
 export function TeaserV1IsEmptyFn(props:TeaserV1Model): boolean{
-
     return (!props.imagePath && !props.description &&  props.actions.length == 0)
-
 }
 
-export interface TeaserV1Action {
+export interface TeaserV1Action extends RoutedModel{
     title: string
-    URL: string;
+    URL: string
 }
 
-export interface TeaserV1Model extends CoreComponentModel{
+export interface TeaserV1Model extends RoutedCoreComponentModel{
     pretitle?: string
     title?: string
     description?: string
@@ -74,7 +74,7 @@ export class TeaserV1<Model extends TeaserV1Model, State extends CoreComponentSt
 
     generateLink(action:TeaserV1Action, index:number){
         return (
-            <a className={this.baseCssCls + '__action-link'} href={action.URL}>${action.title}</a>
+            <RoutedLink isRouted={isItemRouted(this.props, action)} className={this.baseCssCls + '__action-link'} to={action.URL}>${action.title}</RoutedLink>
         )
     }
 

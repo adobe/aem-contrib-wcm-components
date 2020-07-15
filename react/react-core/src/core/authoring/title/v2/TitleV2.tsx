@@ -15,9 +15,11 @@
  */
 
 import React from 'react';
-import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
+import {AbstractCoreComponent, CoreComponentState} from "../../../AbstractCoreComponent";
+import {RoutedCoreComponentModel} from "../../../routing/RoutedCoreComponent";
+import {RoutedLink} from "../../../routing/RoutedLink";
 
-export interface TitleV2Model extends CoreComponentModel{
+export interface TitleV2Model extends RoutedCoreComponentModel{
     text?: string;
     linkURL?: string;
     linkDisabled: boolean;
@@ -45,9 +47,9 @@ export class TitleV2<Model extends TitleV2Model, State extends CoreComponentStat
 
     generateLink(){
         return (
-            <a className={this.baseCssCls + '__link'} href={this.props.linkURL ? this.props.linkURL : '#'}>
+            <RoutedLink className={this.baseCssCls + '__link'} isRouted={this.props.routed} to={this.props.linkURL}>
                 {this.props.text}
-            </a>
+            </RoutedLink>
         )
     }
 

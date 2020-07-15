@@ -55,18 +55,18 @@ export abstract class AbstractCoreComponent<Model extends CoreComponentModel, St
     /**
      * Method that needs to be overloaded, to determine whether the component should be treated as 'empty'
      */
-    abstract isEmpty():boolean;
+    protected abstract isEmpty():boolean;
 
     /**
      * Render method that get's called if the component is not considered empty
      */
-    abstract renderComponent():JSX.Element;
+    protected abstract renderComponent():JSX.Element;
 
-    __hidePlaceHolder():boolean{
+    private __hidePlaceHolder():boolean{
         return this.props.hidePlaceHolder;
     }
 
-    __renderPlaceHolder(title?:string, emptyText?:string):JSX.Element{
+    private __renderPlaceHolder(title?:string, emptyText?:string):JSX.Element{
         return(
             <EditorPlaceHolder
                 emptyTextAppend={emptyText}

@@ -16,6 +16,8 @@
 import React from 'react';
 
 export * from "./core/AbstractCoreComponent";
+export * from "./core/routing/RoutedCoreComponent";
+export * from "./core/routing/RoutedLink";
 
 export * from './core/authoring/button/v1/ButtonV1';
 export * from './core/authoring/text/v2/TextV2';
