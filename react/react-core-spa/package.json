@@ -1,6 +1,6 @@
 {
   "name": "aem-core-components-contributions-react-core-spa",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "scripts": {
     "linter": "eslint --ext .js,.jsx .",
     "linter:fix": "eslint --ext .js,.jsx . --fix",
@@ -27,7 +27,7 @@
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.13.1",
-    "aem-core-components-contributions-react-core": "^0.1.18",
+    "aem-core-components-contributions-react-core": "^0.1.19",
     "@adobe/cq-react-editable-components": "^1.2.1",
     "@adobe/cq-spa-component-mapping": "^1.0.3",
     "@adobe/cq-spa-page-model-manager": "^1.1.3"
