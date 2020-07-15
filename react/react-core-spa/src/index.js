@@ -14,18 +14,7 @@
  *  limitations under the License.
  */
 
-export * from './core/layout/breadcrumb/v2/SpaBreadCrumbV2';
-export * from './core/layout/language-navigation/v1/SpaLanguageNavigationV1';
-export * from './core/layout/navigation/v1/SpaNavigationV1';
-
 export * from './core/container/tabs/v2/TabsV2';
 export * from './core/container/accordion/v1/AccordionV1';
 export * from './core/container/carousel/v1/CarouselV1';
 export * from './core/container/container/v1/ContainerV1';
-
-export * from './core/authoring/button/v1/SpaButtonV1';
-export * from './core/authoring/list/v2/SpaListV2';
-export * from './core/authoring/teaser/v1/SpaTeaserV1';
-export * from './core/authoring/title/v2/SpaTitleV2';
-
-export * from './utils/Link';

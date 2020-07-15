@@ -1,6 +1,6 @@
 {
   "name": "aem-core-components-contributions-react-core-spa",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "scripts": {
     "linter": "eslint --ext .js,.jsx .",
     "linter:fix": "eslint --ext .js,.jsx . --fix",
