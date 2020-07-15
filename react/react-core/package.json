@@ -1,6 +1,6 @@
 {
   "name": "aem-core-components-contributions-react-core",
-  "version": "0.1.16",
+  "version": "0.1.19",
   "keywords": [
     "adobe",
     "aem",
@@ -35,7 +35,13 @@
     "postversion": "git push origin && git push origin --tags",
     "tmprelease": "node release.js"
   },
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -46,13 +52,6 @@
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
     "@types/react-router-dom": "^5.1.5",
-    "typescript": "^3.8.3"
-  },
-  "peerDependencies": {
-    "react": "^16.13.1",
-    "react-router-dom": "^5.1.2"
-  },
-  "devDependencies": {
     "@adobe/cq-spa-component-mapping": "~1.0.3",
     "@adobe/cq-spa-page-model-manager": "~1.1.0",
     "@babel/cli": "^7.7.7",
@@ -76,12 +75,11 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2",
+    "react-router-dom": "^5.2.0",
     "jest": "25.3.0",
     "jest-environment-jsdom-fourteen": "1.0.1",
     "jest-resolve": "25.3.0",
     "jest-watch-typeahead": "0.4.2",
-    "typescript": "^3.8.3",
     "tslint": "5.9.1",
     "ts-loader": "^6.2.2",
     "ts-jest": "25.3.1",

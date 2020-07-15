@@ -533,6 +533,12 @@
                 <version>2.9.5</version>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.12</version>
+                <scope>provided</scope>
+            </dependency>
 
             <!-- Testing -->
             <dependency>
@@ -549,8 +555,20 @@
             <dependency>
                 <groupId>com.adobe.aem</groupId>
                 <artifactId>uber-jar</artifactId>
-                <version>6.5.4</version>
+                <version>6.5.5</version>
                 <classifier>apis</classifier>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.cq</groupId>
+                <artifactId>core.wcm.components.core</artifactId>
+                <version>2.10.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bndlib</artifactId>
+                <version>2.4.0</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>

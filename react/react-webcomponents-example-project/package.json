@@ -5,17 +5,10 @@
   "dependencies": {
     "aem-core-components-contributions-react-core": "file:../react-core",
     "@adobe/react-webcomponent": "^0.1.2",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.31",
-    "@types/react": "^16.9.25",
-    "@types/react-dom": "^16.9.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "typescript": "^3.7.5"
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "aempack": "^1.1.9",
@@ -23,7 +16,16 @@
     "move-cli": "^1.2.1",
     "cross-env": "^7.0.2",
     "fs-extra": "^9.0.0",
-    "mini-css-extract-plugin": "latest"
+    "mini-css-extract-plugin": "latest",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.31",
+    "@types/react": "^16.9.25",
+    "@types/react-dom": "^16.9.5",
+    "typescript": "^3.7.5",
+    "del": "^5.1.0"
   },
   "scripts": {
     "aempack": "cross-env NODE_ENV=development node scripts/aempack.js",
