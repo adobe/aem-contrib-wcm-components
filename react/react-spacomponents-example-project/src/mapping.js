@@ -1,32 +1,44 @@
 import {
-    ImageV2, ImageV2IsEmptyFn,
-    TitleV2, TitleV2IsEmptyFn,
-    BreadCrumbV2IsEmptyFn,
-    TextV2 ,
     BreadCrumbV2,
-    NavigationV1,
+    BreadCrumbV2IsEmptyFn,
+    ButtonV1IsEmptyFn,
+    DownloadV1,
+    DownloadV1IsEmptyFn,
+    ImageV2,
+    ImageV2IsEmptyFn,
     LanguageNavigationV1,
-    ButtonV1,ButtonV1IsEmptyFn,
+    ListV2,
+    ListV2IsEmptyFn,
+    NavigationV1,
+    SeparatorV1,
+    SeparatorV1IsEmptyFn,
+    TeaserV1IsEmptyFn,
+    TextV2,
     TextV2IsEmptyFn,
-    TeaserV1,
-    DownloadV1, DownloadV1IsEmptyFn,
-    SeparatorV1, SeparatorV1IsEmptyFn,
-    ListV2, ListV2IsEmptyFn,
-    TeaserV1IsEmptyFn
+    TitleV2,
+    TitleV2IsEmptyFn
 } from "aem-core-components-contributions-react-core";
 import {
-    TabsV2, TabsV2IsEmptyFn,
-    AccordionV1, AccordionV1IsEmptyFn,
-    CarouselV1,CarouselV1IsEmptyFn,
-    ContainerV1, ContainerV1IsEmptyFn,
+    AccordionV1,
+    AccordionV1IsEmptyFn,
+    CarouselV1,
+    CarouselV1IsEmptyFn,
+    ContainerV1,
+    ContainerV1IsEmptyFn,
+    TabsV2,
+    TabsV2IsEmptyFn,
 } from "aem-core-components-contributions-react-core-spa";
 
 
-import { MapTo,withComponentMappingContext, Container} from '@adobe/cq-react-editable-components';
+import {Container, MapTo, withComponentMappingContext} from '@adobe/cq-react-editable-components';
 
 import withRoute from './utils/RouteHelper';
 import ContribPage from './components/Page';
 import Demo from './components/Demo';
+import importedComponent from 'react-imported-component';
+
+const TeaserV1 = importedComponent( () => import('aem-core-components-contributions-react-core-teaser-v1'));
+const ButtonV1 = importedComponent( () => import('aem-core-components-contributions-react-core-button-v1'));
 
 MapTo('contrib/wcm/components/languagenavigation')(withComponentMappingContext(LanguageNavigationV1));
 MapTo('contrib/wcm/components/navigation')(withComponentMappingContext(NavigationV1));
