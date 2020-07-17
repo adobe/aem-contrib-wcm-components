@@ -16,17 +16,19 @@
       "dom"
     ],
     "paths": {
+      
       "aem-angular-core-wcm-components": [
         "dist/aem-angular-core-wcm-components/aem-angular-core-wcm-components",
         "dist/aem-angular-core-wcm-components"
       ],
       "aem-angular-core-spa-wcm-components": [
-        "dist/aem-angular-core-spa-wcm-components/aem-angular-core-spa-wcm-components",
+        "dist/aem-angu lar-core-spa-wcm-components/aem-angular-core-spa-wcm-components",
         "dist/aem-angular-core-spa-wcm-components"
       ]
     }
   },
   "angularCompilerOptions": {
+    "enableIvy": false,
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
   }

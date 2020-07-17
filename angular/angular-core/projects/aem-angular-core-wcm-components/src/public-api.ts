@@ -2,6 +2,9 @@
  * Public API Surface of aem-angular-core-wcm-components
  */
 
+export * from "./lib/AbstractCoreComponent";
+export * from "./lib/AbstractRoutedCoreComponent";
+
 export * from "./lib/aem-angular-core-wcm-components.module";
 export * from "./lib/authoring/button/v1/button.v1.component";
 export * from "./lib/editplaceholder/editplaceholder.component";

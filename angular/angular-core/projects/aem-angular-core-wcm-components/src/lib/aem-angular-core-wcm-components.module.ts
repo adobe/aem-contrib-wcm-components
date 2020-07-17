@@ -30,7 +30,6 @@ import {NavigationV1Component} from "./layout/navigation/navigation.v1.component
 import {LanguageNavigationV1Component} from "./layout/language-navigation/v1/language-navigation.v1.component";
 import {DefaultNavigationUtilityServiceImpl, NAVIGATION_UTIL_SERVICE, NavigationUtilityService} from "./services/NavigationUtilityService";
 import {CommonModule} from "@angular/common";
-import {BrowserModule} from "@angular/platform-browser";
 import {RouterModule} from "@angular/router";
 
 export interface NavigationUtilityConfig {
@@ -38,7 +37,7 @@ export interface NavigationUtilityConfig {
 }
 
 @NgModule({
-    imports: [CommonModule, BrowserModule, RouterModule],
+    imports: [CommonModule, RouterModule],
     providers: [
         {provide: NAVIGATION_UTIL_SERVICE, useClass: DefaultNavigationUtilityServiceImpl}
     ],
@@ -57,6 +56,21 @@ export interface NavigationUtilityConfig {
         ButtonV1Component,
         DefaultV1Component,
         SafeHtmlPipe,
+    ],
+    exports: [
+        EditPlaceholderComponent,
+        DefaultV1Component,
+        ButtonV1Component,
+        DownloadV1Component,
+        ImageV2Component,
+        SeparatorV1,
+        TitleV2,
+        TextV2,
+        ListV2Component,
+        TeaserV1Component,
+        BreadCrumbV2Component,
+        NavigationV1Component,
+        LanguageNavigationV1Component
     ],
     entryComponents: [
         EditPlaceholderComponent,

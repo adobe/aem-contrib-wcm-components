@@ -1,0 +1,29 @@
+<div *ngIf="isEmpty; then placeHolderBlock else componentBlock"></div>
+
+<ng-template #placeHolderBlock>
+    <core-placeholder *ngIf="shouldShowPlaceHolder" componentTitle="TitleV2"></core-placeholder>
+</ng-template>
+
+<ng-template #componentBlock>
+    <div *ngIf="hasLink; else heading">
+        <a *ngIf="routed" class="{{class}}__item-link"
+           routerLink="{{ linkURL}}"
+           routerLinkActive="active">
+            <ng-container *ngTemplateOutlet="heading"></ng-container>
+        </a>
+        <a *ngIf="!routed" href="{{linkURL}}">
+            <ng-container *ngTemplateOutlet="heading"></ng-container>
+        </a>
+    </div>
+</ng-template>
+
+<ng-template #heading>
+    <div [ngSwitch]="type">
+        <h1 class="{{class}}__text" *ngSwitchCase="'h1'">{{text}}</h1>
+        <h2 class="{{class}}__text" *ngSwitchCase="'h2'">{{text}}</h2>
+        <h4 class="{{class}}__text" *ngSwitchCase="'h4'">{{text}}</h4>
+        <h5 class="{{class}}__text" *ngSwitchCase="'h5'">{{text}}</h5>
+        <h6 class="{{class}}__text" *ngSwitchCase="'h6'">{{text}}</h6>
+        <h3 class="{{class}}__text" *ngSwitchDefault>{{text}}</h3>
+    </div>
+</ng-template>

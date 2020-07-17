@@ -23,7 +23,7 @@
     "@adobe/cq-angular-editable-components": "^2.0.2",
     "@adobe/cq-spa-component-mapping": "^1.0.3",
     "@adobe/cq-spa-page-model-manager": "^1.1.3",
-    "aem-angular-core-wcm-components": "0.0.2",
+    "aem-angular-core-wcm-components": "file:~/workspace/aem-contrib-wcm-components/angular/angular-core/dist/aem-angular-core-wcm-components",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
