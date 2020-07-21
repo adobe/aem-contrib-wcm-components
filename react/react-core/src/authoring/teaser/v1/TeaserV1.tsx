@@ -1,7 +1,7 @@
 import React from "react";
 import {AbstractCoreComponent, CoreComponentModel, CoreComponentState} from "../../../AbstractCoreComponent";
-import {ImageV2} from "../../../../core/authoring/image/v2/ImageV2";
-import {TitleV2} from "../../../../core/authoring/title/v2/TitleV2";
+import {ImageV2} from "../../../authoring/image/v2/ImageV2";
+import {TitleV2} from "../../../authoring/title/v2/TitleV2";
 import {RoutedLink} from "../../../routing/RoutedLink";
 import {RoutedCoreComponentModel, isItemRouted, RoutedModel} from "../../../routing/RoutedCoreComponent";
 

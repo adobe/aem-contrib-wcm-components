@@ -2,7 +2,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const webpackConfig = require('react-scripts/config/webpack.config.js')('development');
 const paths = require('../config/paths');
-
+const path = require('path');
+const webpack = require('webpack');
 
 webpackConfig.optimization = {
     splitChunks: {
@@ -43,7 +44,6 @@ webpackConfig.module.rules.forEach( rule => {
         });
     }
 });
-
 webpackConfig.plugins.forEach(plugin => {
     if(plugin instanceof ManifestPlugin){
         plugin.opts.publicPath = webpackConfig.output.publicPath;
@@ -54,5 +54,12 @@ webpackConfig.plugins.forEach(plugin => {
         plugin.options.chunkFilename = 'static/css/[name].[contenthash:8].chunk.css';
     }
 });
+webpackConfig.resolve.alias = {
+    "react-router": path.resolve("./node_modules/react-router"),
+    "react-router-dom": path.resolve("./node_modules/react-router-dom"),
+    "@adobe/cq-react-editable-components":  path.resolve("./node_modules/@adobe/cq-react-editable-components"),
+    "@adobe/cq-spa-component-mapping":  path.resolve("./node_modules/@adobe/cq-spa-component-mapping"),
+    "@adobe/cq-spa-page-model-manager":  path.resolve("./node_modules/@adobe/cq-spa-page-model-manager")
+};
 
 module.exports = webpackConfig;

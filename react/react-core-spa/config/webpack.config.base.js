@@ -22,15 +22,16 @@ const isEnvironmentProd = process.env.NODE_ENV === 'production';
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const sourceMap = (isEnvironmentProd) ? '' : 'inline-source-map';
+const { DllPlugin } = require("webpack");
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
-    entry: './src/index.js',
     mode: 'development',
     devtool: sourceMap,
     output: {
         globalObject: `typeof self !== 'undefined' ? self : this`,
         path: path.resolve(__dirname, 'dist'),
-        filename: "index.js",
+        filename: '[name].js',
         library: 'cqSpaCoreComponents',
         libraryTarget: 'umd'
     },
@@ -67,6 +68,7 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
     plugins: [
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new ManifestPlugin()
     ]
 };

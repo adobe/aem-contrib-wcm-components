@@ -13,25 +13,22 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-
 const path = require('path');
 
 const isEnvironmentTest = process.env.NODE_ENV === 'test';
 const isEnvironmentProd = process.env.NODE_ENV === 'production';
 const nodeExternals = require('webpack-node-externals');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
 const sourceMap = (isEnvironmentProd) ? '' : 'inline-source-map';
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
-    entry: './src/index.ts',
+    entry: {},
     mode: 'development',
     devtool: sourceMap,
     output: {
         globalObject: `typeof self !== 'undefined' ? self : this`,
-        path: path.resolve(__dirname, 'dist'),
-        filename: "index.js",
-        library: 'cqCoreComponents',
+        path: path.resolve(__dirname, '../dist'),
+        filename: '[name].js',
         libraryTarget: 'umd'
     },
     module: {
@@ -64,6 +61,7 @@ module.exports = {
         extensions: ['.ts', '.tsx']
     },
     plugins: [
-        new CleanWebpackPlugin(),
+
+        new ManifestPlugin()
     ]
 };

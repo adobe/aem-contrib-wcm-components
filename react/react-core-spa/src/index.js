@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-export * from './core/container/tabs/v2/TabsV2';
-export * from './core/container/accordion/v1/AccordionV1';
-export * from './core/container/carousel/v1/CarouselV1';
-export * from './core/container/container/v1/ContainerV1';
+export * from './container/tabs/v2/TabsV2';
+export * from './container/accordion/v1/AccordionV1';
+export * from './container/carousel/v1/CarouselV1';
+export * from './container/container/v1/ContainerV1';
