@@ -1,5 +1,5 @@
 {
-  "name": "react-spacomponents-example-project",
+  "name": "@adobe/aem-core-components-react-spa",
   "version": "0.1.0",
   "dependencies": {
     "aem-core-components-contributions-react-core": "file:../react-core",

@@ -30,10 +30,11 @@ webpackConfig.optimization = {
     },
 };
 
+webpackConfig.devtool ='inline-source-map';
 webpackConfig.output.path = paths.clientLibRoot;
 webpackConfig.output.publicPath = process.env.PUBLIC_URL;
-webpackConfig.output.filename = "resources/js/[name].[hash:8].js";
-webpackConfig.output.chunkFilename = "resources/js/[name].[hash:8].js";
+webpackConfig.output.filename = "static/js/[name].[hash:8].js";
+webpackConfig.output.chunkFilename = "static/js/[name].[hash:8].js";
 webpackConfig.module.rules.forEach( rule => {
     if(rule.oneOf){
         rule.oneOf.forEach( subRule => {
@@ -42,7 +43,6 @@ webpackConfig.module.rules.forEach( rule => {
         });
     }
 });
-
 webpackConfig.plugins.forEach(plugin => {
     if(plugin instanceof ManifestPlugin){
         plugin.opts.publicPath = webpackConfig.output.publicPath;

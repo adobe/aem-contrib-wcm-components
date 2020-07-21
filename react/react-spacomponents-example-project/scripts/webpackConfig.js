@@ -3,7 +3,6 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const webpackConfig = require('react-scripts/config/webpack.config.js')('development');
 const paths = require('../config/paths');
 const path = require('path');
-const webpack = require('webpack');
 
 webpackConfig.optimization = {
     splitChunks: {
