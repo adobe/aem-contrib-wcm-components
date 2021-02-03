@@ -103,6 +103,7 @@
                         <exclude>**/*.editorconfig</exclude>
                         <exclude>**/*.stylelintrc.yaml</exclude>
                         <exclude>**/*.eslintignore</exclude>
+                        <exclude>**/*.babelrc</exclude>
                         <!-- Ignore Node and npm -->
                         <exclude>**/node/**</exclude>
                         <exclude>**/node_modules/**</exclude>
