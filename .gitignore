@@ -19,3 +19,5 @@ atlassian-ide-plugin.xml
 .vlt-sync-config.properties
 node
 node_modules
+dist
+/webcomponents/ui.apps/src/content/jcr_root/apps/contrib/wcm/webcomponents/clientlibs/*
