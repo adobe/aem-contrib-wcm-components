@@ -58,6 +58,7 @@
         <module>bundle</module>
         <module>ui.apps</module>
         <module>all</module>
+        <module>webcomponents</module>
     </modules>
 
     <!-- ====================================================================== -->
