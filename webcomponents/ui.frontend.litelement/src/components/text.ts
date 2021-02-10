@@ -14,7 +14,15 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 "use strict";
+import { LitElement, html, property, customElement } from "lit-element";
+import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 
-import "./components/title";
-import "./components/text";
-import "./components/image";
+@customElement("cmp-text")
+export class Text extends LitElement {
+    @property() isRichText = true;
+
+    render() {
+        const template = `<p>${this.innerHTML}</p>`;
+        return html`${unsafeHTML(template)}`;
+    }
+}

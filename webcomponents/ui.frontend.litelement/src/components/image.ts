@@ -14,7 +14,15 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 "use strict";
+import { LitElement, html, property, customElement } from "lit-element";
+import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 
-import "./components/title";
-import "./components/text";
-import "./components/image";
+@customElement("cmp-img")
+export class Image extends LitElement {
+    @property() src = "";
+    @property() alt = "";
+
+    render() {
+        return html`<img src="${this.src}" alt="${this.alt}"/>`;
+    }
+}
