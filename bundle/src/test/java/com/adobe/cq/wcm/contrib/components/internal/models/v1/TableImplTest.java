@@ -149,7 +149,7 @@ class TableImplTest {
         assertEquals(TABLE_EXPORTED_TYPE, table.getExportedType());
     }
 
-//    @Test
+    @Test
     void testTableJson() {
         context.load().json(TEST_BASE + ContribComponentsTestContext.TEST_CONTENT_JSON, CONTENT_ROOT);
         context.registerService(ResourceProcessor.class, new DefaultResourceProcessor());

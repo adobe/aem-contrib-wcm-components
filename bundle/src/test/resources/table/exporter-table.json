@@ -9,11 +9,11 @@
     "gender",
     "title"
   ],
+  "dataLayerText": "This is sample Table Description",
   ":type": "core/wcm/components/table/v1/table",
   "dataLayer": {
     "table-b6492c2cdc": {
-      "@type": "core/wcm/components/table/v1/table",
-      "xdm:text": "This is sample Table Description"
+      "@type": "core/wcm/components/table/v1/table"
     }
   }
 }

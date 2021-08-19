@@ -20,6 +20,7 @@ import com.adobe.cq.wcm.core.components.models.Component;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,7 +36,7 @@ public interface Table extends Component {
      */
     @NotNull
     default List<String> getFormattedHeaderNames() {
-        throw new UnsupportedOperationException();
+        return new ArrayList<>();
     }
 
     /**
@@ -45,7 +46,7 @@ public interface Table extends Component {
      */
     @NotNull
     default List<List<String>> getItems() throws IOException {
-        throw new UnsupportedOperationException();
+        return new ArrayList<>();
     }
 
     /**
@@ -55,7 +56,7 @@ public interface Table extends Component {
      */
     @NotNull
     default String getDescription() {
-        throw new UnsupportedOperationException();
+        return "";
     }
 
     /**
@@ -65,7 +66,7 @@ public interface Table extends Component {
      */
     @NotNull
     default String getAriaLabel() {
-        throw new UnsupportedOperationException();
+        return "";
     }
 
     /**
@@ -75,7 +76,7 @@ public interface Table extends Component {
     @NotNull
     @Override
     default String getExportedType() {
-        throw new UnsupportedOperationException();
+        return "";
     }
 
 }
