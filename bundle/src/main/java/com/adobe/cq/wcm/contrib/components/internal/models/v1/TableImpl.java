@@ -19,7 +19,7 @@ import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.adobe.cq.wcm.contrib.components.models.Table;
 import com.adobe.cq.wcm.contrib.components.services.table.ResourceProcessor;
-import com.adobe.cq.wcm.core.components.internal.models.v1.AbstractComponentImpl;
+import com.adobe.cq.wcm.core.components.util.AbstractComponentImpl;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.commons.util.DamUtil;
 import org.apache.commons.lang3.StringUtils;
