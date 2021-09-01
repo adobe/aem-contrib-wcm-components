@@ -38,7 +38,7 @@ public interface HTMLContainer extends Component {
      *        <code>default</code> in 12.1.0
      */
     default StringBuffer getCSSIncludes() {
-        throw new UnsupportedOperationException();
+        return new StringBuffer();
     }
 
     /**
@@ -49,7 +49,7 @@ public interface HTMLContainer extends Component {
      *        <code>default</code> in 12.1.0
      */
     default StringBuffer getHTMLInclude() {
-        throw new UnsupportedOperationException();
+        return new StringBuffer();
     }
 
     /**
@@ -59,11 +59,11 @@ public interface HTMLContainer extends Component {
      * @since com.adobe.cq.wcm.core.components.models 12.4.0
      */
     default StringBuffer getJSIncludes() {
-        throw new UnsupportedOperationException();
+        return new StringBuffer();
     }
 
     default String getIncludes() {
-        throw new UnsupportedOperationException();
+        return "";
     }
 
     /**
@@ -73,6 +73,6 @@ public interface HTMLContainer extends Component {
     @NotNull
     @Override
     default String getExportedType() {
-        throw new UnsupportedOperationException();
+        return "";
     }
 }
