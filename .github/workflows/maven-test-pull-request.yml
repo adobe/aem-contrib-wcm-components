@@ -18,6 +18,8 @@ name: Test (pull request)
 
 on:
   pull_request:
+  workflow_dispatch:
+  push:
 
 jobs:
   build:
