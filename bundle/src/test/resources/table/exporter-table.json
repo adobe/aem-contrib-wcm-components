@@ -1,0 +1,19 @@
+{
+  "id": "table-b6492c2cdc",
+  "description": "This is sample Table Description",
+  "ariaLabel": "Sample Table",
+  "items": [],
+  "formattedHeaderNames": [
+    "email",
+    "firstName",
+    "gender",
+    "title"
+  ],
+  "dataLayerText": "This is sample Table Description",
+  ":type": "core/wcm/components/table/v1/table",
+  "dataLayer": {
+    "table-b6492c2cdc": {
+      "@type": "core/wcm/components/table/v1/table"
+    }
+  }
+}

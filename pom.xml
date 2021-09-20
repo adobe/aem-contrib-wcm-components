@@ -293,6 +293,8 @@
                             <exclude>**/.github/**</exclude>
                             <!-- Ignore mockito extensions config -->
                             <exclude>**/test/resources/mockito-extensions/*</exclude>
+                            <exclude>**/test/resources/table/*</exclude>
+                            <exclude>**/META-INF/**</exclude>
                         </excludes>
                     </configuration>
                     <executions>
@@ -537,8 +539,7 @@
             <dependency>
                 <groupId>com.adobe.aem</groupId>
                 <artifactId>uber-jar</artifactId>
-                <version>6.3.2</version>
-                <classifier>apis</classifier>
+                <version>6.4.8.4-1.0</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
