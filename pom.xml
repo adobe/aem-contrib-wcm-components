@@ -294,6 +294,7 @@
                             <!-- Ignore mockito extensions config -->
                             <exclude>**/test/resources/mockito-extensions/*</exclude>
                             <exclude>**/test/resources/table/*</exclude>
+                            <exclude>**/test/resources/htmlcontainer/*</exclude>
                             <exclude>**/META-INF/**</exclude>
                         </excludes>
                     </configuration>

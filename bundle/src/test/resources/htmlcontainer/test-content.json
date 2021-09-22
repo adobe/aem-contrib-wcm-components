@@ -1,0 +1,44 @@
+{
+  "htmlcontainer": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "jcr:title": "Table Test",
+      "sling:resourceType": "core/wcm/components/page/v2/page",
+      "jcr:description": "Table description",
+      "root": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/responsivegrid",
+        "responsivegrid": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/responsivegrid",
+          "htmlcontainer-1": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "admin",
+            "jcr:lastModifiedBy": "admin",
+            "htmlFile": "/content/dam/html/sample-site/sample.html",
+            "jcr:created": "Wed Sep 08 2021 17:38:52 GMT+0530",
+            "jcr:lastModified": "Wed Sep 08 2021 18:11:07 GMT+0530",
+            "sling:resourceType": "contrib/wcm/components/htmlcontainer/v1/htmlcontainer",
+            "cssFiles": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "fileName": "/content/dam/html/sample-site/sample.css",
+                "includeType": "inline"
+              }
+            },
+            "jsFiles": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "fileName": "/content/dam/html/sample-site/sample.js",
+                "includeType": "inline"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
