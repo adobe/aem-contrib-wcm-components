@@ -10,10 +10,10 @@
     "title"
   ],
   "dataLayerText": "This is sample Table Description",
-  ":type": "core/wcm/components/table/v1/table",
+  ":type": "contrib/wcm/components/table/v1/table",
   "dataLayer": {
     "table-b6492c2cdc": {
-      "@type": "core/wcm/components/table/v1/table"
+      "@type": "contrib/wcm/components/table/v1/table"
     }
   }
 }

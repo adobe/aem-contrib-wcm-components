@@ -55,7 +55,7 @@ import static java.util.Objects.nonNull;
 )
 public class TableImpl extends AbstractComponentImpl implements Table {
 
-    public static final String RESOURCE_TYPE = "core/wcm/components/table/v1/table";
+    public static final String RESOURCE_TYPE = "contrib/wcm/components/table/v1/table";
 
     @ValueMapValue(name = "source", injectionStrategy = InjectionStrategy.REQUIRED)
     private String source;
