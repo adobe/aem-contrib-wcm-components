@@ -1,0 +1,5 @@
+<style type="text/css">
+h1 {	color: red;}</style>
+<link rel="stylesheet" href="/content/dam/html/sample-site/sample.css"><!DOCTYPE html><html><body>	<h1 id="heading" onclick="changeColor()">Hello World</h1></body></html> <script type="text/javascript">
+function changeColor() {    let x = document.getElementById("heading");    x.style.color = "blue"; };</script>
+<script type="text/javascript" defer src="/content/dam/html/sample-site/sample.js"></script>

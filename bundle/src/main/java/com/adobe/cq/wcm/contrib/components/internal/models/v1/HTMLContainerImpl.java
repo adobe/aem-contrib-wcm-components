@@ -36,7 +36,6 @@ import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
-import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.jetbrains.annotations.Nullable;
 
@@ -44,8 +43,6 @@ import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.dam.api.Asset;
-import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageManager;
 import com.day.cq.wcm.api.designer.Style;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.slf4j.Logger;
@@ -80,23 +77,14 @@ public class HTMLContainerImpl extends AbstractComponentImpl implements HTMLCont
 
     private static final String HTML_FILE = "htmlFile";
 
-    protected static final String RESOURCE_TYPE_V1 = "core/wcm/components/htmlcontainer/v1/htmlcontainer";
+    protected static final String RESOURCE_TYPE_V1 = "contrib/wcm/components/htmlcontainer/v1/htmlcontainer";
 
     private static final String JS_FILES = "jsFiles";
 
     private static final String NL = StringUtils.CR + StringUtils.LF;
 
-    @Self
-    private SlingHttpServletRequest request;
-
     @ScriptVariable
     private Resource resource;
-
-    @ScriptVariable
-    private PageManager pageManager;
-
-    @ScriptVariable
-    private Page currentPage;
 
     @ScriptVariable(injectionStrategy = InjectionStrategy.OPTIONAL)
     @JsonIgnore

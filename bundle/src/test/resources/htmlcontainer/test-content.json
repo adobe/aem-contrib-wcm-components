@@ -26,6 +26,11 @@
                 "jcr:primaryType": "nt:unstructured",
                 "fileName": "/content/dam/html/sample-site/sample.css",
                 "includeType": "inline"
+              },
+              "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "fileName": "/content/dam/html/sample-site/sample.css",
+                "includeType": "reference"
               }
             },
             "jsFiles": {
@@ -34,6 +39,11 @@
                 "jcr:primaryType": "nt:unstructured",
                 "fileName": "/content/dam/html/sample-site/sample.js",
                 "includeType": "inline"
+              },
+              "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "fileName": "/content/dam/html/sample-site/sample.js",
+                "includeType": "defer"
               }
             }
           }
