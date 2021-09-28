@@ -209,35 +209,30 @@ public class HTMLContainerImpl extends AbstractComponentImpl implements HTMLCont
 
     private StringBuffer readFileIntoSB(String fileName, StringBuffer sb) {
 
-        Resource original;
-        Asset asset;
-        ResourceResolver resolver;
-        resolver = resource.getResourceResolver();
+        ResourceResolver resolver = resource.getResourceResolver();
         if (resolver != null) {
-            original = resolver.getResource(fileName);
-            if (original != null) {
-                asset = original.adaptTo(Asset.class);
+            Resource newResource = resolver.getResource(fileName);
+            if (newResource != null) {
+                Asset asset = newResource.adaptTo(Asset.class);
                 if (asset != null) {
-                    original = asset.getOriginal();
-
+                    Resource original = asset.getOriginal();
                     InputStream content = original.adaptTo(InputStream.class);
-
-                    String line;
-                    BufferedReader br = new BufferedReader(new InputStreamReader(content, StandardCharsets.UTF_8));
-
-                    try {
-                        while ((line = br.readLine()) != null) {
-                            sb.append(line);
+                    if(content != null) {
+                        BufferedReader br = new BufferedReader(new InputStreamReader(content, StandardCharsets.UTF_8));
+                        try {
+                            String line;
+                            while ((line = br.readLine()) != null) {
+                                sb.append(line);
+                            }
+                            br.close();
+                        } catch (IOException e) {
+                            LOGGER.error("ERROR reading {} into the StringBuffer: {}", fileName, e.toString());
+                            e.printStackTrace();
                         }
-                    } catch (IOException e) {
-                        LOGGER.error("ERROR reading {} into the StringBuffer: {}", fileName, e.toString());
-                        e.printStackTrace();
                     }
                 }
             }
         }
-
-        return (sb);
+        return sb;
     }
-
 }
