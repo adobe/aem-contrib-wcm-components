@@ -26,7 +26,7 @@ HTML Container component written in HTL that displays the contents of the select
 * JS files support "async", "inline", "defer", and "reference" inclusion capability.
 
 ### Use Object
-The HTML Container component uses the `com.adobe.cq.wcm.core.components.models.HTMLContainer` Sling model as its Use-object.
+The HTML Container component uses the `com.adobe.cq.wcm.contrib.components.models.HTMLContainer` Sling model as its Use-object.
 
 ### Edit dialog properties
 The following JCR properties are used:
