@@ -36,6 +36,7 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.internal.util.reflection.FieldSetter;
 
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 
@@ -54,8 +55,10 @@ public class HTMLContainerImplTest {
 
     private static final String SAMPLE_SITE = "/content/dam/html/sample-site";
     private static final String SAMPLE_CSS = "/sample.css";
+    private static final String SAMPLE2_CSS = "/sample2.css";
     private static final String SAMPLE_HTML = "/sample.html";
     private static final String SAMPLE_JS = "/sample.js";
+    private static final String SAMPLE2_JS = "/sample2.js";
 
     private static final String CSS_FILES = "cssFiles";
 
@@ -87,8 +90,11 @@ public class HTMLContainerImplTest {
         when(resource.getChild(JS_FILES)).thenReturn(null);
         when(resource.getChild(HTML_FILE)).thenReturn(null);
         ValueMap properties = new MockValueMap(resource);
-        properties.put(HTML_FILE, "xyz.html");
         when(resource.getValueMap()).thenReturn(properties);
+        assertEquals("",  htmlContainer.getIncludes());
+        properties.put(HTML_FILE, "xyz.html");
+        assertEquals("",  htmlContainer.getIncludes());
+        when(resource.getResourceResolver()).thenReturn(context.resourceResolver());
         assertEquals("",  htmlContainer.getIncludes());
     }
 
@@ -102,6 +108,11 @@ public class HTMLContainerImplTest {
                 "text/css",
                 true);
         context.assetManager().createAsset(
+                SAMPLE_SITE + SAMPLE2_CSS,
+                Utils.class.getResourceAsStream(TEST_BASE + SAMPLE2_CSS),
+                "text/css",
+                true);
+        context.assetManager().createAsset(
                 SAMPLE_SITE + SAMPLE_HTML,
                 Utils.class.getResourceAsStream(TEST_BASE + SAMPLE_HTML),
                 "text/html",
@@ -109,6 +120,11 @@ public class HTMLContainerImplTest {
         context.assetManager().createAsset(
                 SAMPLE_SITE + SAMPLE_JS,
                 Utils.class.getResourceAsStream(TEST_BASE + SAMPLE_JS),
+                "application/javascript",
+                true);
+        context.assetManager().createAsset(
+                SAMPLE_SITE + SAMPLE2_JS,
+                Utils.class.getResourceAsStream(TEST_BASE + SAMPLE2_JS),
                 "application/javascript",
                 true);
 
@@ -131,7 +147,61 @@ public class HTMLContainerImplTest {
         String output = container.getIncludes();
         String expected = IOUtils.toString(
                 Utils.class.getResourceAsStream(TEST_BASE + "/exporter-htmlcontainer.txt"),
-                StandardCharsets.UTF_8);
-        assertTrue(output.replaceAll("\r", "").contentEquals(expected));
+                StandardCharsets.UTF_8).trim();
+        assertTrue(output.replaceAll("\r", "").trim().contentEquals(expected));
+    }
+
+    @Test
+    void testWrongHtmlIncludes() throws IOException {
+        context.load().json(TEST_BASE + "/test-content2.json", CONTENT_ROOT);
+
+        context.assetManager().createAsset(
+                SAMPLE_SITE + SAMPLE_CSS,
+                Utils.class.getResourceAsStream(TEST_BASE + SAMPLE_CSS),
+                "text/css",
+                true);
+        context.assetManager().createAsset(
+                SAMPLE_SITE + SAMPLE2_CSS,
+                Utils.class.getResourceAsStream(TEST_BASE + SAMPLE2_CSS),
+                "text/css",
+                true);
+        context.assetManager().createAsset(
+                SAMPLE_SITE + SAMPLE_HTML,
+                Utils.class.getResourceAsStream(TEST_BASE + SAMPLE_HTML),
+                "text/html",
+                true);
+        context.assetManager().createAsset(
+                SAMPLE_SITE + SAMPLE_JS,
+                Utils.class.getResourceAsStream(TEST_BASE + SAMPLE_JS),
+                "application/javascript",
+                true);
+        context.assetManager().createAsset(
+                SAMPLE_SITE + SAMPLE2_JS,
+                Utils.class.getResourceAsStream(TEST_BASE + SAMPLE2_JS),
+                "application/javascript",
+                true);
+
+        Utils.enableDataLayer(context, true);
+        Resource resource = context.currentResource(HTML_CONTAINER_1);
+
+        if (resource == null) {
+            throw new IllegalStateException("Resource not found " + HTML_CONTAINER_1);
+        }
+
+        MockSlingHttpServletRequest request = new MockSlingHttpServletRequest(context.resourceResolver(),
+                context.bundleContext());
+        SlingBindings bindings = new SlingBindings();
+        bindings.put(SlingBindings.RESOURCE, resource);
+        bindings.put(SlingBindings.REQUEST, request);
+        bindings.put(WCMBindings.PROPERTIES, resource.getValueMap());
+        request.setResource(resource);
+        request.setAttribute(SlingBindings.class.getName(), bindings);
+        HTMLContainerImpl container = request.adaptTo(HTMLContainerImpl.class);
+        String output = container.getIncludes();
+        container.getTypedIncludes("xyzFiles", new StringBuffer());
+        String expected = IOUtils.toString(
+                Utils.class.getResourceAsStream(TEST_BASE + "/exporter-htmlcontainer2.txt"),
+                StandardCharsets.UTF_8).trim();
+        assertTrue(output.replaceAll("\r", "").trim().contentEquals(expected));
     }
 }

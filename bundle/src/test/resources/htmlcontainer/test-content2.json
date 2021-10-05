@@ -47,18 +47,47 @@
               },
               "item1": {
                 "jcr:primaryType": "nt:unstructured",
-                "fileName": "/content/dam/html/sample-site/sample.js",
                 "includeType": "defer"
               },
               "item2": {
                 "jcr:primaryType": "nt:unstructured",
-                "fileName": "/content/dam/html/sample-site/sample2.js",
-                "includeType": "async"
+                "fileName": "/content/dam/html/sample-site/sample.js"
               },
               "item3": {
                 "jcr:primaryType": "nt:unstructured",
+                "fileName": "/content/dam/html/sample-site/sample.js",
+                "includeType": "defer"
+              },
+              "item4": {
+                "jcr:primaryType": "nt:unstructured",
                 "fileName": "/content/dam/html/sample-site/sample2.js",
-                "includeType": "reference"
+                "includeType": "async1"
+              }
+            },
+            "xyzFiles": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "fileName": "/content/dam/html/sample-site/sample.js",
+                "includeType": "inline"
+              },
+              "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "includeType": "defer"
+              },
+              "item2": {
+                "jcr:primaryType": "nt:unstructured",
+                "fileName": "/content/dam/html/sample-site/sample.js"
+              },
+              "item3": {
+                "jcr:primaryType": "nt:unstructured",
+                "fileName": "/content/dam/html/sample-site/sample.js",
+                "includeType": "defer"
+              },
+              "item4": {
+                "jcr:primaryType": "nt:unstructured",
+                "fileName": "/content/dam/html/sample-site/sample2.js",
+                "includeType": "async1"
               }
             }
           }
