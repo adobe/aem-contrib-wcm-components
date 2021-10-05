@@ -64,7 +64,7 @@ class TableImplTest {
     private static final String TABLE_DESCRIPTION = "This is sample Table Description";
     private static final String TABLE_ARIA_LABEL="Sample Table";
     private static final String DAM_ASSET = "dam:Asset";
-    private static final String TABLE_EXPORTED_TYPE = "contrib/wcm/components/table/v1/table";
+    private static final String TABLE_EXPORTED_TYPE = "core/wcm/components/table/v1/table";
 
     private final AemContext context = ContribComponentsTestContext.newAemContext();
 
