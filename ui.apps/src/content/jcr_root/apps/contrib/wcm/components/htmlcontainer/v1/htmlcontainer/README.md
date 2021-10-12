@@ -46,6 +46,3 @@ Files are included in CSS, HTML, JS order with appropriate script and style tags
 * **Version**: v1
 * **Compatibility**: AEM 6.5
 * **Status**: production-ready
-* **Documentation**: [https://www.adobe.com/go/aem\_cmp\_htmlcontainer\_v1
-](https://www.adobe.com/go/aem_cmp_contentfragment_v1)
-* **Component Library**: [https://www.adobe.com/go/aem\_cmp\_library\_cf](https://www.adobe.com/go/aem_cmp_library_cf)

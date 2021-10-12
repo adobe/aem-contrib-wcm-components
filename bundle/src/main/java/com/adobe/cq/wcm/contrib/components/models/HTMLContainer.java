@@ -22,41 +22,39 @@ import org.osgi.annotation.versioning.ConsumerType;
 import com.adobe.cq.export.json.ComponentExporter;
 
 /**
- * Defines the {@code Title} Sling Model used for the
- * {@code /apps/core/wcm/components/title} component.
+ * Defines the {@code HtmlContainer} Sling Model used for the
+ * {@code /apps/contrib/wcm/components/htmlcontainer} component.
  *
- * @since com.adobe.cq.wcm.core.components.models 11.0.0
+ * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
  */
 @ConsumerType
 public interface HTMLContainer extends Component {
 
     /**
-     * Returns the text to be displayed as title.
+     * Returns the CSS included
      *
-     * @return the title's text
-     * @since com.adobe.cq.wcm.core.components.models 11.0.0; marked
-     *        <code>default</code> in 12.1.0
+     * @return the CSS included
+     * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
      */
     default StringBuffer getCSSIncludes() {
         return new StringBuffer();
     }
 
     /**
-     * Returns the HTML element type (h1-h6) used for the markup.
+     * Returns the HTML included
      *
-     * @return the element type
-     * @since com.adobe.cq.wcm.core.components.models 11.0.0; marked
-     *        <code>default</code> in 12.1.0
+     * @return the HTML included
+     * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
      */
     default StringBuffer getHTMLInclude() {
         return new StringBuffer();
     }
 
     /**
-     * Returns the Title's link URL, if one was set.
+     * Returns the JS included
      *
-     * @return the title's link URL, if one was set, or {@code null}
-     * @since com.adobe.cq.wcm.core.components.models 12.4.0
+     * @return the JS included
+     * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
      */
     default StringBuffer getJSIncludes() {
         return new StringBuffer();
@@ -68,7 +66,7 @@ public interface HTMLContainer extends Component {
 
     /**
      * @see ComponentExporter#getExportedType()
-     * @since com.adobe.cq.wcm.core.components.models 12.2.0
+     * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
      */
     @NotNull
     @Override
