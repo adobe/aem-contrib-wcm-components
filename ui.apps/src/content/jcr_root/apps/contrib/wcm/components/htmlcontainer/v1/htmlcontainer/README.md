@@ -45,4 +45,4 @@ Files are included in CSS, HTML, JS order with appropriate script and style tags
 * **Vendor**: Adobe
 * **Version**: v1
 * **Compatibility**: AEM 6.5
-* **Status**: production-ready
+* **Status**: community-contributed

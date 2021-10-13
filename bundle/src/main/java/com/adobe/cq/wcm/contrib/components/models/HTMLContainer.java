@@ -36,8 +36,8 @@ public interface HTMLContainer extends Component {
      * @return the CSS included
      * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
      */
-    default StringBuffer getCSSIncludes() {
-        return new StringBuffer();
+    default String getCSSIncludes() {
+        return "";
     }
 
     /**
@@ -46,8 +46,8 @@ public interface HTMLContainer extends Component {
      * @return the HTML included
      * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
      */
-    default StringBuffer getHTMLInclude() {
-        return new StringBuffer();
+    default String getHTMLInclude() {
+        return "";
     }
 
     /**
@@ -56,8 +56,8 @@ public interface HTMLContainer extends Component {
      * @return the JS included
      * @since com.adobe.cq.wcm.contrib.components.models 1.0.0
      */
-    default StringBuffer getJSIncludes() {
-        return new StringBuffer();
+    default String getJSIncludes() {
+        return "";
     }
 
     default String getIncludes() {

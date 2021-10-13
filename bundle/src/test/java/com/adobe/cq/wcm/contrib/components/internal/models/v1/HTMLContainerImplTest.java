@@ -198,7 +198,7 @@ public class HTMLContainerImplTest {
         request.setAttribute(SlingBindings.class.getName(), bindings);
         HTMLContainerImpl container = request.adaptTo(HTMLContainerImpl.class);
         String output = container.getIncludes();
-        container.getTypedIncludes("xyzFiles", new StringBuffer());
+        container.getTypedIncludes("xyzFiles");
         String expected = IOUtils.toString(
                 Utils.class.getResourceAsStream(TEST_BASE + "/exporter-htmlcontainer2.txt"),
                 StandardCharsets.UTF_8).trim();

@@ -18,8 +18,8 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="HTML Container"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="[core.wcm.components.commons.editor.dialog.childreneditor.v1,core.wcm.components.tabs.v1.editor]"
-    helpPath="https://www.adobe.com/go/aem_cmp_htmlcontainer_v1" 
+    extraClientlibs="[core.wcm.components.htmlcontainer.v1.editor]"
+    helpPath="https://www.adobe.com/go/aem_cmp_htmlcontainer_v1"
     trackingFeature="core-components:htmlcontainer:v1">
     <content
         granite:class="cmp-tabs__editor"
@@ -250,10 +250,6 @@
                     </jsIncludes>
                 </items>
             </tabs>
-            <include-clientlibs
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
-                js="core.wcm.components.htmlcontainer.v1.editor"/>
         </items>
     </content>
 </jcr:root>

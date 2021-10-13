@@ -110,44 +110,39 @@ public class HTMLContainerImpl extends AbstractComponentImpl implements HTMLCont
 
     @Override
     public String getIncludes() {
-        StringBuffer outString = new StringBuffer();
-        outString = outString.append(getCSSIncludes());
-        outString = outString.append(getHTMLInclude());
-        outString = outString.append(getJSIncludes());
+        String outString = "";
+        outString += (getCSSIncludes());
+        outString  += (getHTMLInclude());
+        outString += (getJSIncludes());
 
-        return (outString.toString());
+        return outString;
     }
 
     @Override
     @JsonIgnore
-    public StringBuffer getCSSIncludes() {
-        StringBuffer cssIncludes = new StringBuffer();
-
-        getTypedIncludes(CSS_FILES, cssIncludes);
-        return (cssIncludes);
+    public String getCSSIncludes() {
+        return getTypedIncludes(CSS_FILES);
     }
 
     @Override
     @JsonIgnore
-    public StringBuffer getHTMLInclude() {
+    public String getHTMLInclude() {
         ValueMap properties = resource.getValueMap();
-        StringBuffer htmlInclude = new StringBuffer();
+        String htmlInclude = "";
 
         String htmlFile = (String) properties.get(HTML_FILE);
         if (htmlFile != null) {
-            readFileIntoSB(htmlFile, htmlInclude);
+            htmlInclude = readFileIntoSB(htmlFile);
         }
         return (htmlInclude);
     }
 
     @Override
     @JsonIgnore
-    public StringBuffer getJSIncludes() {
-        StringBuffer jsIncludes = new StringBuffer();
+    public String getJSIncludes() {
+        return getTypedIncludes(JS_FILES);
 
-        getTypedIncludes(JS_FILES, jsIncludes);
 
-        return (jsIncludes);
     }
 
     // find ALL the filenames for the given type and either read the file in
@@ -155,7 +150,8 @@ public class HTMLContainerImpl extends AbstractComponentImpl implements HTMLCont
     // page or treat it as an external link, depending on the "inlineCBox" boolean.
     // This should
     // reduce page size if libraries are referenced instead of inlined.
-    public StringBuffer getTypedIncludes(String type, StringBuffer typedSB) {
+    public String getTypedIncludes(String type) {
+        String include = "";
         Resource typeFileNode = resource.getChild(type);
         if (typeFileNode != null) {
             Iterator<Resource> typeFileNodeIterator = typeFileNode.listChildren();
@@ -169,33 +165,30 @@ public class HTMLContainerImpl extends AbstractComponentImpl implements HTMLCont
                     // includeType will be null for HTML files...
                     if (includeType == null || includeType.contentEquals(INLINE_TYPE)) {
                         if (type.contentEquals(CSS_FILES)) {
-                            typedSB.append("<style type=\"text/css\">" + NL);
-
+                            include += ("<style type=\"text/css\">" + NL);
                         } else if (type.contentEquals(JS_FILES)) {
-
-                            typedSB.append("<script type=\"text/javascript\">" + NL);
-
+                            include += ("<script type=\"text/javascript\">" + NL);
                         }
 
-                        readFileIntoSB(fileName, typedSB);
+                        include += readFileIntoSB(fileName);
 
                         if (type.contentEquals(CSS_FILES)) {
-                            typedSB.append("</style>" + NL);
+                            include += ("</style>" + NL);
 
                         } else if (type.contentEquals(JS_FILES)) {
 
-                            typedSB.append("</script>" + NL);
+                            include += ("</script>" + NL);
 
                         }
 
                     } else if (includeType.contentEquals(REFERENCE_TYPE) || includeType.contentEquals(DEFER_TYPE)
                             || includeType.contentEquals(ASYNC_TYPE)) {
                         if (type.contentEquals(CSS_FILES)) {
-                            typedSB.append("<link rel=\"stylesheet\" href=\"" + fileName + "\">");
+                            include += ("<link rel=\"stylesheet\" href=\"" + fileName + "\">");
 
                         } else if (type.contentEquals(JS_FILES)) {
 
-                            typedSB.append("<script type=\"text/javascript\" "
+                            include += ("<script type=\"text/javascript\" "
                                     + (String) (includeType.contentEquals(DEFER_TYPE)
                                     || includeType.contentEquals(ASYNC_TYPE) ? includeType : "")
                                     + " src=\"" + fileName + "\"></script>");
@@ -204,11 +197,11 @@ public class HTMLContainerImpl extends AbstractComponentImpl implements HTMLCont
                 }
             }
         }
-        return (typedSB);
+        return include;
     }
 
-    private StringBuffer readFileIntoSB(String fileName, StringBuffer sb) {
-
+    private String readFileIntoSB(String fileName) {
+        String sb = "";
         ResourceResolver resolver = resource.getResourceResolver();
         if (resolver != null) {
             Resource newResource = resolver.getResource(fileName);
@@ -221,13 +214,14 @@ public class HTMLContainerImpl extends AbstractComponentImpl implements HTMLCont
                         BufferedReader br = new BufferedReader(new InputStreamReader(content, StandardCharsets.UTF_8));
                         try {
                             String line;
+                            StringBuilder sbBuilder = new StringBuilder(sb);
                             while ((line = br.readLine()) != null) {
-                                sb.append(line);
+                                sbBuilder.append(line);
                             }
+                            sb = sbBuilder.toString();
                             br.close();
                         } catch (IOException e) {
                             LOGGER.error("ERROR reading {} into the StringBuffer: {}", fileName, e.toString());
-                            e.printStackTrace();
                         }
                     }
                 }
