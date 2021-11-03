@@ -16,7 +16,7 @@
 <div data-sly-use.htmlcontainer="com.adobe.cq.wcm.contrib.components.models.HTMLContainer"
 	 data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component"
      data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-	 data-sly-test.hasContent=htmlcontainer.includes
+	 data-sly-test.hasContent="${htmlcontainer.includes}"
      id="${component.id}"
      class="cmp-htmlcontainer">
 	<sly data-sly-call="${template.placeholder @ isEmpty=!hasContent, classAppend='cq-marker-start'}"></sly>
