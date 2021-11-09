@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/adobe/aem-contrib-wcm-components.svg?style=svg)](https://circleci.com/gh/adobe/aem-contrib-wcm-components) [![codecov](https://codecov.io/gh/adobe/aem-contrib-wcm-components/branch/master/graph/badge.svg)](https://codecov.io/gh/adobe/aem-contrib-wcm-components)
+[![Tests](https://github.com/adobe/aem-contrib-wcm-components/actions/workflows/maven-test-pull-request.yml/badge.svg)](https://github.com/adobe/aem-contrib-wcm-components/actions/workflows/maven-test-pull-request.yml) [![codecov](https://codecov.io/gh/adobe/aem-contrib-wcm-components/branch/master/graph/badge.svg)](https://codecov.io/gh/adobe/aem-contrib-wcm-components)
 
 
 # AEM WCM Components - Community Contributions
