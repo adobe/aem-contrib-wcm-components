@@ -24,7 +24,7 @@ module.exports = {
             name: "contrib.wcm.webcomponents.example.customize",
             serializationFormat: "xml",
             allowProxy: true,
-            jsProcessor: ["default:none", "min:gcc;compilationLevel=whitespace"],
+            jsProcessor: ["default:none", "min:gcc;compilationLevel=whitespace;languageIn=ECMASCRIPT_2015"],
             assets: {
                 js: [
                     "dist/main.js"
