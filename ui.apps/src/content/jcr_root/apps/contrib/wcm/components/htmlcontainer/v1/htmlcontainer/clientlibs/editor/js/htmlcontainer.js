@@ -13,24 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-/*console.log("Client library called");
-
-$(document).on("foundation-contentloaded", function(e) {
-    var container = e.target;
-	alert("hello world!");
-    console.log("foundation-contentloaded was fired.");
-    console.log(container);
-});
-
-*/
 
 /* deal with *.html */
 $(window).adaptTo("foundation-registry").register("foundation.validation.validator", {
   selector: "[data-html-should-contain]",
   validate: function(el) {
-
-    console.log('validating text ends with ' + shouldContain);
-    console.log('input should end with ' + shouldContain);
 
     var shouldContain = el.getAttribute("data-html-should-contain");  //.html
 
@@ -50,9 +37,6 @@ $(window).adaptTo("foundation-registry").register("foundation.validation.validat
   selector: "[data-css-should-contain]",
   validate: function(el) {
 
-    console.log('validating text ends with ' + shouldContain);
-    console.log('input should end with ' + shouldContain);
-
     var shouldContain = el.getAttribute("data-css-should-contain");  //.css
 
     var input = el.value;  //input added by author
@@ -69,9 +53,6 @@ $(window).adaptTo("foundation-registry").register("foundation.validation.validat
 $(window).adaptTo("foundation-registry").register("foundation.validation.validator", {
   selector: "[data-js-should-contain]",
   validate: function(el) {
-
-    console.log('validating text ends with ' + shouldContain);
-    console.log('input should end with ' + shouldContain);
 
     var shouldContain = el.getAttribute("data-js-should-contain");  //.js
 
