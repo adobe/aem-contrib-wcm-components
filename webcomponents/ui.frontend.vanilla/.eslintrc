@@ -1,0 +1,14 @@
+{
+    "env": {
+        "browser": true,
+        "jquery": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+    "globals": {
+        "Coral": false,
+        "Granite": false
+    }
+}
